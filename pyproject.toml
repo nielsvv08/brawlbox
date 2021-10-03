@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "brawlbox"
+version = "2.0.0-alpha"
+description = "Brawl Box — the loot box simulator for Brawl Stars."
+authors = ["Robin Mahieu <robin.mahieu@protonmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+discourtesy = "^0.1.1"
+dnspython = "^2.1.0"
+httpx = "^0.19.0"
+motor = "^2.5.1"
+python-dotenv = "^0.19.0"
+
+[tool.poetry.dev-dependencies]
+black = "^21.9b0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
