@@ -12,7 +12,7 @@ The different types of data are being stored on three separate [MongoDB][mongodb
 
 ## Environment Setup
 
-Brawl Box requires [Python 3.9][python-3.9] or higher.
+Brawl Box requires [Python 3.10][python-3.10] or higher.
 
 Firstly, clone the source code and install the [Poetry][poetry] dependency manager.
 
@@ -63,5 +63,5 @@ This project is licensed under the terms of the [AGPL-3.0][agpl-3.0-license] lic
 [discourtesy]: <https://github.com/robinmahieu/discourtesy>
 [mongodb]: <https://www.mongodb.com/>
 [poetry]: <https://github.com/python-poetry/poetry>
-[python-3.9]: <https://www.python.org/downloads/>
+[python-3.10]: <https://www.python.org/downloads/>
 [starlette]: <https://github.com/encode/starlette>
