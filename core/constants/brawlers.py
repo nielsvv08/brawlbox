@@ -272,6 +272,12 @@ class BrawlersConstants:
             "gadgets": ["Fire Starters"],
             "starpowers": ["Wild Flames", "Scorchin' Siphon"],
         },
+        "Meg": {
+            "rarity": "Legendary",
+            "emoji": "<:M:892446763103973398>",
+            "gadgets": ["Jolting Volts"],
+            "starpowers": ["Force Field", "Self Destruction"],
+        },
         "Gale": {
             "rarity": "Chromatic",
             "emoji": "<:G:776006754646884352>",
