@@ -338,6 +338,7 @@ class BrawlersConstants:
         "Active Noise Cancelling": "Active Noise Canceling",
         "Backup Mine": "Mine Mania",
         "Sleep Simulator": "Sleep Stimulator",
+        "Self Destruction": "Heavy Metal",
     }
 
     starpowers_overwrite = {
