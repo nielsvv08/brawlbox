@@ -326,6 +326,12 @@ class BrawlersConstants:
             "gadgets": ["Chill Pill"],
             "starpowers": ["First Bash", "Mad As Heck"],
         },
+        "Lola": {
+            "rarity": "Chromatic",
+            "emoji": "<:L:902944553575804971>",
+            "gadgets": ["Freeze Frame"],
+            "starpowers": ["Improvise", "Sealed With A Kiss"],
+        },
     }
 
     gadgets_overwrite = {
