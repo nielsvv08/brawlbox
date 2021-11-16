@@ -3,48 +3,51 @@ from copy import deepcopy
 import discourtesy
 
 from core.config import Config as config
+from core.constants import Constants as constants
 from core.paginate import Paginate
+
+emoji = constants.emoji
+
 
 base_embed = discourtesy.utils.embed(
     {
-        "title": "Badges",
+        "title": "Profile Badges",
         "color": config.colour,
     }
 )
 
 first_embed = deepcopy(base_embed)
 first_embed["embeds"][0]["description"] = (
-    "<:box:563003560233533440> a member of the Brawl Box server\n"
-    "<:Nitro:836655327684460576> the Nitro Booster role on the Brawl Box server\n"
-    "<:vip:569080708153212938> the VIP role on the Brawl Box server\n"
-    "<:support:569587383683776553> the VIP+ role on the Brawl Box server\n"
-    "<:splus:569599349361868850> the VIP++ role on the Brawl Box server\n"
-    "<:staff:569854669543702539> a staff member of the Brawl Box server\n"
-    "<:To:609428420438523934> participated in the 1k server members tournament"
+    f"{emoji.box} a member in the Brawl Box server\n"
+    f"{emoji.nitro} a Nitro Booster in the Brawl Box server\n"
+    f"{emoji.vip} a VIP in the Brawl Box server\n"
+    f"{emoji.vip_p} a VIP+ in the Brawl Box server\n"
+    f"{emoji.vip_pp} a VIP++ in the Brawl Box server\n"
+    f"{emoji.staff} a staff member in the Brawl Box server\n"
+    f"{emoji.tournament} a participant of a Brawl Box server tournament"
 )
 
 
 second_embed = deepcopy(base_embed)
 second_embed["embeds"][0]["description"] = (
-    "<:1OO:569858643923566596> a box count of at least 100\n"
-    "<:1000:569858643810451466> a box count of at least 1,000\n"
-    "<:10000:569858644003520522> a box count of at least 10,000\n"
-    "<:50000:569858643995131914> a box count of at least 50,000\n"
-    "<:100000:569858643772702743> a box count of at least 100,000"
+    f"{emoji.b_100} a box count of at least 100\n"
+    f"{emoji.b_1k} a box count of at least 1 000\n"
+    f"{emoji.b_10k} a box count of at least 10 000\n"
+    f"{emoji.b_50k} a box count of at least 50 000\n"
+    f"{emoji.b_100k} a box count of at least 100 000"
 )
 
 third_embed = deepcopy(base_embed)
 third_embed["embeds"][0]["description"] = (
-    "<:tier1:569816898649325578> tier 1\n"
-    "<:tier2:569816898666233856> tier 2\n"
-    "<:tier3:569816899140059136> tier 3\n"
-    "<:tier4:569816898527559700> tier 4\n"
-    "<:tier5:569816898599124992> tier 5\n"
-    "<:tier6:569816898708176896> tier 6\n"
-    "<:tier7:569816898888400926> tier 7\n"
-    "<:tier8:569816899236659210> tier 8"
+    f"{emoji.tier_1} prestige tier 1\n"
+    f"{emoji.tier_2} prestige tier 2\n"
+    f"{emoji.tier_3} prestige tier 3\n"
+    f"{emoji.tier_4} prestige tier 4\n"
+    f"{emoji.tier_5} prestige tier 5\n"
+    f"{emoji.tier_6} prestige tier 6\n"
+    f"{emoji.tier_7} prestige tier 7\n"
+    f"{emoji.tier_8} prestige tier 8"
 )
-
 
 embeds = (first_embed, second_embed, third_embed)
 

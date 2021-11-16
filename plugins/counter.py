@@ -4,6 +4,8 @@ from core.config import Config as config
 from core.constants import Constants as constants
 from core.utils import r
 
+emoji = constants.emoji
+
 
 @discourtesy.command("counter")
 async def counter_command(application, interaction):
@@ -16,9 +18,9 @@ async def counter_command(application, interaction):
         return constants.errors.profile_not_found.format(complete_username)
 
     description = (
-        f"<:box:563003560233533440> **Brawl Boxes** = {r(profile['boxcounter'])}\n"
-        f"<:big:563003560124612649> **Big Boxes** = {r(profile['bigcounter'])}\n"
-        f"<:megab:563003560325808151> **Mega Boxes** = {r(profile['megacounter'])}"
+        f"{emoji.box} **Brawl Boxes** = {r(profile['boxcounter'])}\n"
+        f"{emoji.big_box} **Big Boxes** = {r(profile['bigcounter'])}\n"
+        f"{emoji.mega_box} **Mega Boxes** = {r(profile['megacounter'])}"
     )
 
     return discourtesy.utils.embed(
