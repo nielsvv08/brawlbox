@@ -194,6 +194,12 @@ class BrawlersConstants:
             "gadgets": ["Piggy Bank"],
             "starpowers": ["Keep The Change", "Business Resilience"],
         },
+        "Grom": {
+            "rarity": "Epic",
+            "emoji": "<:G:923487323847540736>",
+            "gadgets": ["Watchtower"],
+            "starpowers": ["Foot Patrol", "X-Factor"],
+        },
         "Mortis": {
             "rarity": "Mythic",
             "emoji": "<:M:776006754424979456>",
@@ -331,6 +337,12 @@ class BrawlersConstants:
             "emoji": "<:L:902944553575804971>",
             "gadgets": ["Freeze Frame"],
             "starpowers": ["Improvise", "Sealed With A Kiss"],
+        },
+        "Fang": {
+            "rarity": "Chromatic",
+            "emoji": "<:F:923487339597148160>",
+            "gadgets": ["Corn-Fu"],
+            "starpowers": ["Fresh Kicks", "Divine Soles"],
         },
     }
 
