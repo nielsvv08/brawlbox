@@ -32,19 +32,25 @@ Then, move to the correct directory to create a virtual environment and install 
 
 ```sh
 cd brawlbox
-```
 
-```sh
 poetry install
 ```
 
-The bot requires a few environment variables to be set up. Rename the `.env.example` file to `.env` and fill out the values accordingly.
+## Configuration
 
-The `colour` field defines the main colour theme used throughout the bot as an integer, e.g. 26367.
+The bot can be configured by a few environment variables. Rename the `.env.example` file to `.env` and fill out the values accordingly.
 
-The `application_id`, `token` and `public_key` fields require the respective information found in [Discord's developer portal][discord-developer-portal].
+### Required
 
-The `mongo_one`, `mongo_two` and `mongo_three` fields specify the three MongoDB clusters.
+- `application_id`, `token`, `public_key`: the respective information found in [Discord's developer portal][discord-developer-portal].
+- `mongo_one`, `mongo_two`, `mongo_three`: the URIs for the three MongoDB clusters.
+
+### Optional
+
+- `colour`: the main colour theme used throughout the bot as an integer, e.g. 26367.
+- `top_gg_token`: the authentication key used to interact with the top.gg API.
+
+## Startup
 
 Finally, start the bot by running this command.
 

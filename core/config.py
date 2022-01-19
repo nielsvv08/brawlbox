@@ -6,10 +6,7 @@ dotenv.load_dotenv()
 
 
 class Config:
-    colour = int(os.getenv("colour"))
-
     application_id = os.getenv("application_id")
-
     token = os.getenv("token")
     public_key = os.getenv("public_key")
 
@@ -17,4 +14,5 @@ class Config:
     mongo_two = os.getenv("mongo_two")
     mongo_three = os.getenv("mongo_three")
 
-    top_gg_token = os.getenv("top_gg_token")
+    colour = int(os.getenv("colour", 0))
+    top_gg_token = os.getenv("top_gg_token", "")
