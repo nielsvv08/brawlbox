@@ -16,3 +16,5 @@ class Config:
     mongo_one = os.getenv("mongo_one")
     mongo_two = os.getenv("mongo_two")
     mongo_three = os.getenv("mongo_three")
+
+    top_gg_token = os.getenv("top_gg_token")

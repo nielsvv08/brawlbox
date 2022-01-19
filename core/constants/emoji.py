@@ -6,6 +6,12 @@ class EmojiConstants:
     big_box = "<:big:563003560124612649>"
     mega_box = "<:megab:563003560325808151>"
 
+    # currency
+
+    coins = "<:co:563001980667035658>"
+    gems = "<:ge:563001979115405334>"
+    star_points = "<:sc:596043292764798987>"
+
     # badges
 
     nitro = "<:Nitro:836655327684460576>"
