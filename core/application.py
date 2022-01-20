@@ -15,6 +15,11 @@ class Application(discourtesy.Application):
 
         self.version = "2.0.0-alpha"
 
+        self.on_shutdown = [self.close_http]
+
+    async def close_http(self):
+        await self.http.aclose()
+
     @property
     def config(self):
         return Config
