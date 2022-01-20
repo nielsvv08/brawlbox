@@ -5,41 +5,34 @@ from .config import Config as config
 
 class MongoClient:
     def __init__(self):
-        self.mongo_one = AsyncIOMotorClient(config.mongo_one)
-        self.mongo_two = AsyncIOMotorClient(config.mongo_two)
-        self.mongo_three = AsyncIOMotorClient(config.mongo_three)
+
+        self.databases = [
+            AsyncIOMotorClient(mongo_uri) for mongo_uri in config.mongo_uris
+        ]
+
+        self.databases.reverse()
 
     async def get_guild(self, guild_id):
         query = {"guild_id": int(guild_id)}
 
-        guild = await self.mongo_three.data.servers.find_one(query)
-        db = self.mongo_three
+        for db in self.databases:
+            guild = await db.data.servers.find_one(query)
 
-        if guild is None:
-            guild = await self.mongo_two.data.servers.find_one(query)
-            db = self.mongo_two
+            if guild:
+                return guild, db
 
-        if guild is None:
-            guild = await self.mongo_one.data.servers.find_one(query)
-            db = self.mongo_one
-
-        return guild, db
+        return None, None
 
     async def get_profile(self, user_id):
         query = {"id": int(user_id)}
 
-        player = await self.mongo_three.data.players.find_one(query)
-        db = self.mongo_three
+        for db in self.databases:
+            profile = await db.data.players.find_one(query)
 
-        if player is None:
-            player = await self.mongo_two.data.players.find_one(query)
-            db = self.mongo_two
+            if profile:
+                return profile, db
 
-        if player is None:
-            player = await self.mongo_one.data.players.find_one(query)
-            db = self.mongo_one
-
-        return player, db
+        return None, None
 
     async def insert_guild(self, guild_id, guild_name):
         struct = {
@@ -50,7 +43,9 @@ class MongoClient:
             "channel_blacklist": [],
         }
 
-        await self.mongo_three.data.servers.insert_one(struct)
+        db = self.databases[0]
+
+        await db.data.servers.insert_one(struct)
 
     async def insert_profile(self, user_id):
         struct = {
@@ -75,7 +70,9 @@ class MongoClient:
             },
         }
 
-        await self.mongo_three.data.players.insert_one(struct)
+        db = self.databases[0]
+
+        await db.data.players.insert_one(struct)
 
 
 async def update_profile(user_id, db, set_query=None, inc_query=None):

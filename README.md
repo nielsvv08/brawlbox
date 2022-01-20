@@ -8,7 +8,7 @@ The bot is being rewritten to support Discord's latest features regarding intera
 
 Brawl Box is written in Python. The bot makes use of the [Discourtesy][discourtesy] framework to handle interactions, which utilises a minimal [Starlette][starlette] server internally.
 
-The different types of data are being stored on three separate [MongoDB][mongodb] clusters.
+The different types of data are being stored on one or more [MongoDB][mongodb] clusters.
 
 ## Environment Setup
 
@@ -43,7 +43,7 @@ The bot can be configured by a few environment variables. Rename the `.env.examp
 ### Required
 
 - `application_id`, `token`, `public_key`: the respective information found in [Discord's developer portal][discord-developer-portal].
-- `mongo_one`, `mongo_two`, `mongo_three`: the URIs for the three MongoDB clusters.
+- `mongo_uris`: the URI for the MongoDB cluster. When mulitple URIs are provided here, they should be separated by a comma and a space.
 
 ### Optional
 

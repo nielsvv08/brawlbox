@@ -10,9 +10,7 @@ class Config:
     token = os.getenv("token")
     public_key = os.getenv("public_key")
 
-    mongo_one = os.getenv("mongo_one")
-    mongo_two = os.getenv("mongo_two")
-    mongo_three = os.getenv("mongo_three")
+    mongo_uris = os.getenv("mongo_uris").split(", ")
 
     colour = int(os.getenv("colour", 0))
     top_gg_token = os.getenv("top_gg_token", "")
