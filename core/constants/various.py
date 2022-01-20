@@ -8,7 +8,11 @@ class VariousConstants:
         "292311529213132800",  # BLOODWIING
     )
     eval_coroutine = (
-        "import asyncio\nimport discourtesy\nasync def eval_coroutine():\n"
+        "import asyncio\n\n"
+        "import discourtesy\n\n"
+        "from core.config import Config as config\n"
+        "from core.constants import Constants as constants\n\n"
+        "async def eval_coroutine():\n"
     )
 
     leaderboard_readable = {
