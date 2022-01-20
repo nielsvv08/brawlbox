@@ -10,7 +10,7 @@ class MongoClient:
         self.mongo_three = AsyncIOMotorClient(config.mongo_three)
 
     async def get_guild(self, guild_id):
-        query = {"guild_id": guild_id}
+        query = {"guild_id": int(guild_id)}
 
         guild = await self.mongo_three.data.servers.find_one(query)
         db = self.mongo_three
@@ -43,7 +43,7 @@ class MongoClient:
 
     async def insert_guild(self, guild_id, guild_name):
         struct = {
-            "guild_id": guild_id,
+            "guild_id": int(guild_id),
             "guild_name": guild_name,
             "language": "english",
             "prefix": "-",
@@ -54,7 +54,7 @@ class MongoClient:
 
     async def insert_profile(self, user_id):
         struct = {
-            "id": user_id,
+            "id": int(user_id),
             "coins": 0,
             "gems": 0,
             "tickets": 0,
@@ -76,3 +76,15 @@ class MongoClient:
         }
 
         await self.mongo_three.data.players.insert_one(struct)
+
+
+async def update_profile(user_id, db, set_query=None, inc_query=None):
+    struct = dict()
+
+    if set_query:
+        struct.update({"$set": set_query})
+
+    if inc_query:
+        struct.update({"$inc": inc_query})
+
+    await db.data.players.update_one({"id": int(user_id)}, struct)

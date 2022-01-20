@@ -1,13 +1,10 @@
-import datetime
-import random
 import time
 
 import discourtesy
 
+from core import mongo, random
 from core.config import Config as config
 from core.constants import Constants as constants
-
-emoji = constants.emoji
 
 
 @discourtesy.command("claim")
@@ -26,47 +23,25 @@ async def claim_command(application, interaction):
     )
 
     response = request.json()
-
     has_voted = bool(response["voted"])
 
-    if not has_voted:
-        return "You can't claim a voting reward, since you didn't vote yet."
+    # 41,400 seconds = 11 hours and 30 minutes
 
-    if profile["claim"] > int(time.time()) - 41400:  # 11 hours 30 minutes
-        return "You can't claim a voting reward, since you didn't vote yet!"
-
-    is_weekend = datetime.datetime.utcnow().weekday in (4, 5, 6)
-
-    if is_weekend:
-        amount, db_type, fmt_type, reward_emoji = random.choice(
-            [
-                (20, "gems", "gems", emoji.gems),
-                (100, "starpoints", "star points", emoji.star_points),
-                (3, "megaboxes", "mega boxes", emoji.mega_box),
-            ]
-        )
-    else:
-        amount, db_type, fmt_type, reward_emoji = random.choice(
-            [
-                (15, "gems", "gems", emoji.gems),
-                (75, "starpoints", "star points", emoji.star_points),
-                (2, "megaboxes", "mega boxes", emoji.mega_box),
-            ]
+    if not has_voted or profile["claim"] > int(time.time()) - 41400:
+        return (
+            "You can't claim a reward for voting right now, because you "
+            "haven't voted yet. Check out the `/vote` command for more "
+            "information."
         )
 
-    await db.data.players.find_one_and_update(
-        {"id": user["id"]},
-        {
-            "$set": {
-                "claim": int(time.time()),
-                db_type: profile[db_type] + amount,
-            }
-        },
-    )
+    amount, db_type, fmt_type, emoji = random.claim()
 
-    description = (
-        f"Your reward: **{amount} {fmt_type}** {reward_emoji} — enjoy."
-    )
+    set_query = {"claim": int(time.time())}
+    inc_query = {db_type: amount}
+
+    await mongo.update_profile(user["id"], db, set_query, inc_query)
+
+    description = f"Your reward: **{amount} {fmt_type}** {emoji} — enjoy."
 
     return discourtesy.utils.embed(
         {
