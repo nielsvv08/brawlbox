@@ -2,23 +2,20 @@ import discourtesy
 
 from .config import Config
 from .constants import Constants
-from .http import HTTPClient
 from .mongo import MongoClient
 
 
 class Application(discourtesy.Application):
     def __init__(self):
-        super().__init__()
+        super().__init__(
+            self.config.application_id,
+            self.config.public_key,
+            self.config.token,
+        )
 
-        self.http = HTTPClient()
         self.mongo = MongoClient()
 
         self.version = "2.0.0-alpha"
-
-        self.on_shutdown = [self.close_http]
-
-    async def close_http(self):
-        await self.http.aclose()
 
     @property
     def config(self):

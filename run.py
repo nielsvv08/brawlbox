@@ -1,8 +1,6 @@
 from core import Application
-from core.config import Config as config
 
 application = Application()
-application.set_public_key(config.public_key)
 
 application.add_plugin("plugins.badges")
 application.add_plugin("plugins.beep")

@@ -6,9 +6,8 @@ authors = ["Robin Mahieu <robin.mahieu@protonmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-discourtesy = "^0.1.1"
+discourtesy = "^0.2.0"
 dnspython = "^2.2.0"
-httpx = "^0.21.3"
 motor = "^2.5.1"
 python-dotenv = "^0.19.2"
 
