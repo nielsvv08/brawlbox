@@ -5,7 +5,7 @@ from core.constants import Constants as constants
 from core.utils import r
 
 
-@discourtesy.command("leaderboard")
+@discourtesy.command("leaderboard", followup=True)
 async def leaderboard_command(application, interaction):
     try:
         category = interaction["data"]["options"][0]["value"]
@@ -23,42 +23,20 @@ async def leaderboard_command(application, interaction):
 
     member_ids = [int(member["user"]["id"]) for member in response]
 
-    cursor_1 = (
-        application.mongo.mongo_one.data.players.find(
-            {"id": {"$in": member_ids}}
-        )
+    cursors = (
+        database.data.players.find({"id": {"$in": member_ids}})
         .sort(category, -1)
-        .limit(10)
-    )
-
-    cursor_2 = (
-        application.mongo.mongo_two.data.players.find(
-            {"id": {"$in": member_ids}}
-        )
-        .sort(category, -1)
-        .limit(10)
-    )
-
-    cursor_3 = (
-        application.mongo.mongo_three.data.players.find(
-            {"id": {"$in": member_ids}}
-        )
-        .sort(category, -1)
-        .limit(10)
+        .limit(12)
+        for database in application.mongo.databases
     )
 
     leaders = list()
 
-    async for document in cursor_1:
-        leaders.append((document["id"], int(document[category])))
+    for cursor in cursors:
+        async for document in cursor:
+            leaders.append((document["id"], int(document[category])))
 
-    async for document in cursor_2:
-        leaders.append((document["id"], int(document[category])))
-
-    async for document in cursor_3:
-        leaders.append((document["id"], int(document[category])))
-
-    leaders = sorted(leaders, key=lambda x: x[1], reverse=True)[:10]
+    leaders = sorted(leaders, key=lambda x: x[1], reverse=True)[:12]
 
     fields = []
 
@@ -80,5 +58,5 @@ async def leaderboard_command(application, interaction):
         )
 
     return discourtesy.utils.embed(
-        {"title": "Leaderboard", "color": config.colour, "fields": fields}
+        {"color": config.colour, "title": "Leaderboard", "fields": fields}
     )
