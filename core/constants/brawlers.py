@@ -407,6 +407,7 @@ class BrawlersConstants:
             "Pirate Poco": "<:pi:791327646608261160>",
             "Corsair Colt": "<:co:791328379990573057>",
             "Tanuki Jessie": "<:T:826771874196357142>",
+            "Logmas Spike": "<:L:923487356777037884>",
         }
     )
 
