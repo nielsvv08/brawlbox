@@ -2,7 +2,7 @@ from .constants import Constants as constants
 
 
 def r(number):
-    return "{:,}".format(number).replace(",", " ")
+    return "{:,}".format(number)
 
 
 def get_skin(profile, brawler_name):

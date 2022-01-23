@@ -36,3 +36,5 @@ class EmojiConstants:
     tier_6 = "<:T:569816898708176896>"
     tier_7 = "<:T:569816898888400926>"
     tier_8 = "<:T:569816899236659210>"
+
+    tiers = [tier_1, tier_2, tier_3, tier_4, tier_5, tier_6, tier_7, tier_8]

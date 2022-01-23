@@ -74,6 +74,18 @@ class MongoClient:
 
         await db.data.players.insert_one(struct)
 
+    async def is_user_in_guild(self, user_id, guild_id):
+        query = {"id": guild_id}
+
+        db = self.databases[0]
+
+        document = await db.data.partners.find_one(query)
+
+        if user_id in document["members"]:
+            return True
+
+        return False
+
 
 async def update_profile(user_id, db, set_query=None, inc_query=None):
     struct = dict()
