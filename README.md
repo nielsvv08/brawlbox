@@ -50,6 +50,10 @@ The bot can be configured by a few environment variables. Rename the `.env.examp
 - `colour`: the main colour theme used throughout the bot as an integer, e.g. 26367.
 - `top_gg_token`: the authentication key used to interact with the top.gg API.
 
+## Command Registry
+
+In order for commands to show up in the selection menu, they should be registred first. This is accomplished by sending a `PUT` request to `https://discord.com/api/v8/applications/{application_id}/commands` containing the command objects as JSON data. The specific configuration for Brawl Box can be found in the [`commands.json`][commands-file] file.
+
 ## Startup
 
 Finally, start the bot by running this command.
@@ -63,6 +67,7 @@ poetry run uvicorn run:application
 This project is licensed under the terms of the [AGPL-3.0][agpl-3.0-license] license.
 
 [agpl-3.0-license]: <https://github.com/nielsvv08/brawlbox/blob/main/LICENSE>
+[commands-file]: <https://github.com/nielsvv08/brawlbox/blob/main/commands.json>
 [discord-developer-portal]: <https://discord.com/developers/applications>
 [discord-message-components]: <https://discord.com/developers/docs/interactions/message-components>
 [discord-slash-commands]: <https://discord.com/developers/docs/interactions/application-commands>
