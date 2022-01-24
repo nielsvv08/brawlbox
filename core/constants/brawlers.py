@@ -414,24 +414,27 @@ class BrawlersConstants:
     brawler_categories = {
         "⚪ Trophy Road": [
             k for k, v in brawlers.items() if v["rarity"] == "Trophy Road"
-        ][:6],
+        ][:4],
         "\u200e": [
             k for k, v in brawlers.items() if v["rarity"] == "Trophy Road"
-        ][6:],
+        ][4:8],
+        "\u200e\u200e": [
+            k for k, v in brawlers.items() if v["rarity"] == "Trophy Road"
+        ][8:],
         "🟢 Rare": [k for k, v in brawlers.items() if v["rarity"] == "Rare"],
         "🔵 Super Rare": [
             k for k, v in brawlers.items() if v["rarity"] == "Super Rare"
         ],
         "🟣 Epic": [k for k, v in brawlers.items() if v["rarity"] == "Epic"][
-            :4
+            :5
         ],
-        "\u200e\u200e": [
+        "\u200e\u200e\u200e": [
             k for k, v in brawlers.items() if v["rarity"] == "Epic"
-        ][4:],
+        ][5:],
         "🔴 Mythic": [
             k for k, v in brawlers.items() if v["rarity"] == "Mythic"
         ][:4],
-        "\u200e\u200e\u200e": [
+        "\u200e\u200e\u200e\u200e": [
             k for k, v in brawlers.items() if v["rarity"] == "Mythic"
         ][4:],
         "🟡 Legendary": [
@@ -439,10 +442,10 @@ class BrawlersConstants:
         ],
         "🟠 Chromatic": [
             k for k, v in brawlers.items() if v["rarity"] == "Chromatic"
-        ][:4],
-        "‎‎‎‎\u200e\u200e\u200e\u200e": [
+        ][:5],
+        "\u200e\u200e\u200e\u200e\u200e": [
             k for k, v in brawlers.items() if v["rarity"] == "Chromatic"
-        ][4:],
+        ][5:],
     }
 
     icon_url = "https://papier.dis.tf/static/brawlbox/pins/{}.png"

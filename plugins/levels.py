@@ -56,11 +56,11 @@ def get_status(profile, brawler_name):
         .get(brawler_name, {"unlocked": False})
         .get("unlocked", True)
     ):
-        return f"{emoji} — Locked"
+        return f"{emoji} Locked"
 
     brawler = profile["brawlers"][brawler_name]
 
-    message = f"{emoji} — Level {brawler['level']}"
+    message = f"{emoji} **Level {brawler['level']}**"
 
     if brawler["level"] >= 7:
         if not max_gadgets(brawler_name):
