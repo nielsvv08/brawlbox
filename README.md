@@ -6,9 +6,7 @@ The bot is being rewritten to support Discord's latest features regarding intera
 
 ## Tech Stack
 
-Brawl Box is written in Python. The bot makes use of the [Discourtesy][discourtesy] framework to handle interactions, which utilises a minimal [Starlette][starlette] server internally.
-
-The different types of data are being stored on one or more [MongoDB][mongodb] clusters.
+Brawl Box is written in Python. The bot makes use of the [Discourtesy][discourtesy] framework to handle interactions, which utilises a minimal [Starlette][starlette] server internally. The different types of data are being stored on one or more [MongoDB][mongodb] clusters.
 
 ## Environment Setup
 
@@ -17,14 +15,13 @@ Brawl Box requires [Python 3.10][python-3.10] or higher.
 Firstly, clone the source code and install the [Poetry][poetry] dependency manager.
 
 ```sh
-# using the traditional method
+# using the customary way with HTTP
 git clone https://github.com/nielsvv08/brawlbox.git
 
-# or using SSH
+# or using the more secure SSH option
 git clone git@github.com:nielsvv08/brawlbox.git
-```
 
-```sh
+
 pip install poetry
 ```
 
@@ -38,16 +35,16 @@ poetry install
 
 ## Configuration
 
-The bot can be configured by a few environment variables. Rename the `.env.example` file to `.env` and fill out the values accordingly.
+The bot can be configured by a few environment variables. Rename the `.env.example` file to `.env` and fill out the values accordingly. This file includes two example configurations with randomised or invalidated values.
 
 ### Required
 
 - `application_id`, `token`, `public_key`: the respective information found in [Discord's developer portal][discord-developer-portal].
-- `mongo_uris`: the URI for the MongoDB cluster. When mulitple URIs are provided here, they should be separated by a comma and a space.
+- `mongo_uris`: the URI or URIs for the MongoDB cluster. When mulitple URIs are provided here, they should be separated by a comma and a space.
 
 ### Optional
 
-- `colour`: the main colour theme used throughout the bot as an integer, e.g. 26367.
+- `colour`: the main colour theme used throughout the bot as an integer.
 - `top_gg_token`: the authentication key used to interact with the top.gg API.
 
 ## Command Registry
@@ -64,6 +61,8 @@ poetry run uvicorn app:app
 
 ## Contributing
 
+There is a `#development` channel in the support server at [https://discord.gg/bXQaeFM][discord-support-server] dedicated to communication about the rewrite process.
+
 This project is licensed under the terms of the [AGPL-3.0][agpl-3.0-license] license.
 
 [agpl-3.0-license]: <https://github.com/nielsvv08/brawlbox/blob/main/LICENSE>
@@ -71,6 +70,7 @@ This project is licensed under the terms of the [AGPL-3.0][agpl-3.0-license] lic
 [discord-developer-portal]: <https://discord.com/developers/applications>
 [discord-message-components]: <https://discord.com/developers/docs/interactions/message-components>
 [discord-slash-commands]: <https://discord.com/developers/docs/interactions/application-commands>
+[discord-support-server]: <https://discord.gg/bXQaeFM>
 [discourtesy]: <https://github.com/robinmahieu/discourtesy>
 [mongodb]: <https://www.mongodb.com/>
 [poetry]: <https://github.com/python-poetry/poetry>
