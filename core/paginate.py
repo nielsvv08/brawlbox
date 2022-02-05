@@ -1,7 +1,5 @@
 import asyncio
 
-from click import command
-
 
 class Confirm:
     def __init__(
@@ -82,7 +80,7 @@ class Confirm:
                                 "type": 2,
                                 "label": "✅",
                                 "style": 1,
-                                "custom_id": f"confirm_timeout_checkmark",
+                                "custom_id": "confirm_timeout_checkmark",
                                 "disabled": True,
                             },
                         ],
@@ -124,13 +122,17 @@ class Paginate:
                                     "type": 2,
                                     "label": "⬅️",
                                     "style": 1,
-                                    "custom_id": f"{self.command_name}_{i}_previous",
+                                    "custom_id": (
+                                        f"{self.command_name}_{i}_previous"
+                                    ),
                                 },
                                 {
                                     "type": 2,
                                     "label": "➡️",
                                     "style": 1,
-                                    "custom_id": f"{self.command_name}_{i}_next",
+                                    "custom_id": (
+                                        f"{self.command_name}_{i}_next"
+                                    ),
                                 },
                             ],
                         }
@@ -139,7 +141,10 @@ class Paginate:
             )
 
             embed["embeds"][0]["footer"] = {
-                "text": f"Use the buttons below to navigate!  •  page {i} of {len(self.embeds)}"
+                "text": (
+                    "Use the buttons below to navigate!  •  "
+                    f"page {i} of {len(self.embeds)}"
+                )
             }
 
             if i == 1:

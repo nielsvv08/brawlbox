@@ -2,33 +2,35 @@ from core.config import Config as config
 
 
 class ProfileConstants:
+    static_base_url = "https://papier.dis.tf/static/brawlbox/icons"
+
     # skins: {key: (colour, thumbnail, footer)}
 
     skins = {
         "default": (config.colour, None, None),
         "winter_2019": (
             10875635,
-            "https://papier.dis.tf/static/brawlbox/icons/winter.png",
+            f"{static_base_url}/winter.png",
             "Brawl Box Winter Skin",
         ),
         "5_robo_wins": (
             15548997,
-            "https://papier.dis.tf/static/brawlbox/icons/robo-rumble.png",
+            f"{static_base_url}/robo-rumble.png",
             "Robo Rumble Skin",
         ),
         "5_game_wins": (
             15548997,
-            "https://papier.dis.tf/static/brawlbox/icons/big-game.png",
+            f"{static_base_url}/big-game.png",
             "Big Game Skin",
         ),
         "5_city_wins": (
             15548997,
-            "https://papier.dis.tf/static/brawlbox/icons/super-city-rampage.png",
+            f"{static_base_url}/super-city-rampage.png",
             "Super City Rampage Skin",
         ),
         "staff": (
             16399420,
-            "https://papier.dis.tf/static/brawlbox/icons/staff.png",
+            f"{static_base_url}/staff.png",
             "Brawl Box Staff Member",
         ),
     }

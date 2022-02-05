@@ -1,6 +1,7 @@
 import discourtesy
 
 from core.config import Config as config
+from core.constants import Constants as constants
 
 
 @discourtesy.command("invite")
@@ -11,11 +12,11 @@ async def invite_command(_, __):
             "fields": [
                 {
                     "name": "Join our support server.",
-                    "value": ">> https://discord.gg/bXQaeFM",
+                    "value": f">> {constants.various.discord_server_invite}",
                 },
                 {
                     "name": "Add the bot to another server.",
-                    "value": ">> https://discord.com/api/oauth2/authorize?client_id=531858459512012811&permissions=388176&scope=bot%20applications.commands",
+                    "value": f">> {constants.various.discord_bot_invite}",
                 },
             ],
         }

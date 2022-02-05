@@ -69,6 +69,9 @@ def get_status(profile, brawler_name):
     required_pp = constants.brawlers.powerpoint_costs[brawler["level"]]
 
     if current_pp >= required_pp:
-        return f"{emoji} — **{current_pp} / {required_pp}** <:pp:563001978079150102>"
+        return (
+            f"{emoji} — **{current_pp} / {required_pp}** "
+            "<:pp:563001978079150102>"
+        )
 
     return f"{emoji} — {current_pp} / {required_pp} <:pp:563001978079150102>"

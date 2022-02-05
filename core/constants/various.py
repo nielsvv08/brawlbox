@@ -2,6 +2,15 @@ from core.config import Config as config
 
 
 class VariousConstants:
+    discord_server_invite = "https://discord.gg/bXQaeFM"
+
+    discord_bot_invite = (
+        "https://discord.com/api/oauth2/authorize"
+        "?client_id=531858459512012811"
+        "&permissions=388176"
+        "&scope=bot%20applications.commands"
+    )
+
     eval_permission = (
         "306809153748467722",  # Niels
         "355790471219511297",  # Papier
