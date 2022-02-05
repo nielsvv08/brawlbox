@@ -346,6 +346,12 @@ class BrawlersConstants:
         },
     }
 
+    two_gadget_brawlers = [
+        name
+        for name, brawler in brawlers.items()
+        if len(brawler["gadgets"]) == 2
+    ]
+
     gadgets_overwrite = {
         "Active Noise Cancelling": "Active Noise Canceling",
         "Backup Mine": "Mine Mania",

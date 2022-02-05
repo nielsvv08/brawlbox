@@ -74,6 +74,13 @@ class MongoClient:
 
         await db.data.players.insert_one(struct)
 
+    async def delete_shop(self, user_id):
+        query = {"id": int(user_id)}
+
+        db = self.databases[0]
+
+        await db.data.shop.delete_one(query)
+
     async def is_user_in_guild(self, user_id, guild_id):
         query = {"id": guild_id}
 

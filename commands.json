@@ -130,6 +130,11 @@
     },
     {
         "type": 1,
+        "name": "prestige",
+        "description": "View information about the prestige process."
+    },
+    {
+        "type": 1,
         "name": "profile",
         "description": "View the profile statistics.",
         "options": [

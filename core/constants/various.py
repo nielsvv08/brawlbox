@@ -22,6 +22,29 @@ class VariousConstants:
         "starpoints": "star points",
     }
 
+    prestige_congrats = (
+        "Congratulations! You prestiged to tier {}.\n"
+        "Your reward: 200 gems{}!"
+    )
+
+    prestige_base_message = (
+        "By using the `/prestige` command, you can reset your Brawl Box "
+        "progress. It is going to remove every brawler — including their "
+        "level, power points, star powers and gadgets.\n\n"
+        "You are still going to keep all of the skins, coins, gems, star "
+        "ponts, big boxes and mega boxes that you collected.\n\n"
+    )
+
+    prestige_explanation = prestige_base_message + (
+        "**Prestiging is not possible right now, because your account isn't "
+        "maxed out yet.**"
+    )
+
+    prestige_confirm_message = prestige_base_message + (
+        "**You can prestige right now!** To do so, click the check mark "
+        "button below to confirm."
+    )
+
     vote_thumbnail = (
         "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/"
         "thumbs/120/twitter/259/ballot-box-with-ballot_1f5f3.png"

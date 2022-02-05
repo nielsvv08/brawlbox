@@ -1,5 +1,101 @@
 import asyncio
 
+from click import command
+
+
+class Confirm:
+    def __init__(
+        self, command_name, confirm_callback, application, interaction, embed
+    ):
+        self.command_name = command_name
+        self.confirm_callback = confirm_callback
+
+        self.application = application
+        self.interaction = interaction
+
+        self.embed = embed
+
+        self.author_id = self.interaction["member"]["user"]["id"]
+        self.id = self.interaction["id"]
+        self.token = self.interaction["token"]
+
+        self.embed.update(
+            {
+                "components": [
+                    {
+                        "type": 1,
+                        "components": [
+                            {
+                                "type": 2,
+                                "label": "✅",
+                                "style": 1,
+                                "custom_id": f"{self.command_name}_confirm",
+                            },
+                        ],
+                    }
+                ],
+            }
+        )
+
+    async def start(self):
+        component_name = f"{self.command_name}_confirm"
+
+        try:
+            self.application.dispatch.component_callbacks[
+                component_name
+            ].append(self.confirm)
+        except KeyError:
+            self.application.dispatch.component_callbacks[component_name] = [
+                self.confirm
+            ]
+
+        asyncio.create_task(self.stop())
+
+    async def stop(self):
+        await asyncio.sleep(10)
+
+        self.application.dispatch.component_callbacks[
+            f"{self.command_name}_confirm"
+        ].remove(self.confirm)
+
+        await self.application.http.edit_original_interaction_response(
+            self.token,
+            self.application.constants.paginate.stop_confirm_embed,
+        )
+
+    async def confirm(self, application, interaction):
+        if interaction["member"]["user"]["id"] != self.author_id:
+            return
+
+        if interaction["message"]["interaction"]["id"] != self.id:
+            return
+
+        embed = await self.confirm_callback(application, interaction)
+
+        embed.update(
+            {
+                "components": [
+                    {
+                        "type": 1,
+                        "components": [
+                            {
+                                "type": 2,
+                                "label": "✅",
+                                "style": 1,
+                                "custom_id": f"confirm_timeout_checkmark",
+                                "disabled": True,
+                            },
+                        ],
+                    }
+                ],
+            }
+        )
+
+        await self.application.http.edit_original_interaction_response(
+            self.token,
+            embed,
+        )
+
 
 class Paginate:
     def __init__(self, command_name, application, interaction, *embeds):
