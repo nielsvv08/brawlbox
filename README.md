@@ -59,7 +59,7 @@ In order for commands to show up in the selection menu, they should be registred
 Finally, start the bot by running this command.
 
 ```sh
-poetry run uvicorn run:application
+poetry run uvicorn app:app
 ```
 
 ## Contributing
