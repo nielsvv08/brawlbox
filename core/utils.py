@@ -1,4 +1,4 @@
-from .constants import Constants as constants
+from core.constants import Constants as constants
 
 
 def r(number):

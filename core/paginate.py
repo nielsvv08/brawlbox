@@ -1,5 +1,7 @@
 import asyncio
 
+from core.constants import Constants as constants
+
 
 class Confirm:
     def __init__(
@@ -58,7 +60,7 @@ class Confirm:
 
         await self.application.http.edit_original_interaction_response(
             self.token,
-            self.application.constants.paginate.stop_confirm_embed,
+            constants.paginate.stop_confirm_embed,
         )
 
     async def confirm(self, application, interaction):
@@ -195,7 +197,7 @@ class Paginate:
 
         await self.application.http.edit_original_interaction_response(
             self.token,
-            self.application.constants.paginate.stop_embed,
+            constants.paginate.stop_embed,
         )
 
     async def display_previous_embed(self, _, interaction):
