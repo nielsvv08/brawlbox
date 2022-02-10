@@ -1,5 +1,29 @@
-class PaginateConstants:
-    stop_embed = {
+class ButtonsConstants:
+    confirm_stop = {
+        "components": [
+            {
+                "type": 1,
+                "components": [
+                    {
+                        "type": 2,
+                        "label": "✅",
+                        "style": 1,
+                        "disabled": True,
+                        "custom_id": "confirm_timeout_check",
+                    },
+                    {
+                        "type": 2,
+                        "label": "❌",
+                        "style": 4,
+                        "disabled": True,
+                        "custom_id": "confirm_timeout_cross",
+                    },
+                ],
+            }
+        ],
+    }
+
+    paginate_stop = {
         "components": [
             {
                 "type": 1,
@@ -30,7 +54,7 @@ class PaginateConstants:
         ],
     }
 
-    stop_confirm_embed = {
+    prestige_confirm = {
         "components": [
             {
                 "type": 1,
@@ -39,15 +63,7 @@ class PaginateConstants:
                         "type": 2,
                         "label": "✅",
                         "style": 1,
-                        "disabled": True,
-                        "custom_id": "paginate_timeout_check",
-                    },
-                    {
-                        "type": 2,
-                        "label": "❌",
-                        "style": 4,
-                        "disabled": True,
-                        "custom_id": "paginate_timeout_cross",
+                        "custom_id": "prestige_confirm",
                     },
                 ],
             }

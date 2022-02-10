@@ -1,22 +1,13 @@
+import asyncio
+
 import discourtesy
 
 from core import mongo
 from core.config import Config as config
 from core.constants import Constants as constants
-from core.paginate import Confirm
 
 
-@discourtesy.command("prestige")
-async def prestige_command(application, interaction):
-    user = interaction["member"]["user"]
-
-    profile, _ = await application.mongo.get_profile(user["id"])
-
-    if profile is None:
-        return constants.errors.profile_not_found_self
-
-    can_prestige = True
-
+def can_prestige(profile):
     for brawler in constants.brawlers.brawlers:
         try:
             if (
@@ -29,11 +20,23 @@ async def prestige_command(application, interaction):
                     else 1
                 )
             ):
-                can_prestige = False
+                return False
         except KeyError:
-            can_prestige = False
+            return False
 
-    if not can_prestige:
+    return True
+
+
+@discourtesy.command("prestige")
+async def prestige_command(application, interaction):
+    user = interaction["member"]["user"]
+
+    profile, _ = await application.mongo.get_profile(user["id"])
+
+    if profile is None:
+        return constants.errors.profile_not_found_self
+
+    if not can_prestige(profile):
         return discourtesy.utils.embed(
             {
                 "color": config.colour,
@@ -41,14 +44,6 @@ async def prestige_command(application, interaction):
                 "description": constants.various.prestige_explanation,
             }
         )
-
-    discourtesy.utils.embed(
-        {
-            "color": config.colour,
-            "title": "Prestige",
-            "description": constants.various.prestige_explanation,
-        }
-    )
 
     embed = discourtesy.utils.embed(
         {
@@ -58,27 +53,36 @@ async def prestige_command(application, interaction):
         }
     )
 
-    confirm = Confirm(
-        "prestige", prestige_callback, application, interaction, embed
-    )
-    await confirm.start()
+    embed.update(constants.buttons.prestige_confirm)
+
+    asyncio.create_task(prestige_timeout(application, interaction))
 
     return embed
 
 
-async def prestige_callback(application, interaction):
+async def prestige_timeout(application, interaction):
+    await asyncio.sleep(10)
+
+    await application.http.edit_original_interaction_response(
+        interaction["token"],
+        constants.buttons.confirm_stop,
+    )
+
+
+@discourtesy.component("prestige_confirm", timeout=10)
+async def prestige_component(application, interaction):
     user = interaction["member"]["user"]
 
     profile, db = await application.mongo.get_profile(user["id"])
 
-    if profile is None:
-        return constants.errors.profile_not_found_self
+    if not can_prestige(profile):
+        return "Something went wrong!"
 
     for brawler in constants.brawlers.brawlers:
         profile["brawlers"][brawler]["level"] = 1
         profile["brawlers"][brawler]["powerpoints"] = 0
-        del profile["brawlers"][brawler]["starpowers"]
         del profile["brawlers"][brawler]["gadgets"]
+        del profile["brawlers"][brawler]["starpowers"]
 
         if brawler != "Shelly":
             profile["brawlers"][brawler]["unlocked"] = False
@@ -112,7 +116,7 @@ async def prestige_callback(application, interaction):
     else:
         extra_reward = str()
 
-    return discourtesy.utils.embed(
+    embed = discourtesy.utils.embed(
         {
             "color": config.colour,
             "title": "Prestige",
@@ -121,3 +125,7 @@ async def prestige_callback(application, interaction):
             ),
         }
     )
+
+    embed.update(constants.buttons.confirm_stop)
+
+    return embed
