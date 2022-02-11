@@ -367,55 +367,68 @@ class BrawlersConstants:
 
     emoji = {k: v["emoji"] for k, v in brawlers.items()}
 
-    emoji.update(
-        {
-            "Wizard Barley": "<:wb:597722510028439573>",
-            "Star Shelly": "<:sts:597723270153764864>",
-            "Boom Box Brock": "<:bob:597722576936108062>",
-            "Bunny Penny": "<:bp:597723137521745930>",
-            "Dragon Knight Jessie": "<:dj:597722931535020042>",
-            "Phoenix Crow": "<:pc:597722720054018049>",
-            "Serenade Poco": "<:sp:597723181813465088>",
-            "Royal Agent Colt": "<:rc:597722687124537344>",
-            "Summer Jessie": "<:sj:597722931338149898>",
-            "Red Nose Nita": "<:rn:597723031430758402>",
-            "Lil Helper Penny": "<:hp:597723137010040842>",
-            "Bandita Shelly": "<:bs:597723269923078156>",
-            "Panda Nita": "<:pn:597723031577690153>",
-            "Rockstar Colt": "<:rockc:597722687074467863>",
-            "White Crow": "<:whc:597722720301613056>",
-            "Sakura Spike": "<:ss:597723306845667328>",
-            "El Rudo Primo": "<:rup:597722827172347924>",
-            "Spicy Mike": "<:spd:597722785862647850>",
-            "Viking Bull": "<:vb:597722616148656128>",
-            "Popcorn Rico": "<:pr:597723232983973899>",
-            "Shiba Nita": "<:sn:597723031305060387>",
-            "Road Rage Carl": "<:roc:597722660129996800>",
-            "Bakesale Barley": "<:bb:597722509747683339>",
-            "Robo Spike": "<:rs:597723306786947104>",
-            "Robo Dynamike": "<:rd:597722785782956032>",
-            "Mecha Bo": "<:mbo:597722541951549441>",
-            "Mecha Crow": "<:mc:597722720209207296>",
-            "Hog Rider Carl": "<:hrc:609102124009259049>",
-            "Outlaw Colt": "<:oc:597722687087050753>",
-            "Linebacker Bull": "<:lb:597722616362696725>",
-            "Light Mecha Bo": "<:lmb:597722542379237377>",
-            "Night Mecha Crow": "<:nmc:597722720289030146>",
-            "Gold Mecha Bo": "<:gmb:597722542844674048>",
-            "Gold Mecha Crow": "<:gmc:597722720524042250>",
-            "Maple Barley": "<:mb:597722509894221845>",
-            "Night Witch Mortis": "<:nm:597722977068646413>",
-            "El Brown": "<:el:647789850191331338>",
-            "Sally Leon": "<:sl:647789849666912286>",
-            "Leonard Carl": "<:le:647789849612648469>",
-            "Santamike": "<:sd:597722785485291558>",
-            "Brawl-O-Ween Rosa": "<:br:771763988593508353>",
-            "Pirate Poco": "<:pi:791327646608261160>",
-            "Corsair Colt": "<:co:791328379990573057>",
-            "Tanuki Jessie": "<:T:826771874196357142>",
-            "Logmas Spike": "<:L:923487356777037884>",
-        }
-    )
+    shop_gem_skins = {
+        "Bandita Shelly": "<:bs:597723269923078156>",
+        "Rockstar Colt": "<:rockc:597722687074467863>",
+        "Panda Nita": "<:pn:597723031577690153>",
+        "White Crow": "<:whc:597722720301613056>",
+        "Sakura Spike": "<:ss:597723306845667328>",
+        "El Rudo Primo": "<:rup:597722827172347924>",
+        "Spicy Mike": "<:spd:597722785862647850>",
+        "Viking Bull": "<:vb:597722616148656128>",
+        "Popcorn Rico": "<:pr:597723232983973899>",
+        "Shiba Nita": "<:sn:597723031305060387>",
+        "Road Rage Carl": "<:roc:597722660129996800>",
+        "Bakesale Barley": "<:bb:597722509747683339>",
+        "Robo Spike": "<:rs:597723306786947104>",
+        "Robo Dynamike": "<:rd:597722785782956032>",
+        "Mecha Bo": "<:mbo:597722541951549441>",
+        "Mecha Crow": "<:mc:597722720209207296>",
+        "Hog Rider Carl": "<:hrc:609102124009259049>",
+        "Maple Barley": "<:mb:597722509894221845>",
+        "El Brown": "<:el:647789850191331338>",
+        "Sally Leon": "<:sl:647789849666912286>",
+        "Leonard Carl": "<:le:647789849612648469>",
+    }
+
+    shop_star_skins = {
+        "Outlaw Colt": "<:oc:597722687087050753>",
+        "Linebacker Bull": "<:lb:597722616362696725>",
+        "Light Mecha Bo": "<:lmb:597722542379237377>",
+        "Night Mecha Crow": "<:nmc:597722720289030146>",
+        "Gold Mecha Bo": "<:gmb:597722542844674048>",
+        "Gold Mecha Crow": "<:gmc:597722720524042250>",
+    }
+
+    special_skins = {
+        "Star Shelly": "<:sts:597723270153764864>",  # Discord server
+        #
+        "Boom Box Brock": "<:bob:597722576936108062>",  # comeback
+        "Wizard Barley": "<:wb:597722510028439573>",  # 100 servers
+        "Bunny Penny": "<:bp:597723137521745930>",  # 1k servers
+        "Brawl-O-Ween Rosa": "<:br:771763988593508353>",  # 50k servers & Brawl-O-Ween 2020
+        "Logmas Spike": "<:L:923487356777037884>",  # 100k servers & Brawlidays 2021
+        "Summer Jessie": "<:sj:597722931338149898>",  # 1k members
+        "Tanuki Jessie": "<:T:826771874196357142>",  # 10k members
+        #
+        "Red Nose Nita": "<:rn:597723031430758402>",  # Brawlidays 2019
+        "Lil Helper Penny": "<:hp:597723137010040842>",  # Brawlidays 2019
+        "Santamike": "<:sd:597722785485291558>",  # Brawlidays 2019
+        #
+        "Pirate Poco": "<:pi:791327646608261160>",  # Brawlidays 2020
+        "Corsair Colt": "<:co:791328379990573057>",  # Brawlidays 2020
+        #
+        "Dragon Knight Jessie": "<:dj:597722931535020042>",  # prestige tier 4
+        "Night Witch Mortis": "<:nm:597722977068646413>",  # prestige tier 8
+        #
+        "Phoenix Crow": "<:pc:597722720054018049>",  # VIP
+        "Serenade Poco": "<:sp:597723181813465088>",  # VIP+
+        "Royal Agent Colt": "<:rc:597722687124537344>",  # VIP++
+    }
+
+    emoji.update(shop_gem_skins)
+    emoji.update(shop_star_skins)
+    emoji.update(special_skins)
 
     brawler_categories = {
         "⚪ Trophy Road": [

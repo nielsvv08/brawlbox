@@ -147,6 +147,18 @@
     },
     {
         "type": 1,
+        "name": "skins",
+        "description": "View a list of brawler skins.",
+        "options": [
+            {
+                "type": 6,
+                "name": "user",
+                "description": "The user to look up."
+            }
+        ]
+    },
+    {
+        "type": 1,
         "name": "version",
         "description": "are we there yet?"
     },
