@@ -15,7 +15,7 @@ def check_upgrade(profile, brawler_name):
         required_coins = sum(
             constants.various.upgrades[str(prev_level)]["coins"]
             for prev_level in constants.various.levels[
-                current_level - 1 : level - 1
+                current_level - 1 : level - 1  # noqa: E203
             ]
         )
 
