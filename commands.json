@@ -159,6 +159,19 @@
     },
     {
         "type": 1,
+        "name": "upgrade",
+        "description": "Upgrade a brawler.",
+        "options": [
+            {
+                "type": 3,
+                "name": "brawler",
+                "description": "The name of the brawler",
+                "required": true
+            }
+        ]
+    },
+    {
+        "type": 1,
         "name": "version",
         "description": "are we there yet?"
     },
