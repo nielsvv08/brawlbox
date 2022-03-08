@@ -344,6 +344,12 @@ class BrawlersConstants:
             "gadgets": ["Corn-Fu"],
             "starpowers": ["Fresh Kicks", "Divine Soles"],
         },
+        "Eve": {
+            "rarity": "Chromatic",
+            "emoji": "<:E:950762267522269224>",
+            "gadgets": ["Gotta Go!"],
+            "starpowers": ["Unnatural Order", "Happy Surprise"],
+        }
     }
 
     two_gadget_brawlers = [
