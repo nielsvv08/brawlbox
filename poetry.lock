@@ -113,7 +113,7 @@ uvicorn = ">=0.17.0,<0.18.0"
 
 [[package]]
 name = "dnspython"
-version = "2.2.0"
+version = "2.2.1"
 description = "DNS toolkit"
 category = "main"
 optional = false
@@ -364,7 +364,7 @@ dev = ["pytest (>=4.6.2)", "black (>=19.3b0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "975aae871ad2f194b73dbd42d053e3d55c7b5bfec5a7a7d1d10945279ecd5dc4"
+content-hash = "2fa8b2722d8e546af14a0f40950ea12891df2ba4c3c2fed3783b16108c990b69"
 
 [metadata.files]
 anyio = [
@@ -473,8 +473,8 @@ discourtesy = [
     {file = "discourtesy-0.2.0.tar.gz", hash = "sha256:516c9cda30708c502518d8015419228c2648db19398f95454cdb667fc341dfcf"},
 ]
 dnspython = [
-    {file = "dnspython-2.2.0-py3-none-any.whl", hash = "sha256:081649da27ced5e75709a1ee542136eaba9842a0fe4c03da4fb0a3d3ed1f3c44"},
-    {file = "dnspython-2.2.0.tar.gz", hash = "sha256:e79351e032d0b606b98d38a4b0e6e2275b31a5b85c873e587cc11b73aca026d6"},
+    {file = "dnspython-2.2.1-py3-none-any.whl", hash = "sha256:a851e51367fb93e9e1361732c1d60dab63eff98712e503ea7d92e6eccb109b4f"},
+    {file = "dnspython-2.2.1.tar.gz", hash = "sha256:0f7569a4a6ff151958b64304071d370daa3243d15941a7beedf0c9fe5105603e"},
 ]
 h11 = [
     {file = "h11-0.12.0-py3-none-any.whl", hash = "sha256:36a3cb8c0a032f56e2da7084577878a035d3b61d104230d4bd49c0c6b555a9c6"},
