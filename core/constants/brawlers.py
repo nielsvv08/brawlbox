@@ -83,7 +83,7 @@ class BrawlersConstants:
         "Emz": {
             "rarity": "Trophy Road",
             "emoji": "<:E:776006754479374367>",
-            "gadgets": ["Friendzoner"],
+            "gadgets": ["Friendzoner", "Acid Spray"],
             "starpowers": ["Bad Karma", "Hype"],
         },
         "Stu": {
@@ -167,7 +167,7 @@ class BrawlersConstants:
         "Bibi": {
             "rarity": "Epic",
             "emoji": "<:B:776006754139504691>",
-            "gadgets": ["Vitamin Booster"],
+            "gadgets": ["Vitamin Booster", "Extra Sticky"],
             "starpowers": ["Home Run", "Batting Stance"],
         },
         "Bea": {
@@ -197,7 +197,7 @@ class BrawlersConstants:
         "Grom": {
             "rarity": "Epic",
             "emoji": "<:G:923487323847540736>",
-            "gadgets": ["Watchtower"],
+            "gadgets": ["Watchtower", "Radio Check"],
             "starpowers": ["Foot Patrol", "X-Factor"],
         },
         "Mortis": {
@@ -239,13 +239,13 @@ class BrawlersConstants:
         "Byron": {
             "rarity": "Mythic",
             "emoji": "<:B:788333161791750144>",
-            "gadgets": ["Shot In The Arm"],
+            "gadgets": ["Shot In The Arm", "Booster Shots"],
             "starpowers": ["Malaise", "Injection"],
         },
         "Squeak": {
             "rarity": "Mythic",
             "emoji": "<:S:830402901696446464>",
-            "gadgets": ["Windup"],
+            "gadgets": ["Windup", "Residue"],
             "starpowers": ["Chain Reaction", "Super Sticky"],
         },
         "Spike": {
@@ -299,7 +299,7 @@ class BrawlersConstants:
         "Colette": {
             "rarity": "Chromatic",
             "emoji": "<:C:776006754663399489>",
-            "gadgets": ["Na-ah!"],
+            "gadgets": ["Na-ah!", "Gotcha!"],
             "starpowers": ["Push It", "Mass Tax"],
         },
         "Lou": {
@@ -317,7 +317,7 @@ class BrawlersConstants:
         "Belle": {
             "rarity": "Chromatic",
             "emoji": "<:B:830402914941927425>",
-            "gadgets": ["Nest Egg"],
+            "gadgets": ["Nest Egg", "Reverse Polarity"],
             "starpowers": ["Positive Feedback", "Grounded"],
         },
         "Buzz": {
@@ -329,19 +329,19 @@ class BrawlersConstants:
         "Ash": {
             "rarity": "Chromatic",
             "emoji": "<:A:881457139837710357>",
-            "gadgets": ["Chill Pill"],
+            "gadgets": ["Chill Pill", "Rotten Banana"],
             "starpowers": ["First Bash", "Mad As Heck"],
         },
         "Lola": {
             "rarity": "Chromatic",
             "emoji": "<:L:902944553575804971>",
-            "gadgets": ["Freeze Frame"],
+            "gadgets": ["Freeze Frame", "Stunt Double"],
             "starpowers": ["Improvise", "Sealed With A Kiss"],
         },
         "Fang": {
             "rarity": "Chromatic",
             "emoji": "<:F:923487339597148160>",
-            "gadgets": ["Corn-Fu"],
+            "gadgets": ["Corn-Fu", "Roundhouse Kick"],
             "starpowers": ["Fresh Kicks", "Divine Soles"],
         },
         "Eve": {
@@ -349,7 +349,7 @@ class BrawlersConstants:
             "emoji": "<:E:950762267522269224>",
             "gadgets": ["Gotta Go!"],
             "starpowers": ["Unnatural Order", "Happy Surprise"],
-        }
+        },
     }
 
     two_gadget_brawlers = [
