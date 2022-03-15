@@ -1,5 +1,7 @@
 import asyncio
 
+from discourtesy.component import Component
+
 from core.constants import Constants as constants
 
 
@@ -12,8 +14,6 @@ class Paginate:
 
         self.embeds = list(embeds)
 
-        self.author_id = self.interaction["member"]["user"]["id"]
-        self.id = self.interaction["id"]
         self.token = self.interaction["token"]
 
         self.prepare_embeds()
@@ -65,41 +65,34 @@ class Paginate:
 
     async def start(self):
         for i, _ in enumerate(self.embeds, start=1):
-            component_name = f"{self.command_name}_{i}_previous"
+            if (
+                not f"{self.command_name}_{i}_previous"
+                in self.application.dispatch.components
+            ):
+                previous_component = Component(
+                    name=f"{self.command_name}_{i}_previous",
+                    coroutine=self.display_previous_embed,
+                    timeout=0,
+                )
 
-            try:
-                self.application.dispatch.component_callbacks[
-                    component_name
-                ].append(self.display_previous_embed)
-            except KeyError:
-                self.application.dispatch.component_callbacks[
-                    component_name
-                ] = [self.display_previous_embed]
+                self.application.dispatch.add_component(previous_component)
 
-            component_name = f"{self.command_name}_{i}_next"
+            if (
+                not f"{self.command_name}_{i}_next"
+                in self.application.dispatch.components
+            ):
+                next_component = Component(
+                    name=f"{self.command_name}_{i}_next",
+                    coroutine=self.display_next_embed,
+                    timeout=0,
+                )
 
-            try:
-                self.application.dispatch.component_callbacks[
-                    component_name
-                ].append(self.display_next_embed)
-            except KeyError:
-                self.application.dispatch.component_callbacks[
-                    component_name
-                ] = [self.display_next_embed]
+                self.application.dispatch.add_component(next_component)
 
         asyncio.create_task(self.stop())
 
     async def stop(self):
         await asyncio.sleep(20)
-
-        for i, _ in enumerate(self.embeds, start=1):
-            self.application.dispatch.component_callbacks[
-                f"{self.command_name}_{i}_previous"
-            ].remove(self.display_previous_embed)
-
-            self.application.dispatch.component_callbacks[
-                f"{self.command_name}_{i}_next"
-            ].remove(self.display_next_embed)
 
         await self.application.http.edit_original_interaction_response(
             self.token,
@@ -107,10 +100,10 @@ class Paginate:
         )
 
     async def display_previous_embed(self, _, interaction):
-        if interaction["member"]["user"]["id"] != self.author_id:
-            return
-
-        if interaction["message"]["interaction"]["id"] != self.id:
+        if (
+            interaction["member"]["user"]["id"]
+            != interaction["message"]["interaction"]["user"]["id"]
+        ):
             return
 
         current_index = int(interaction["data"]["custom_id"].split("_")[1])
@@ -119,16 +112,13 @@ class Paginate:
         if previous_index <= 0:
             return
 
-        await self.application.http.edit_original_interaction_response(
-            self.token,
-            self.embeds[previous_index - 1],
-        )
+        return self.embeds[previous_index - 1]
 
     async def display_next_embed(self, _, interaction):
-        if interaction["member"]["user"]["id"] != self.author_id:
-            return
-
-        if interaction["message"]["interaction"]["id"] != self.id:
+        if (
+            interaction["member"]["user"]["id"]
+            != interaction["message"]["interaction"]["user"]["id"]
+        ):
             return
 
         current_index = int(interaction["data"]["custom_id"].split("_")[1])
@@ -137,7 +127,4 @@ class Paginate:
         if next_index > len(self.embeds):
             return
 
-        await self.application.http.edit_original_interaction_response(
-            self.token,
-            self.embeds[next_index - 1],
-        )
+        return self.embeds[next_index - 1]
