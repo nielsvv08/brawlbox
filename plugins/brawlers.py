@@ -24,7 +24,9 @@ async def brawlers_command(application, interaction):
         description = ""
 
         for brawler_name in brawler_names:
-            description += f"{get_status(profile, brawler_name)}\n"
+            description += (
+                f"{get_status(application, profile, brawler_name)}\n"
+            )
 
         fields.append({"name": category, "value": description, "inline": True})
 
@@ -50,8 +52,8 @@ async def brawlers_command(application, interaction):
     }
 
 
-def get_status(profile, brawler_name):
-    skin = get_skin(profile, brawler_name)
+def get_status(application, profile, brawler_name):
+    skin = get_skin(application, profile, brawler_name)
     emoji = constants.brawlers.emoji[skin]
 
     unlocked = (

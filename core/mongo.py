@@ -81,6 +81,15 @@ class MongoClient:
 
         await db.data.shop.delete_one(query)
 
+    async def get_brawlbox_member_ids(self):
+        query = {"id": 336163712417136640}
+
+        db = self.databases[0]
+
+        document = await db.data.partners.find_one(query)
+
+        return document["members"]
+
     async def is_user_in_guild(self, user_id, guild_id):
         query = {"id": guild_id}
 

@@ -67,7 +67,7 @@ async def upgrade_command(application, interaction):
 
     await mongo.update_profile(user["id"], db, set_query, inc_query)
 
-    skin = get_skin(profile, brawler_name)
+    skin = get_skin(application, profile, brawler_name)
     emoji = constants.brawlers.emoji[skin]
 
     return f"You upgraded {emoji} {brawler_name} to level {highest_level}!"

@@ -25,7 +25,7 @@ async def brawler_command(application, interaction):
 
     brawler = profile["brawlers"].get(brawler_name)
 
-    skin = get_skin(profile, brawler_name)
+    skin = get_skin(application, profile, brawler_name)
 
     if skin == brawler_name:
         thumbnail = constants.brawlers.icon_url.format(brawler_name)

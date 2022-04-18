@@ -56,7 +56,8 @@ async def skins_command(application, interaction):
         for skin in skins:
             all_skins.add(skin)
 
-    # TODO: add Star Shelly skin for server members.
+    if int(user["id"]) in application.cache.member_ids:
+        all_skins.add("Star Shelly")
 
     first_embed["embeds"][0]["title"] += "Unlocked"
 

@@ -21,7 +21,7 @@ async def powerpoints_command(application, interaction):
         description = ""
 
         for brawler in brawlers:
-            description += f"{get_status(profile, brawler)}\n"
+            description += f"{get_status(application, profile, brawler)}\n"
 
         fields.append({"name": category, "value": description, "inline": True})
 
@@ -47,8 +47,8 @@ async def powerpoints_command(application, interaction):
     }
 
 
-def get_status(profile, brawler_name):
-    skin = get_skin(profile, brawler_name)
+def get_status(application, profile, brawler_name):
+    skin = get_skin(application, profile, brawler_name)
     emoji = constants.brawlers.emoji[skin]
 
     if not (

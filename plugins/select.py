@@ -54,6 +54,9 @@ async def select_command(application, interaction):
 
         skins = profile["brawlers"][brawler_name].get("skins", [])
 
+        if int(user["id"]) in application.cache.member_ids:
+            skins.append("Star Shelly")
+
         if not skins:
             return (
                 f"You don't have any skins for {brawler_name} at the moment."
@@ -140,6 +143,8 @@ async def select_component(application, interaction):
         if skin == brawler_name:
             skin = "default"
             new_selected = 0
+        elif skin == "Star Shelly":
+            new_selected = -1
         else:
             new_selected = (
                 profile["brawlers"][brawler_name]["skins"].index(skin) + 1

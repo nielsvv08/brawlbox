@@ -1,5 +1,6 @@
 import discourtesy
 
+from core.cache import Cache
 from core.config import Config as config
 from core.mongo import MongoClient
 
@@ -13,5 +14,6 @@ class Application(discourtesy.Application):
         )
 
         self.mongo = MongoClient()
+        self.cache = Cache(self)
 
         self.version = "2.0.0-alpha"

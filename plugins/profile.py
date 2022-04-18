@@ -29,6 +29,9 @@ async def profile_command(application, interaction):
 
     description = "Badges: "
 
+    if int(user["id"]) in application.cache.member_ids:
+        description += "<:box:563003560233533440> "
+
     box_count = (
         profile["boxcounter"] + profile["bigcounter"] + profile["megacounter"]
     )
