@@ -5,6 +5,7 @@ import discourtesy
 from core import mongo, random
 from core.config import Config as config
 from core.constants import Constants as constants
+from core.utils import get_skin
 
 
 @discourtesy.command("battle")
@@ -42,9 +43,12 @@ async def battle_command(application, interaction):
     description = random.battle.generate_description(win)
     reward = random.battle.generate_reward(win)
 
-    thumbnail = (
-        f"https://papier.dis.tf/static/brawlbox/pins/{brawler_name}.png"
-    )
+    skin = get_skin(application, profile, brawler_name)
+
+    if skin == brawler_name:
+        thumbnail = constants.brawlers.icon_url.format(brawler_name)
+    else:
+        thumbnail = constants.brawlers.skin_icon_url.format(brawler_name, skin)
 
     set_query = {"daily": today}
     inc_query = {reward[1]: reward[0]}
