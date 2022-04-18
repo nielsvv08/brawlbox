@@ -66,8 +66,8 @@ class Paginate:
     async def start(self):
         for i, _ in enumerate(self.embeds, start=1):
             if (
-                not f"{self.command_name}_{i}_previous"
-                in self.application.dispatch.components
+                f"{self.command_name}_{i}_previous"
+                not in self.application.dispatch.components
             ):
                 previous_component = Component(
                     name=f"{self.command_name}_{i}_previous",
@@ -78,8 +78,8 @@ class Paginate:
                 self.application.dispatch.add_component(previous_component)
 
             if (
-                not f"{self.command_name}_{i}_next"
-                in self.application.dispatch.components
+                f"{self.command_name}_{i}_next"
+                not in self.application.dispatch.components
             ):
                 next_component = Component(
                     name=f"{self.command_name}_{i}_next",

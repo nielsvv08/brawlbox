@@ -136,7 +136,7 @@ async def select_component(application, interaction):
 
         set_query = {"profile_skins": final_skins}
 
-        description = f"This skin will now appear on your profile!"
+        description = "This skin will now appear on your profile!"
     else:
         emoji = constants.brawlers.emoji[skin]
 
