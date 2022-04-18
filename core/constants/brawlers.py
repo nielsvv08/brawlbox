@@ -359,16 +359,21 @@ class BrawlersConstants:
     ]
 
     gadgets_overwrite = {
-        "Active Noise Cancelling": "Active Noise Canceling",
-        "Backup Mine": "Mine Mania",
-        "Sleep Simulator": "Sleep Stimulator",
-        "Self Destruction": "Heavy Metal",
+        "Active Noise Cancelling": "Active Noise Canceling",  # Frank
+        "Sleep Simulator": "Sleep Stimulator",  # Sandy
+        "Backup Mine": "Mine Mania",  # Tick
     }
 
     starpowers_overwrite = {
-        "Extra Life": "Plugged In",
-        "Honey Coat": "Honeycomb",
-        "Tin Can": "Revolving Door",
+        "Extra Life": "Plugged In",  # 8-Bit
+        "Insta Beeload": "Insta Beaload",  # Bea
+        "Honey Coat": "Honeycomb",  # Bea
+        "Snare a Bear": "Snare A Bear",  # Bo
+        "Rocket No. Four": "Rocket No. 4",  # Brock
+        "Incediary": "More Rockets!",  # Brock
+        "Run n' Gun": "Run N Gun",  # Max
+        "Self Destruction": "Heavy Metal",  # Meg
+        "Tin Can": "Revolving Door",  # Mr P
     }
 
     emoji = {k: v["emoji"] for k, v in brawlers.items()}
