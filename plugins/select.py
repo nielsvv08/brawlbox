@@ -54,7 +54,10 @@ async def select_command(application, interaction):
 
         skins = profile["brawlers"][brawler_name].get("skins", [])
 
-        if int(user["id"]) in application.cache.member_ids:
+        if (
+            brawler_name == "Shelly"
+            and int(user["id"]) in application.cache.member_ids
+        ):
             skins.append("Star Shelly")
 
         if not skins:
