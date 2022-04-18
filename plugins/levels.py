@@ -2,6 +2,7 @@ import discourtesy
 
 from core.config import Config as config
 from core.constants import Constants as constants
+from core.paginate import Paginate
 from core.utils import get_skin, max_gadgets
 
 
@@ -25,11 +26,8 @@ async def levels_command(application, interaction):
 
         fields.append({"name": category, "value": description, "inline": True})
 
-    first_fields = fields[:6]
-    second_fields = fields[6:]
-
-    return {
-        "embeds": [
+    embeds = [
+        discourtesy.utils.embed(
             {
                 "title": "Levels",
                 "color": config.colour,
@@ -37,14 +35,26 @@ async def levels_command(application, interaction):
                     "name": user["username"],
                     "icon_url": discourtesy.utils.avatar_url(user),
                 },
-                "fields": first_fields,
-            },
+                "fields": fields[:6],
+            }
+        ),
+        discourtesy.utils.embed(
             {
+                "title": "Levels",
                 "color": config.colour,
-                "fields": second_fields,
-            },
-        ]
-    }
+                "author": {
+                    "name": user["username"],
+                    "icon_url": discourtesy.utils.avatar_url(user),
+                },
+                "fields": fields[6:],
+            }
+        ),
+    ]
+
+    paginate = Paginate("levels", application, interaction, *embeds)
+    await paginate.start()
+
+    return paginate.embeds[0]
 
 
 def get_status(application, profile, brawler_name):
@@ -60,34 +70,42 @@ def get_status(application, profile, brawler_name):
 
     brawler = profile["brawlers"][brawler_name]
 
-    message = f"{emoji} **Level {brawler['level']}**"
+    message = f"{emoji} Level {brawler['level']}"
+
+    maxed_out = True
 
     if brawler["level"] >= 7:
-        if not max_gadgets(brawler_name):
+        if max_gadgets(brawler_name) == 1:
             if len(brawler.get("gadgets", [])) == 1:
-                message += " <:g:689837070264303673> <:b:771135048237580298>"
+                message += " <:g:689837070264303673> <:b:771135048237580298> "
             else:
                 message += " <:g:689843668345290844> <:b:771135048237580298>"
+                maxed_out = False
         else:
             if len(brawler.get("gadgets", [])) == 1:
                 message += " <:g:689837070264303673> <:g:689843668345290844>"
+                maxed_out = False
             elif len(brawler.get("gadgets", [])) == 2:
                 message += " <:g:689837070264303673> <:g:689837070264303673>"
             else:
                 message += " <:g:689843668345290844> <:g:689843668345290844>"
+                maxed_out = False
 
-        if brawler["level"] == 10:
-            if len(brawler.get("starpowers", [])) == 1:
-                return (
-                    message
-                    + " <:l:563001977328369692> <:s:563001977877954590>"
-                )
+    if brawler["level"] == 10:
+        if len(brawler.get("starpowers", [])) == 1:
+            message += " <:l:563001977328369692> <:s:563001977877954590>"
+            maxed_out = False
 
-            return message + " <:s:563001977877954590> <:s:563001977877954590>"
+        message += " <:s:563001977877954590> <:s:563001977877954590>"
 
-        if brawler["level"] == 9:
-            return message + " <:l:563001977328369692> <:l:563001977328369692>"
+    if brawler["level"] == 9:
+        message += " <:l:563001977328369692> <:l:563001977328369692>"
+        maxed_out = False
 
-        return message
+    if brawler["level"] != 10:
+        maxed_out = False
+
+    if maxed_out:
+        return f"**{message}**"
 
     return message

@@ -15,6 +15,7 @@ class Paginate:
         self.embeds = list(embeds)
 
         self.token = self.interaction["token"]
+        self.id = self.interaction["id"]
 
         self.prepare_embeds()
 
@@ -31,7 +32,7 @@ class Paginate:
                                     "label": "⬅️",
                                     "style": 1,
                                     "custom_id": (
-                                        f"{self.command_name}_{i}_previous"
+                                        f"{self.command_name}_{i}_{self.id}_previous"
                                     ),
                                 },
                                 {
@@ -39,7 +40,7 @@ class Paginate:
                                     "label": "➡️",
                                     "style": 1,
                                     "custom_id": (
-                                        f"{self.command_name}_{i}_next"
+                                        f"{self.command_name}_{i}_{self.id}_next"
                                     ),
                                 },
                             ],
@@ -65,34 +66,35 @@ class Paginate:
 
     async def start(self):
         for i, _ in enumerate(self.embeds, start=1):
-            if (
-                f"{self.command_name}_{i}_previous"
-                not in self.application.dispatch.components
-            ):
-                previous_component = Component(
-                    name=f"{self.command_name}_{i}_previous",
-                    coroutine=self.display_previous_embed,
-                    timeout=0,
-                )
+            previous_component = Component(
+                name=f"{self.command_name}_{i}_{self.id}_previous",
+                coroutine=self.display_previous_embed,
+                timeout=0,
+            )
 
-                self.application.dispatch.add_component(previous_component)
+            self.application.dispatch.add_component(previous_component)
 
-            if (
-                f"{self.command_name}_{i}_next"
-                not in self.application.dispatch.components
-            ):
-                next_component = Component(
-                    name=f"{self.command_name}_{i}_next",
-                    coroutine=self.display_next_embed,
-                    timeout=0,
-                )
+            next_component = Component(
+                name=f"{self.command_name}_{i}_{self.id}_next",
+                coroutine=self.display_next_embed,
+                timeout=0,
+            )
 
-                self.application.dispatch.add_component(next_component)
+            self.application.dispatch.add_component(next_component)
 
         asyncio.create_task(self.stop())
 
     async def stop(self):
         await asyncio.sleep(20)
+
+        for i, _ in enumerate(self.embeds, start=1):
+            del self.application.dispatch.components[
+                f"{self.command_name}_{i}_{self.id}_previous"
+            ]
+
+            del self.application.dispatch.components[
+                f"{self.command_name}_{i}_{self.id}_next"
+            ]
 
         await self.application.http.edit_original_interaction_response(
             self.token,
