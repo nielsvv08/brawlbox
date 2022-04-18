@@ -1,7 +1,7 @@
 from random import normalvariate
 
 
-def normal(mu, sigma):
+def normal_distribution(mu, sigma):
     value = -1
 
     while abs(value - mu) > 4 * sigma:

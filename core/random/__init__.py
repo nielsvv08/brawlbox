@@ -6,4 +6,4 @@ from .battle import (
     random_game_mode,
 )
 from .brawlers import random_unlocked_brawler
-from .normal import normal
+from .normal import normal_distribution
