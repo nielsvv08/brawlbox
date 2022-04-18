@@ -9,14 +9,19 @@ from core.constants import Constants as constants
 
 @discourtesy.command("select")
 async def select_command(application, interaction):
-    brawler_name = interaction["data"]["options"][0]["value"].title()
+    select_profile = False
 
-    brawler_name = constants.brawlers.alternative_brawlers.get(
-        brawler_name, brawler_name
-    )
-
-    if brawler_name not in constants.brawlers.brawlers:
-        return f"`{brawler_name}` is not a valid brawler."
+    try:
+        brawler_name = interaction["data"]["options"][0]["value"].title()
+    except KeyError:
+        return (
+            "You should select a brawler or set the `profile` option to true."
+        )
+    except AttributeError:
+        if not interaction["data"]["options"][0]["value"]:
+            return "You should select a brawler."
+        else:
+            select_profile = True
 
     user = interaction["member"]["user"]
 
@@ -25,28 +30,52 @@ async def select_command(application, interaction):
     if profile is None:
         return constants.errors.profile_not_found_self
 
-    skins = profile["brawlers"][brawler_name].get("skins", [])
+    if select_profile:
+        skins = profile.get("profile_skins", [])
 
-    if not skins:
-        return f"You don't have any skins for {brawler_name} at the moment."
+        if not skins:
+            return "You don't have any profile skins at the moment."
 
-    options = list()
+        options = list()
 
-    for skin in [brawler_name] + list(set(skins)):
-        emoji = constants.brawlers.emoji[skin]
+        for skin in set(["default"] + list(skins)):
+            options.append({"label": skin, "value": f"profile-{skin}"}),
 
-        _, emoji_name, emoji_id = emoji.strip("<>").split(":")
+        brawler_name = "your profile"
+    else:
+        brawler_name = interaction["data"]["options"][0]["value"].title()
 
-        options.append(
-            {
-                "label": skin,
-                "value": f"{brawler_name}-{skin}",
-                "emoji": {
-                    "name": emoji_name,
-                    "id": emoji_id,
-                },
-            }
-        ),
+        brawler_name = constants.brawlers.alternative_brawlers.get(
+            brawler_name, brawler_name
+        )
+
+        if brawler_name not in constants.brawlers.brawlers:
+            return f"`{brawler_name}` is not a valid brawler."
+
+        skins = profile["brawlers"][brawler_name].get("skins", [])
+
+        if not skins:
+            return (
+                f"You don't have any skins for {brawler_name} at the moment."
+            )
+
+        options = list()
+
+        for skin in [brawler_name] + list(set(skins)):
+            emoji = constants.brawlers.emoji[skin]
+
+            _, emoji_name, emoji_id = emoji.strip("<>").split(":")
+
+            options.append(
+                {
+                    "label": skin,
+                    "value": f"{brawler_name}-{skin}",
+                    "emoji": {
+                        "name": emoji_name,
+                        "id": emoji_id,
+                    },
+                }
+            ),
 
     content = (
         f"Choose a skin for {brawler_name} in the menu below.\n"
@@ -94,21 +123,35 @@ async def select_component(application, interaction):
 
     profile, db = await application.mongo.get_profile(user_id)
 
-    emoji = constants.brawlers.emoji[skin]
+    if brawler_name == "profile":
+        current_skins = profile.get("profile_skins", [])
 
-    if skin == brawler_name:
-        skin = "default"
-        new_selected = 0
+        if skin in current_skins:
+            current_skins.remove(skin)
+
+        final_skins = [skin] + current_skins
+
+        set_query = {"profile_skins": final_skins}
+
+        description = f"This skin will now appear on your profile!"
     else:
-        new_selected = (
-            profile["brawlers"][brawler_name]["skins"].index(skin) + 1
+        emoji = constants.brawlers.emoji[skin]
+
+        if skin == brawler_name:
+            skin = "default"
+            new_selected = 0
+        else:
+            new_selected = (
+                profile["brawlers"][brawler_name]["skins"].index(skin) + 1
+            )
+
+        set_query = {f"brawlers.{brawler_name}.selected": new_selected}
+
+        description = (
+            f"You selected the {emoji} {skin} skin for {brawler_name}!"
         )
 
-    set_query = {f"brawlers.{brawler_name}.selected": new_selected}
-
     await mongo.update_profile(user_id, db, set_query)
-
-    description = f"You selected the {emoji} {skin} skin for {brawler_name}!"
 
     embed = discourtesy.utils.embed(
         {"color": config.colour, "title": "Select", "description": description}

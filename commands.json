@@ -167,7 +167,13 @@
                 "type": 3,
                 "name": "brawler",
                 "description": "The name of the brawler",
-                "required": true
+                "required": false
+            },
+            {
+                "type": 5,
+                "name": "profile",
+                "description": "Whether to select a profile skin or not.",
+                "required": false
             }
         ]
     },
