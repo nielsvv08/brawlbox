@@ -1,6 +1,7 @@
 import random
 
 from core.constants import Constants as constants
+from core.random import normal
 
 
 def generate_description(win):
@@ -17,15 +18,15 @@ def generate_reward(win):
         match number:
             case 1:
                 return (
-                    int(random.normalvariate(140, 10)),
+                    int(normal(140, 10)),
                     "starpoints",
                     "star points",
                 )
             case 2:
-                return int(random.normalvariate(15, 2)), "gems", "gems"
+                return int(normal(15, 2)), "gems", "gems"
             case 3:
                 return (
-                    int(random.normalvariate(3, 0.5)),
+                    int(normal(3, 0.5)),
                     "megaboxes",
                     "mega boxes",
                 )
@@ -33,14 +34,14 @@ def generate_reward(win):
     match number:
         case 1:
             return (
-                int(random.normalvariate(110, 10)),
+                int(normal(110, 10)),
                 "starpoints",
                 "star points",
             )
         case 2:
-            return int(random.normalvariate(12, 2)), "gems", "gems"
+            return int(normal(12, 2)), "gems", "gems"
         case 3:
-            return int(random.normalvariate(3, 0.5)), "bigboxes", "big boxes"
+            return int(normal(3, 0.5)), "bigboxes", "big boxes"
 
 
 def play_battle():
