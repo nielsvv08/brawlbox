@@ -12,7 +12,7 @@ def get_skin(application, profile, brawler_name):
         .get("selected", 0)
     )
 
-    if selected == 0:
+    if selected == 0 or not profile["brawlers"][brawler_name].get("skins"):
         return brawler_name
 
     if (
