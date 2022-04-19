@@ -85,7 +85,7 @@ class Paginate:
         asyncio.create_task(self.stop())
 
     async def stop(self):
-        await asyncio.sleep(20)
+        await asyncio.sleep(60)
 
         for i, _ in enumerate(self.embeds, start=1):
             del self.application.dispatch.components[
