@@ -49,6 +49,24 @@
     },
     {
         "type": 1,
+        "name": "buy",
+        "description": "Purchase an item from the shop.",
+        "options": [
+            {
+                "type": 4,
+                "name": "number",
+                "description": "The number of the item to purchase.",
+                "required": true
+            },
+            {
+                "type": 4,
+                "name": "amount",
+                "description": "The amount of the item to purchase."
+            }
+        ]
+    },
+    {
+        "type": 1,
         "name": "claim",
         "description": "Claim a voting reward."
     },
@@ -176,6 +194,11 @@
                 "required": false
             }
         ]
+    },
+    {
+        "type": 1,
+        "name": "shop",
+        "description": "Purchase magnificent skins and special boxes."
     },
     {
         "type": 1,
