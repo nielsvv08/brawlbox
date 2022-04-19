@@ -95,8 +95,8 @@ def get_status(application, profile, brawler_name):
         if len(brawler.get("starpowers", [])) == 1:
             message += " <:l:563001977328369692> <:s:563001977877954590>"
             maxed_out = False
-
-        message += " <:s:563001977877954590> <:s:563001977877954590>"
+        else:
+            message += " <:s:563001977877954590> <:s:563001977877954590>"
 
     if brawler["level"] == 9:
         message += " <:l:563001977328369692> <:l:563001977328369692>"
