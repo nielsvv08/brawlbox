@@ -30,7 +30,7 @@ async def buy_commands(application, interaction):
         case 2:
             inc_query = {"gems": -30 * amount, "bigboxes": amount}
         case 3:
-            inc_query = {"coins": -2000 * amount, "megaboxes": amount}
+            inc_query = {"coins": -3000 * amount, "megaboxes": amount}
         case 4:
             inc_query = {"gems": -45 * amount, "megaboxes": amount}
         case num if 5 <= num <= 25:
