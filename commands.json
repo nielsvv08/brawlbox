@@ -211,5 +211,20 @@
         "type": 1,
         "name": "vote",
         "description": "View the top.gg vote link."
+    },
+    {
+        "type": 1,
+        "name": "roborumble",
+        "description": "This command is replaced by /battle now."
+    },
+    {
+        "type": 1,
+        "name": "biggame",
+        "description": "This command is replaced by /battle now."
+    },
+    {
+        "type": 1,
+        "name": "supercityrampage",
+        "description": "This command is replaced by /battle now."
     }
 ]
