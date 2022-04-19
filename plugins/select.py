@@ -52,6 +52,9 @@ async def select_command(application, interaction):
         if brawler_name not in constants.brawlers.brawlers:
             return f"`{brawler_name}` is not a valid brawler."
 
+        if not profile["brawlers"].get(brawler_name):
+            return f"You haven't unlocked {brawler_name} yet."
+
         skins = profile["brawlers"][brawler_name].get("skins", [])
 
         if (
