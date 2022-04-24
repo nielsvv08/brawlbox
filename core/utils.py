@@ -22,9 +22,12 @@ def get_skin(application, profile, brawler_name):
     ):
         return "Star Shelly"
 
-    return profile["brawlers"][brawler_name]["skins"][
-        profile["brawlers"][brawler_name]["selected"] - 1
-    ]
+    try:
+        return profile["brawlers"][brawler_name]["skins"][
+            profile["brawlers"][brawler_name]["selected"] - 1
+        ]
+    except IndexError:  # e.g. Star Shelly selected but no longer in server
+        return brawler_name
 
 
 def max_gadgets(brawler_name):
