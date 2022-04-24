@@ -48,7 +48,7 @@ async def brawler_command(application, interaction):
         description = (
             "Status: Unlocked 🔓\n\n"
             f"Level {brawler['level']}\n"
-            f"Power Points: {brawler['powerpoints']} / 1400\n\n"
+            f"Power Points: {brawler['powerpoints']} / 1410\n\n"
         )
 
         description += (
