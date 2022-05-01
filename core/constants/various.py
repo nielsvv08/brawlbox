@@ -144,9 +144,9 @@ class VariousConstants:
 
     # upgrade
 
-    levels = (2, 3, 4, 5, 6, 7, 8, 9)
+    levels = (2, 3, 4, 5, 6, 7, 8, 9, 10, 11)
 
-    levels_reverse = (9, 8, 7, 6, 5, 4, 3, 2)
+    levels_reverse = (11, 10, 9, 8, 7, 6, 5, 4, 3, 2)
 
     upgrades = {
         "2": {"powerpoints": 20, "coins": 20},
