@@ -6,8 +6,8 @@ class ButtonsConstants:
                 "components": [
                     {
                         "type": 2,
-                        "label": "✅",
-                        "style": 1,
+                        "emoji": {"name": "✔️"},
+                        "style": 3,
                         "custom_id": "box_confirm",
                     },
                 ],
@@ -21,8 +21,8 @@ class ButtonsConstants:
                 "components": [
                     {
                         "type": 2,
-                        "label": "✅",
-                        "style": 1,
+                        "emoji": {"name": "✔️"},
+                        "style": 3,
                         "custom_id": "bigbox_confirm",
                     },
                 ],
@@ -36,8 +36,8 @@ class ButtonsConstants:
                 "components": [
                     {
                         "type": 2,
-                        "label": "✅",
-                        "style": 1,
+                        "emoji": {"name": "✔️"},
+                        "style": 3,
                         "custom_id": "megabox_confirm",
                     },
                 ],
@@ -52,14 +52,14 @@ class ButtonsConstants:
                 "components": [
                     {
                         "type": 2,
-                        "label": "✅",
-                        "style": 1,
+                        "emoji": {"name": "✔️"},
+                        "style": 3,
                         "disabled": True,
                         "custom_id": "confirm_timeout_check",
                     },
                     {
                         "type": 2,
-                        "label": "❌",
+                        "emoji": {"name": "✖"},
                         "style": 4,
                         "disabled": True,
                         "custom_id": "confirm_timeout_cross",
@@ -76,21 +76,21 @@ class ButtonsConstants:
                 "components": [
                     {
                         "type": 2,
-                        "label": "⬅️",
+                        "emoji": {"name": "⬅"},
                         "style": 1,
                         "disabled": True,
                         "custom_id": "paginate_timeout_previous",
                     },
                     {
                         "type": 2,
-                        "label": "➡️",
+                        "emoji": {"name": "➡"},
                         "style": 1,
                         "disabled": True,
                         "custom_id": "paginate_timeout_next",
                     },
                     {
                         "type": 2,
-                        "label": "❌",
+                        "label": "✖",
                         "style": 4,
                         "disabled": True,
                         "custom_id": "paginate_timeout_cross",
@@ -107,8 +107,8 @@ class ButtonsConstants:
                 "components": [
                     {
                         "type": 2,
-                        "label": "✅",
-                        "style": 1,
+                        "emoji": {"name": "✔️"},
+                        "style": 3,
                         "custom_id": "prestige_confirm",
                     },
                 ],

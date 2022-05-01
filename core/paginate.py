@@ -29,7 +29,7 @@ class Paginate:
                             "components": [
                                 {
                                     "type": 2,
-                                    "label": "⬅️",
+                                    "emoji": {"name": "⬅"},
                                     "style": 1,
                                     "custom_id": (
                                         f"{self.command_name}_{i}_{self.id}_previous"
@@ -37,7 +37,7 @@ class Paginate:
                                 },
                                 {
                                     "type": 2,
-                                    "label": "➡️",
+                                    "emoji": {"name": "➡"},
                                     "style": 1,
                                     "custom_id": (
                                         f"{self.command_name}_{i}_{self.id}_next"
