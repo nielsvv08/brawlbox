@@ -106,7 +106,7 @@ async def box_timeout(application, interaction):
 
 @discourtesy.component("box_confirm")
 async def box_component(application, interaction):
-    author = interaction["message"]["author"]
+    author = interaction["message"]["interaction"]["user"]
     user = interaction["member"]["user"]
 
     if user["id"] != author["id"]:
@@ -153,7 +153,7 @@ async def box_component(application, interaction):
 
 @discourtesy.component("bigbox_confirm")
 async def bigbox_component(application, interaction):
-    author = interaction["message"]["author"]
+    author = interaction["message"]["interaction"]["user"]
     user = interaction["member"]["user"]
 
     if user["id"] != author["id"]:
@@ -201,7 +201,7 @@ async def bigbox_component(application, interaction):
 
 @discourtesy.component("megabox_confirm")
 async def megabox_component(application, interaction):
-    author = interaction["message"]["author"]
+    author = interaction["message"]["interaction"]["user"]
     user = interaction["member"]["user"]
 
     if user["id"] != author["id"]:
