@@ -19,7 +19,9 @@ class Application(discourtesy.Application):
         self.mongo = MongoClient()
         self.cache = Cache(self)
 
-        self.version = "2.0.0-alpha"
+        self.box_cooldown = list()
+
+        self.version = "2.0.0-candidate"
 
         self.production = sys.platform == "linux"
 

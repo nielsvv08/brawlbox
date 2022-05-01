@@ -1,4 +1,50 @@
 class ButtonsConstants:
+    box_confirm = {
+        "components": [
+            {
+                "type": 1,
+                "components": [
+                    {
+                        "type": 2,
+                        "label": "✅",
+                        "style": 1,
+                        "custom_id": "box_confirm",
+                    },
+                ],
+            }
+        ],
+    }
+    bigbox_confirm = {
+        "components": [
+            {
+                "type": 1,
+                "components": [
+                    {
+                        "type": 2,
+                        "label": "✅",
+                        "style": 1,
+                        "custom_id": "bigbox_confirm",
+                    },
+                ],
+            }
+        ],
+    }
+    megabox_confirm = {
+        "components": [
+            {
+                "type": 1,
+                "components": [
+                    {
+                        "type": 2,
+                        "label": "✅",
+                        "style": 1,
+                        "custom_id": "megabox_confirm",
+                    },
+                ],
+            }
+        ],
+    }
+
     confirm_stop = {
         "components": [
             {

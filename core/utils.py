@@ -1,4 +1,9 @@
+import math
+import random
+from copy import deepcopy
+
 from core.constants import Constants as constants
+from core.random import normal_distribution
 
 
 def r(number):

@@ -54,7 +54,7 @@ async def upgrade_command(application, interaction):
 
     current_level = profile["brawlers"][brawler_name]["level"]
 
-    if current_level >= 9:
+    if current_level == 11:
         return f"{brawler_name} is already maxed out!"
 
     highest_level, required_coins = check_upgrade(profile, brawler_name)

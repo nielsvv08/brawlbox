@@ -8,7 +8,7 @@ class EmojiConstants:
 
     # currency
 
-    coins = "<:C:563001980667035658>"
+    coins = "<:C:969263404802011158>"
     gems = "<:G:563001979115405334>"
     star_points = "<:S:596043292764798987>"
 

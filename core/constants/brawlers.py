@@ -286,66 +286,77 @@ class BrawlersConstants:
         },
         "Gale": {
             "rarity": "Chromatic",
+            "droprate": "Epic",
             "emoji": "<:G:776006754646884352>",
             "gadgets": ["Spring Ejector", "Twister"],
             "starpowers": ["Blustery Blow", "Freezing Snow"],
         },
         "Surge": {
             "rarity": "Chromatic",
+            "droprate": "Epic",
             "emoji": "<:S:776007475261603841>",
             "gadgets": ["Power Surge"],
             "starpowers": ["To The Max!", "Serve Ice Cold"],
         },
         "Colette": {
             "rarity": "Chromatic",
+            "droprate": "Epic",
             "emoji": "<:C:776006754663399489>",
             "gadgets": ["Na-ah!", "Gotcha!"],
             "starpowers": ["Push It", "Mass Tax"],
         },
         "Lou": {
             "rarity": "Chromatic",
+            "droprate": "Epic",
             "emoji": "<:L:776353795030122507>",
             "gadgets": ["Ice Block", "Cryo Syrup"],
             "starpowers": ["Supercool", "Hypothermia"],
         },
         "Colonel Ruffs": {
             "rarity": "Chromatic",
+            "droprate": "Epic",
             "emoji": "<:C:804311859090948096>",
             "gadgets": ["Take Cover", "Air Support"],
             "starpowers": ["Air Superiority", "Field Promotion"],
         },
         "Belle": {
             "rarity": "Chromatic",
+            "droprate": "Epic",
             "emoji": "<:B:830402914941927425>",
             "gadgets": ["Nest Egg", "Reverse Polarity"],
             "starpowers": ["Positive Feedback", "Grounded"],
         },
         "Buzz": {
             "rarity": "Chromatic",
+            "droprate": "Epic",
             "emoji": "<:B:854635938360721408>",
             "gadgets": ["Reserve Buoy"],
             "starpowers": ["Tougher Torpedo", "Eyes Sharp"],
         },
         "Ash": {
             "rarity": "Chromatic",
+            "droprate": "Epic",
             "emoji": "<:A:881457139837710357>",
             "gadgets": ["Chill Pill", "Rotten Banana"],
             "starpowers": ["First Bash", "Mad As Heck"],
         },
         "Lola": {
             "rarity": "Chromatic",
+            "droprate": "Epic",
             "emoji": "<:L:902944553575804971>",
             "gadgets": ["Freeze Frame", "Stunt Double"],
             "starpowers": ["Improvise", "Sealed With A Kiss"],
         },
         "Fang": {
             "rarity": "Chromatic",
+            "droprate": "Mythic",
             "emoji": "<:F:923487339597148160>",
             "gadgets": ["Corn-Fu", "Roundhouse Kick"],
             "starpowers": ["Fresh Kicks", "Divine Soles"],
         },
         "Eve": {
             "rarity": "Chromatic",
+            "droprate": "Legendary",
             "emoji": "<:E:950762267522269224>",
             "gadgets": ["Gotta Go!"],
             "starpowers": ["Unnatural Order", "Happy Surprise"],
@@ -445,41 +456,85 @@ class BrawlersConstants:
 
     emoji.update(special_skins)
 
+    trophy_road_brawlers = [
+        k for k, v in brawlers.items() if v["rarity"] == "Trophy Road"
+    ]
+    rare_brawlers = [k for k, v in brawlers.items() if v["rarity"] == "Rare"]
+    super_rare_brawlers = [
+        k for k, v in brawlers.items() if v["rarity"] == "Super Rare"
+    ]
+    epic_brawlers = [k for k, v in brawlers.items() if v["rarity"] == "Epic"]
+    mythic_brawlers = [
+        k for k, v in brawlers.items() if v["rarity"] == "Mythic"
+    ]
+    legendary_brawlers = [
+        k for k, v in brawlers.items() if v["rarity"] == "Legendary"
+    ]
+
+    chromatic_epic_brawlers = [
+        k
+        for k, v in brawlers.items()
+        if v["rarity"] == "Chromatic" and v["droprate"] == "Epic"
+    ]
+    chromatic_mythic_brawlers = [
+        k
+        for k, v in brawlers.items()
+        if v["rarity"] == "Chromatic" and v["droprate"] == "Mythic"
+    ]
+    chromatic_legendary_brawlers = [
+        k
+        for k, v in brawlers.items()
+        if v["rarity"] == "Chromatic" and v["droprate"] == "Legendary"
+    ]
+
+    chromatic_brawlers = (
+        chromatic_epic_brawlers
+        + chromatic_mythic_brawlers
+        + chromatic_legendary_brawlers
+    )
+
+    droprates = {
+        "pp": 82.1,
+        "trophy": 0.0,
+        "rare": 3.7,
+        "sr": 2.3,
+        "epic": 1.1,
+        "mythic": 10.5,
+        "legen": 0.3,
+    }
+
+    rarities = {
+        "trophy": trophy_road_brawlers,
+        "rare": rare_brawlers,
+        "sr": super_rare_brawlers,
+        "epic": epic_brawlers + chromatic_epic_brawlers,
+        "mythic": mythic_brawlers + chromatic_mythic_brawlers,
+        "legen": legendary_brawlers + chromatic_legendary_brawlers,
+    }
+
     brawler_categories = {
-        "⚪ Trophy Road": [
-            k for k, v in brawlers.items() if v["rarity"] == "Trophy Road"
-        ][:4],
-        "\u200e": [
-            k for k, v in brawlers.items() if v["rarity"] == "Trophy Road"
-        ][4:8],
-        "\u200e\u200e": [
-            k for k, v in brawlers.items() if v["rarity"] == "Trophy Road"
-        ][8:],
-        "🟢 Rare": [k for k, v in brawlers.items() if v["rarity"] == "Rare"],
-        "🔵 Super Rare": [
-            k for k, v in brawlers.items() if v["rarity"] == "Super Rare"
-        ],
-        "🟣 Epic": [k for k, v in brawlers.items() if v["rarity"] == "Epic"][
-            :5
-        ],
-        "\u200e\u200e\u200e": [
-            k for k, v in brawlers.items() if v["rarity"] == "Epic"
-        ][5:],
-        "🔴 Mythic": [
-            k for k, v in brawlers.items() if v["rarity"] == "Mythic"
-        ][:4],
-        "\u200e\u200e\u200e\u200e": [
-            k for k, v in brawlers.items() if v["rarity"] == "Mythic"
-        ][4:],
-        "🟡 Legendary": [
-            k for k, v in brawlers.items() if v["rarity"] == "Legendary"
-        ],
-        "🟠 Chromatic": [
-            k for k, v in brawlers.items() if v["rarity"] == "Chromatic"
-        ][:5],
-        "\u200e\u200e\u200e\u200e\u200e": [
-            k for k, v in brawlers.items() if v["rarity"] == "Chromatic"
-        ][5:],
+        "⚪ Trophy Road": trophy_road_brawlers[:4],
+        "\u200e": trophy_road_brawlers[4:8],
+        "\u200e\u200e": trophy_road_brawlers[8:],
+        "🟢 Rare": rare_brawlers,
+        "🔵 Super Rare": super_rare_brawlers,
+        "🟣 Epic": epic_brawlers[:5],
+        "\u200e\u200e\u200e": epic_brawlers[5:],
+        "🔴 Mythic": mythic_brawlers[:4],
+        "\u200e\u200e\u200e\u200e": mythic_brawlers[4:],
+        "🟡 Legendary": legendary_brawlers,
+        "🟠 Chromatic": chromatic_brawlers[:5],
+        "\u200e\u200e\u200e\u200e\u200e": chromatic_brawlers[5:],
+    }
+
+    rarity_emoji = {
+        "Trophy Road": "🤍",
+        "Rare": "💚",
+        "Super Rare": "💙",
+        "Epic": "💜",
+        "Mythic": "❤",
+        "Legendary": "💛",
+        "Chromatic": "🧡",
     }
 
     icon_url = "https://papier.dis.tf/static/brawlbox/pins/{}.png"

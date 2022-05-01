@@ -1,7 +1,66 @@
 from core.config import Config as config
+from core.constants.brawlers import BrawlersConstants as brawlers_constants
 
 
 class VariousConstants:
+
+    # box
+
+    box_thumbnail = "https://papier.dis.tf/static/brawlbox/boxes/box.png"
+    bigbox_thumbnail = "https://papier.dis.tf/static/brawlbox/boxes/bigbox.png"
+    megabox_thumbnail = (
+        "https://papier.dis.tf/static/brawlbox/boxes/megabox.png"
+    )
+
+    # drops
+
+    drops_field_info = [
+        ("Power Points", "<:pp:563001978079150102>", "pp"),
+        ("Rare", "<:rb:625392826062077971>", "rare"),
+        ("Super Rare", "<:sr:625392826188038154>", "sr"),
+        (
+            "Epic + "
+            + " ".join(
+                [
+                    brawlers_constants.emoji[x]
+                    for x in brawlers_constants.chromatic_epic_brawlers
+                ][:3]
+            )
+            + "\n"
+            + "".join(
+                [
+                    brawlers_constants.emoji[x]
+                    for x in brawlers_constants.chromatic_epic_brawlers
+                ][3:]
+            ),
+            "<:eb:625392825793511451>",
+            "epic",
+        ),
+        (
+            "Mythic + "
+            + " ".join(
+                [
+                    brawlers_constants.emoji[x]
+                    for x in brawlers_constants.chromatic_mythic_brawlers
+                ]
+            ),
+            "<:mb:625392825915408384>",
+            "mythic",
+        ),
+        (
+            "Legendary + "
+            + " ".join(
+                [
+                    brawlers_constants.emoji[x]
+                    for x in brawlers_constants.chromatic_legendary_brawlers
+                ]
+            ),
+            "<:lb:625392826053820430>",
+            "legen",
+        ),
+        ("Star Power", "<:st:625392825940443193>", "star"),
+        ("Gadget", "<:ga:689837070264303673>", "gadget"),
+    ]
 
     # invite
 
@@ -98,5 +157,6 @@ class VariousConstants:
         "7": {"powerpoints": 520, "coins": 480},
         "8": {"powerpoints": 860, "coins": 800},
         "9": {"powerpoints": 1410, "coins": 1250},
-        "10": {},
+        "10": {"powerpoints": 2300, "coins": 1875},
+        "11": {"powerpoints": 3740, "coins": 2800},
     }

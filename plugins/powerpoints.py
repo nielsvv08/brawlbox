@@ -60,7 +60,7 @@ def get_status(application, profile, brawler_name):
 
     brawler = profile["brawlers"][brawler_name]
 
-    if brawler["powerpoints"] == 1410:
+    if brawler["powerpoints"] == 3740:
         return f"{emoji} — **Maxed**"
 
     current_pp = brawler["powerpoints"] - sum(

@@ -24,6 +24,21 @@
     },
     {
         "type": 1,
+        "name": "box",
+        "description": "Open a brawl box."
+    },
+    {
+        "type": 1,
+        "name": "bigbox",
+        "description": "Open a big box."
+    },
+    {
+        "type": 1,
+        "name": "megabox",
+        "description": "Open a mega box."
+    },
+    {
+        "type": 1,
         "name": "brawler",
         "description": "View the stats of a brawler.",
         "options": [
@@ -74,6 +89,18 @@
         "type": 1,
         "name": "counter",
         "description": "View the amount of boxes that someone opened.",
+        "options": [
+            {
+                "type": 6,
+                "name": "user",
+                "description": "The user to look up."
+            }
+        ]
+    },
+    {
+        "type": 1,
+        "name": "drops",
+        "description": "View a list of drop rates.",
         "options": [
             {
                 "type": 6,
@@ -198,7 +225,7 @@
     {
         "type": 1,
         "name": "shop",
-        "description": "Purchase magnificent skins and special boxes."
+        "description": "Purchase special boxes and magnificent skins."
     },
     {
         "type": 1,
@@ -211,6 +238,11 @@
                 "description": "The user to look up."
             }
         ]
+    },
+    {
+        "type": 1,
+        "name": "trophyroad",
+        "description": "View what the trophy road rewards are."
     },
     {
         "type": 1,
@@ -234,20 +266,5 @@
         "type": 1,
         "name": "vote",
         "description": "View the top.gg vote link."
-    },
-    {
-        "type": 1,
-        "name": "roborumble",
-        "description": "This command is replaced by /battle now."
-    },
-    {
-        "type": 1,
-        "name": "biggame",
-        "description": "This command is replaced by /battle now."
-    },
-    {
-        "type": 1,
-        "name": "supercityrampage",
-        "description": "This command is replaced by /battle now."
     }
 ]
