@@ -106,7 +106,11 @@ async def box_timeout(application, interaction):
 
 @discourtesy.component("box_confirm")
 async def box_component(application, interaction):
+    author = interaction["message"]["author"]
     user = interaction["member"]["user"]
+
+    if user["id"] != author["id"]:
+        return
 
     profile, db = await application.mongo.get_profile(user["id"])
 
@@ -149,7 +153,11 @@ async def box_component(application, interaction):
 
 @discourtesy.component("bigbox_confirm")
 async def bigbox_component(application, interaction):
+    author = interaction["message"]["author"]
     user = interaction["member"]["user"]
+
+    if user["id"] != author["id"]:
+        return
 
     profile, db = await application.mongo.get_profile(user["id"])
 
@@ -193,7 +201,11 @@ async def bigbox_component(application, interaction):
 
 @discourtesy.component("megabox_confirm")
 async def megabox_component(application, interaction):
+    author = interaction["message"]["author"]
     user = interaction["member"]["user"]
+
+    if user["id"] != author["id"]:
+        return
 
     profile, db = await application.mongo.get_profile(user["id"])
 
