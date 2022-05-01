@@ -542,4 +542,4 @@ class BrawlersConstants:
         "https://papier.dis.tf/static/brawlbox/pins/skins/{}/{}.png"
     )
 
-    powerpoint_costs = [0, 20, 30, 50, 80, 130, 210, 340, 550, 0, 0]
+    powerpoint_costs = [0, 20, 30, 50, 80, 130, 210, 340, 550, 890, 1440, 0]

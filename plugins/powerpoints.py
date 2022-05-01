@@ -66,6 +66,10 @@ def get_status(application, profile, brawler_name):
     current_pp = brawler["powerpoints"] - sum(
         constants.brawlers.powerpoint_costs[: brawler["level"]]
     )
+
+    if current_pp < 0:  # legacy: level 10 but only 1410 pps
+        current_pp = 0
+
     required_pp = constants.brawlers.powerpoint_costs[brawler["level"]]
 
     if current_pp >= required_pp:
