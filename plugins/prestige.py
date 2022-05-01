@@ -11,7 +11,7 @@ def can_prestige(profile):
     for brawler in constants.brawlers.brawlers:
         try:
             if (
-                profile["brawlers"][brawler]["level"] != 10
+                profile["brawlers"][brawler]["level"] != 11
                 or len(profile["brawlers"][brawler]["starpowers"]) != 2
                 or len(profile["brawlers"][brawler]["gadgets"])
                 != (
