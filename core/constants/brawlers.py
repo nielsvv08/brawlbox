@@ -494,12 +494,12 @@ class BrawlersConstants:
     )
 
     droprates = {
-        "pp": 82.1,
+        "pp": 92.1,
         "trophy": 0.0,
         "rare": 3.7,
         "sr": 2.3,
         "epic": 1.1,
-        "mythic": 10.5,
+        "mythic": 0.5,
         "legen": 0.3,
     }
 
