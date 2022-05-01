@@ -53,7 +53,7 @@ async def bigbox_command(application, interaction):
     embed = discourtesy.utils.embed(
         {
             "color": config.colour,
-            "title": f"{emoji.big_box} Brawl Box",
+            "title": f"{emoji.big_box} Big Box",
             "description": "Click the check mark button below to open a box!",
         }
     )
@@ -165,6 +165,20 @@ async def bigbox_component(application, interaction):
         await application.mongo.insert_profile(user["id"])
         profile, db = await application.mongo.get_profile(user["id"])
 
+    if profile["bigboxes"] < 1:
+        embed = discourtesy.utils.embed(
+            {
+                "title": f"{emoji.big_box} Big Box",
+                "color": config.colour,
+                "description": "You don't have any big boxes to open.",
+            }
+        )
+
+        embed.update(constants.buttons.confirm_stop)
+        return embed
+
+    profile["bigboxes"] -= 1
+
     coins = random.generate_coins(4)
     profile["coins"] += coins
 
@@ -212,6 +226,20 @@ async def megabox_component(application, interaction):
     if not profile:
         await application.mongo.insert_profile(user["id"])
         profile, db = await application.mongo.get_profile(user["id"])
+
+    if profile["megaboxes"] < 1:
+        embed = discourtesy.utils.embed(
+            {
+                "title": f"{emoji.mega_box} Mega Box",
+                "color": config.colour,
+                "description": "You don't have any mega boxes to open.",
+            }
+        )
+
+        embed.update(constants.buttons.confirm_stop)
+        return embed
+
+    profile["megaboxes"] -= 1
 
     coins = random.generate_coins(8)
     profile["coins"] += coins
