@@ -143,6 +143,8 @@ async def box_component(application, interaction):
 
     application.box_cooldown.append(user["id"])
 
+    profile["boxcounter"] += 1
+
     coins = random.generate_coins(1)
     profile["coins"] += coins
 
@@ -206,6 +208,7 @@ async def bigbox_component(application, interaction):
         return embed
 
     profile["bigboxes"] -= 1
+    profile["bigcounter"] += 1
 
     coins = random.generate_coins(4)
     profile["coins"] += coins
@@ -270,6 +273,7 @@ async def megabox_component(application, interaction):
         return embed
 
     profile["megaboxes"] -= 1
+    profile["megacounter"] += 1
 
     coins = random.generate_coins(8)
     profile["coins"] += coins
