@@ -530,8 +530,8 @@ class BrawlersConstants:
         "🔴 Mythic": mythic_brawlers[:4],
         "\u200e\u200e\u200e\u200e": mythic_brawlers[4:],
         "🟡 Legendary": legendary_brawlers,
-        "🟠 Chromatic": chromatic_brawlers[:5],
-        "\u200e\u200e\u200e\u200e\u200e": chromatic_brawlers[5:],
+        "🟠 Chromatic": chromatic_brawlers[:6],
+        "\u200e\u200e\u200e\u200e\u200e": chromatic_brawlers[6:],
     }
 
     rarity_emoji = {

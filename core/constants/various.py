@@ -24,14 +24,14 @@ class VariousConstants:
                 [
                     brawlers_constants.emoji[x]
                     for x in brawlers_constants.chromatic_epic_brawlers
-                ][:3]
+                ][:4]
             )
             + "\n"
             + "".join(
                 [
                     brawlers_constants.emoji[x]
                     for x in brawlers_constants.chromatic_epic_brawlers
-                ][3:]
+                ][4:]
             ),
             "<:eb:625392825793511451>",
             "epic",
