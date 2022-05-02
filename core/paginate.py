@@ -69,6 +69,7 @@ class Paginate:
             previous_component = Component(
                 name=f"{self.command_name}_{i}_{self.id}_previous",
                 coroutine=self.display_previous_embed,
+                callback_type=7,
                 timeout=0,
             )
 
@@ -77,6 +78,7 @@ class Paginate:
             next_component = Component(
                 name=f"{self.command_name}_{i}_{self.id}_next",
                 coroutine=self.display_next_embed,
+                callback_type=7,
                 timeout=0,
             )
 
