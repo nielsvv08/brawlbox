@@ -349,17 +349,24 @@ class BrawlersConstants:
         },
         "Fang": {
             "rarity": "Chromatic",
-            "droprate": "Mythic",
+            "droprate": "Epic",
             "emoji": "<:F:923487339597148160>",
             "gadgets": ["Corn-Fu", "Roundhouse Kick"],
             "starpowers": ["Fresh Kicks", "Divine Soles"],
         },
         "Eve": {
             "rarity": "Chromatic",
-            "droprate": "Legendary",
+            "droprate": "Mythic",
             "emoji": "<:E:950762267522269224>",
             "gadgets": ["Gotta Go!"],
             "starpowers": ["Unnatural Order", "Happy Surprise"],
+        },
+        "Janet": {
+            "rarity": "Chromatic",
+            "droprate": "Legendary",
+            "emoji": "<:J:970789140922769438>",
+            "gadgets": ["Drop The Bass"],
+            "starpowers": ["Stage View", "Vocal Warm Up"],
         },
     }
 
