@@ -14,6 +14,21 @@ class ButtonsConstants:
             }
         ],
     }
+    box_another_confirm = {
+        "components": [
+            {
+                "type": 1,
+                "components": [
+                    {
+                        "type": 2,
+                        "label": "OPEN ANOTHER",
+                        "style": 3,
+                        "custom_id": "box_confirm",
+                    },
+                ],
+            }
+        ],
+    }
     bigbox_confirm = {
         "components": [
             {
@@ -39,6 +54,23 @@ class ButtonsConstants:
                         "emoji": {"name": "✔️"},
                         "style": 3,
                         "custom_id": "megabox_confirm",
+                    },
+                ],
+            }
+        ],
+    }
+
+    box_another_grey = {
+        "components": [
+            {
+                "type": 1,
+                "components": [
+                    {
+                        "type": 2,
+                        "label": "OPEN ANOTHER",
+                        "style": 2,
+                        "disabled": True,
+                        "custom_id": "box_another_grey",
                     },
                 ],
             }
