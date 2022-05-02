@@ -1,6 +1,6 @@
 # Brawl Box
 
-This is the repository for version 2.0.0-candidate of Brawl Box — the loot box simulator for Brawl Stars.
+This is the repository for version 2.1.0 of Brawl Box — the loot box simulator for Brawl Stars.
 
 The bot is being rewritten to support Discord's latest features regarding interactions, like [slash commands][discord-slash-commands] and [message components][discord-message-components].
 
