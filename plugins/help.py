@@ -13,9 +13,7 @@ field_1 = (
 
 field_2 = (
     "Discord: https://discord.gg/bXQaeFM\n"
-    "GitHub: https://github.com/nielsvv08/brawlbox\n"
-    "Patreon: https://patreon.com/brawlbox\n\n"
-    "Commands: **https://papier.dis.tf/brawlbox/commands**"
+    "GitHub: https://github.com/nielsvv08/brawlbox"
 )
 
 
