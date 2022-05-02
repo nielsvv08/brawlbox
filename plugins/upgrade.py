@@ -59,7 +59,7 @@ async def upgrade_command(application, interaction):
 
     highest_level, required_coins = check_upgrade(profile, brawler_name)
 
-    if highest_level in (current_level, -1):
+    if highest_level <= current_level:
         return f"You cannot upgrade {brawler_name} at the moment!"
 
     set_query = {f"brawlers.{brawler_name}.level": highest_level}

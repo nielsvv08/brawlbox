@@ -153,7 +153,10 @@ def get_random_box_item(profile):
                 current_pp = profile["brawlers"][brawler]["powerpoints"]
 
                 if current_pp + power_points > 3740:
-                    new_pp = 3740 - profile["brawlers"][brawler]["powerpoints"]
+                    power_points = (
+                        3740 - profile["brawlers"][brawler]["powerpoints"]
+                    )
+                    new_pp = 3740
                 else:
                     new_pp = current_pp + power_points
 
