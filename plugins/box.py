@@ -21,9 +21,6 @@ async def box_timeout(application, interaction, first=False):
 
     await asyncio.sleep(10)
 
-    if interaction["member"]["user"]["id"] in application.box_cooldown:
-        application.box_cooldown.remove(interaction["member"]["user"]["id"])
-
     await application.http.edit_original_interaction_response(
         interaction["token"],
         constants.buttons.confirm_stop,
@@ -43,12 +40,15 @@ async def box_command(application, interaction):
     user = interaction["member"]["user"]
 
     if user["id"] in application.box_cooldown:
-        return (
-            "The cooldown window hasn't expired yet.\n"
-            "You can't open two boxes at the same time."
-        )
+        if application.box_cooldown[user["id"]] + 13 < time.time():
+            del application.box_cooldown[user["id"]]
+        else:
+            return (
+                "The cooldown window hasn't expired yet.\n"
+                "You can't open two boxes at the same time."
+            )
 
-    application.box_cooldown.append(user["id"])
+    application.box_cooldown.update({user["id"]: time.time()})
 
     embed = discourtesy.utils.embed(
         {
@@ -70,13 +70,16 @@ async def bigbox_command(application, interaction):
     user = interaction["member"]["user"]
 
     if user["id"] in application.box_cooldown:
-        return (
-            "The 5 second cooldown window hasn't expired yet.\n"
-            "You (or a server moderator) should set a slowmode for this "
-            "channel, in order to prevent it."
-        )
+        if application.box_cooldown[user["id"]] + 13 < time.time():
+            del application.box_cooldown[user["id"]]
+        else:
+            return (
+                "The 10 second cooldown window hasn't expired yet.\n"
+                "You (or a server moderator) should set a slowmode for this "
+                "channel, in order to prevent it."
+            )
 
-    application.box_cooldown.append(user["id"])
+    application.box_cooldown.update({user["id"]: time.time()})
 
     embed = discourtesy.utils.embed(
         {
@@ -98,13 +101,16 @@ async def megabox_command(application, interaction):
     user = interaction["member"]["user"]
 
     if user["id"] in application.box_cooldown:
-        return (
-            "The 5 second cooldown window hasn't expired yet.\n"
-            "You (or a server moderator) should set a slowmode for this "
-            "channel, in order to prevent it."
-        )
+        if application.box_cooldown[user["id"]] + 13 < time.time():
+            del application.box_cooldown[user["id"]]
+        else:
+            return (
+                "The 10 second cooldown window hasn't expired yet.\n"
+                "You (or a server moderator) should set a slowmode for this "
+                "channel, in order to prevent it."
+            )
 
-    application.box_cooldown.append(user["id"])
+    application.box_cooldown.update({user["id"]: time.time()})
 
     embed = discourtesy.utils.embed(
         {
@@ -141,7 +147,7 @@ async def box_component(application, interaction):
         await application.mongo.insert_profile(user["id"])
         profile, db = await application.mongo.get_profile(user["id"])
 
-    application.box_cooldown.append(user["id"])
+    application.box_cooldown.update({user["id"]: time.time()})
 
     asyncio.create_task(remove_buttons(application, interaction))
     asyncio.create_task(box_timeout(application, interaction))
