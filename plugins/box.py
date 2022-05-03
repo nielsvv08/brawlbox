@@ -131,10 +131,12 @@ async def megabox_command(application, interaction):
 async def box_component(application, interaction):
     try:
         author_id = interaction["message"]["interaction"]["user"]["id"]
+        first_time = True
     except KeyError:
         author_id = interaction["message"]["embeds"][0]["author"][
             "icon_url"  # very hacky but whatever
         ].split("/")[4]
+        first_time = False
 
     user = interaction["member"]["user"]
 
@@ -146,6 +148,10 @@ async def box_component(application, interaction):
     if not profile:
         await application.mongo.insert_profile(user["id"])
         profile, db = await application.mongo.get_profile(user["id"])
+
+    if not first_time and user["id"] in application.box_cooldown:
+        if application.box_cooldown[user["id"]] + 3 > time.time():
+            return  # double clicking
 
     application.box_cooldown.update({user["id"]: time.time()})
 
