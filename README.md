@@ -1,12 +1,12 @@
 # Brawl Box
 
-This is the repository for version 2.1.0 of Brawl Box — the loot box simulator for Brawl Stars.
+This repository contains the source code for Brawl Box — the loot box simulator for Brawl Stars.
 
-The bot is being rewritten to support Discord's latest features regarding interactions, like [slash commands][discord-slash-commands] and [message components][discord-message-components].
+The bot is designed with Discord's latest features in mind, like [slash commands][discord-slash-commands] and [message components][discord-message-components].
 
 ## Tech Stack
 
-Brawl Box is written in Python. The bot makes use of the [Discourtesy][discourtesy] framework to handle interactions, which utilises a minimal [Starlette][starlette] server internally. The different types of data are being stored on one or more [MongoDB][mongodb] clusters.
+Brawl Box is written in Python. The bot benefits from the custom-designed [Discourtesy][discourtesy] framework to handle interactions, which utilises a minimal [Starlette][starlette] web server internally. The various data storage happens on an external database, by using one or more [MongoDB][mongodb] clusters.
 
 ## Environment Setup
 
@@ -25,7 +25,7 @@ git clone git@github.com:nielsvv08/brawlbox.git
 pip install poetry
 ```
 
-Then, move to the correct directory to create a virtual environment and install the dependencies by running these commands.
+Then, move to the correct directory in order to create a virtual environment and install the dependencies by running these two commands.
 
 ```sh
 cd brawlbox
@@ -44,12 +44,12 @@ The bot can be configured by a few environment variables. Rename the `.env.examp
 
 ### Optional
 
-- `colour`: the main colour theme used throughout the bot as an integer.
-- `top_gg_token`: the authentication key used to interact with the top.gg API.
+- `colour`: the main colour theme throughout the bot as an integer.
+- `top_gg_token`: the authentication key to interact with the top.gg API.
 
 ## Command Registry
 
-In order for commands to show up in the selection menu, they should be registred first. This is accomplished by sending a `PUT` request to `https://discord.com/api/v8/applications/{application_id}/commands` containing the command objects as JSON data. The specific configuration for Brawl Box can be found in the [`commands.json`][commands-file] file.
+In order for commands to show up in the selection menu, they should be registred first. This is accomplished by sending a `PUT` request with the command objects as JSON data to the `https://discord.com/api/v8/applications/{application_id}/commands` endpoint. The specific configuration for Brawl Box can be found in the [`commands.json`][commands.json] file.
 
 ## Startup
 
@@ -61,12 +61,12 @@ poetry run uvicorn app:app
 
 ## Contributing
 
-There is a `#development` channel in the support server at [https://discord.gg/bXQaeFM][discord-support-server] dedicated to communication about the rewrite process.
+There is a `#development` channel in the support server at [https://discord.gg/bXQaeFM][discord-support-server] dedicated to communication about the development process.
 
 This project is licensed under the terms of the [AGPL-3.0][agpl-3.0-license] license.
 
 [agpl-3.0-license]: <https://github.com/nielsvv08/brawlbox/blob/main/LICENSE>
-[commands-file]: <https://github.com/nielsvv08/brawlbox/blob/main/commands.json>
+[commands.json]: <https://github.com/nielsvv08/brawlbox/blob/main/commands.json>
 [discord-developer-portal]: <https://discord.com/developers/applications>
 [discord-message-components]: <https://discord.com/developers/docs/interactions/message-components>
 [discord-slash-commands]: <https://discord.com/developers/docs/interactions/application-commands>
