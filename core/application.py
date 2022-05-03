@@ -1,4 +1,5 @@
 import asyncio
+import copy
 import time
 import sys
 
@@ -36,8 +37,15 @@ class Application(discourtesy.Application):
 
 async def clean_box_cooldown(application):
     while True:
-        for user_id, timestamp in application.box_cooldown.values():
+        box_cooldown_copy = copy.deepcopy(application.box_cooldown)
+
+        counter = 0
+
+        for user_id, timestamp in box_cooldown_copy.items():
             if timestamp + 60 < time.time():
                 del application.box_cooldown[user_id]
+                counter += 1
+
+        logger.info(f"removed {counter} afk users from box_cooldown")
 
         await asyncio.sleep(600)
