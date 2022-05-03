@@ -23,7 +23,7 @@ class Application(discourtesy.Application):
 
         self.box_cooldown = dict()
 
-        self.version = "2.1.2"
+        self.version = "2.1.3"
 
         self.production = sys.platform == "linux"
 
