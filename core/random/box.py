@@ -299,3 +299,5 @@ def get_random_box_item(profile):
 
         else:
             out -= int(droprates[rarity] * 100)
+
+    return profile, ""

@@ -121,7 +121,7 @@ async def megabox_command(application, interaction):
     return embed
 
 
-@discourtesy.component("box_confirm", callback_type=4)
+@discourtesy.component("box_confirm", callback_type=4, timeout=13)
 async def box_component(application, interaction):
     try:
         author_id = interaction["message"]["interaction"]["user"]["id"]
@@ -142,6 +142,9 @@ async def box_component(application, interaction):
         profile, db = await application.mongo.get_profile(user["id"])
 
     application.box_cooldown.append(user["id"])
+
+    asyncio.create_task(remove_buttons(application, interaction))
+    asyncio.create_task(box_timeout(application, interaction))
 
     profile["boxcounter"] += 1
 
@@ -175,13 +178,10 @@ async def box_component(application, interaction):
 
     await mongo.update_profile(user["id"], db, profile)
 
-    asyncio.create_task(remove_buttons(application, interaction))
-    asyncio.create_task(box_timeout(application, interaction))
-
     return embed
 
 
-@discourtesy.component("bigbox_confirm", callback_type=4)
+@discourtesy.component("bigbox_confirm", callback_type=4, timeout=10)
 async def bigbox_component(application, interaction):
     author = interaction["message"]["interaction"]["user"]
     user = interaction["member"]["user"]
@@ -246,7 +246,7 @@ async def bigbox_component(application, interaction):
     return embed
 
 
-@discourtesy.component("megabox_confirm", callback_type=4)
+@discourtesy.component("megabox_confirm", callback_type=4, timeout=10)
 async def megabox_component(application, interaction):
     author = interaction["message"]["interaction"]["user"]
     user = interaction["member"]["user"]
