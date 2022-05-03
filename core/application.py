@@ -37,7 +37,7 @@ class Application(discourtesy.Application):
 async def clean_box_cooldown(application):
     while True:
         for user_id, timestamp in application.box_cooldown.values():
-            if timestamp + 10 < time.time():
+            if timestamp + 60 < time.time():
                 del application.box_cooldown[user_id]
 
         await asyncio.sleep(600)
