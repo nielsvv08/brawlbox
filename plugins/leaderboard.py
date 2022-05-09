@@ -20,8 +20,8 @@ async def leaderboard_command(application, interaction):
 
     if len(response) == 1000:
         return (
-            "This command is currently disabled for servers with more than "
-            "1,000 members."
+            "This command is not available in servers with more than 1,000 "
+            "members."
         )
 
     member_ids = [int(member["user"]["id"]) for member in response]
