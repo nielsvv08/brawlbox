@@ -123,7 +123,7 @@ def get_random_box_item(profile):
                 " (Trophy Road)"
             )
 
-            return (profile, message)
+            return profile, message
 
     out = random.randint(0, 10000)
 
@@ -162,10 +162,11 @@ def get_random_box_item(profile):
 
                 profile["brawlers"][brawler]["powerpoints"] = new_pp
 
-                return (
-                    profile,
-                    f"{power_points} <:pp:563001978079150102> for {brawler}",
+                message = (
+                    f"{power_points} <:pp:563001978079150102> for {brawler}"
                 )
+
+                return profile, message
 
             elif rarity == "gadget":
                 # gadget
@@ -211,10 +212,12 @@ def get_random_box_item(profile):
 
                 profile["brawlers"][brawler]["gadgets"] = new_gadgets
 
-                return (
-                    profile,
-                    f"**{brawler}'s Gadget**: {real_gadget} <:ga:689837070264303673>",
+                message = (
+                    f"**{brawler}'s Gadget**: {real_gadget} "
+                    "<:ga:689837070264303673>"
                 )
+
+                return profile, message
 
             elif rarity == "star":
                 # star power
@@ -254,10 +257,12 @@ def get_random_box_item(profile):
 
                 profile["brawlers"][brawler]["starpowers"] = new_starpowers
 
-                return (
-                    profile,
-                    f"**{brawler}'s Star Power**: {real_starpower} <:st:563001977877954590>",
+                message = (
+                    f"**{brawler}'s Star Power**: {real_starpower} "
+                    "<:st:563001977877954590>"
                 )
+
+                return profile, message
 
             # no pp, gadget or sp ... new brawler unlock!
 
@@ -292,10 +297,12 @@ def get_random_box_item(profile):
 
                 profile["brawlers"][brawler] = new_brawler
 
-                return (
-                    profile,
-                    f"{emoji} {rarity_emoji} **{brawler}** {rarity_emoji} {emoji}",
+                message = (
+                    f"{emoji} {rarity_emoji} **{brawler}** {rarity_emoji} "
+                    f"{emoji}"
                 )
+
+                return profile, message
 
         else:
             out -= int(droprates[rarity] * 100)

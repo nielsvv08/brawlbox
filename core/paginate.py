@@ -32,7 +32,8 @@ class Paginate:
                                     "emoji": {"name": "⬅"},
                                     "style": 1,
                                     "custom_id": (
-                                        f"{self.command_name}_{i}_{self.id}_previous"
+                                        f"{self.command_name}_{i}_{self.id}"
+                                        "_previous"
                                     ),
                                 },
                                 {
@@ -40,7 +41,8 @@ class Paginate:
                                     "emoji": {"name": "➡"},
                                     "style": 1,
                                     "custom_id": (
-                                        f"{self.command_name}_{i}_{self.id}_next"
+                                        f"{self.command_name}_{i}_{self.id}"
+                                        "_next"
                                     ),
                                 },
                             ],

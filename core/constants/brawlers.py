@@ -435,8 +435,8 @@ class BrawlersConstants:
         "Boom Box Brock": "<:bob:597722576936108062>",  # comeback
         "Wizard Barley": "<:wb:597722510028439573>",  # 100 servers
         "Bunny Penny": "<:bp:597723137521745930>",  # 1k servers
-        "Brawl-O-Ween Rosa": "<:br:771763988593508353>",  # 50k servers & Brawl-O-Ween 2020
-        "Logmas Spike": "<:L:923487356777037884>",  # 100k servers & Brawlidays 2021
+        "Brawl-O-Ween Rosa": "<:br:771763988593508353>",  # 50k & B-O-W 2020
+        "Logmas Spike": "<:L:923487356777037884>",  # 100k & Brawlidays 2021
         "Summer Jessie": "<:sj:597722931338149898>",  # 1k members
         "Tanuki Jessie": "<:T:826771874196357142>",  # 10k members
         #

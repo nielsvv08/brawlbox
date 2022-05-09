@@ -132,7 +132,9 @@ async def general_box_component(application, interaction, tries):
                     {
                         "title": f"{emoji.mega_box} Mega Box",
                         "color": config.colour,
-                        "description": "You don't have any mega boxes to open.",
+                        "description": (
+                            "You don't have any mega boxes to open."
+                        ),
                     }
                 )
 
