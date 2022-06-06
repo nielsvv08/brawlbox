@@ -2,50 +2,45 @@
     {
         "type": 1,
         "name": "badges",
-        "description": "View which badges are obtainable."
+        "description": "View a list of profile badges."
     },
     {
         "type": 1,
         "name": "battle",
-        "description": "Battle it out for some sweet rewards.",
+        "description": "Battle it out for sweet rewards!",
         "options": [
             {
                 "type": 3,
                 "name": "brawler",
-                "description": "The name of the brawler",
+                "description": "The name of the brawler.",
                 "required": false
             }
         ]
     },
     {
         "type": 1,
-        "name": "beep",
-        "description": "is this thing on?"
-    },
-    {
-        "type": 1,
         "name": "box",
-        "description": "Open a brawl box."
+        "description": "Start a regular box opening thread."
     },
     {
         "type": 1,
         "name": "bigbox",
-        "description": "Open a big box."
+        "description": "Start a big box opening thread."
     },
     {
         "type": 1,
         "name": "megabox",
-        "description": "Open a mega box."
+        "description": "Start a mega box opening thread."
     },
     {
         "type": 1,
         "name": "brawler",
-        "description": "View the stats of a brawler.",
+        "description": "View a single brawler and their statistics.",
         "options": [
             {
                 "type": 3,
                 "name": "brawler",
-                "description": "The name of the brawler",
+                "description": "The name of the brawler.",
                 "required": true
             }
         ]
@@ -53,7 +48,7 @@
     {
         "type": 1,
         "name": "brawlers",
-        "description": "View a list of locked and unlocked brawlers.",
+        "description": "View a complete list of brawlers.",
         "options": [
             {
                 "type": 6,
@@ -76,19 +71,19 @@
             {
                 "type": 4,
                 "name": "amount",
-                "description": "The amount of the item to purchase."
+                "description": "The amount of the item to purchase. This only applies to shop items 1-4."
             }
         ]
     },
     {
         "type": 1,
         "name": "claim",
-        "description": "Claim a voting reward."
+        "description": "Claim a reward for voting on top.gg!"
     },
     {
         "type": 1,
         "name": "counter",
-        "description": "View the amount of boxes that someone opened.",
+        "description": "View the amount of opened boxes.",
         "options": [
             {
                 "type": 6,
@@ -100,7 +95,7 @@
     {
         "type": 1,
         "name": "drops",
-        "description": "View a list of drop rates.",
+        "description": "View the drop rates of the different rarities.",
         "options": [
             {
                 "type": 6,
@@ -112,7 +107,7 @@
     {
         "type": 1,
         "name": "eval",
-        "description": "Evaluate code in a virtual environment",
+        "description": "Evaluate code in a virtual environment. (restricted)",
         "options": [
             {
                 "type": 3,
@@ -130,7 +125,7 @@
     {
         "type": 1,
         "name": "invite",
-        "description": "View an invite link for the bot or the support server."
+        "description": "Invite the bot to another server or join the support server."
     },
     {
         "type": 1,
@@ -165,7 +160,7 @@
     {
         "type": 1,
         "name": "levels",
-        "description": "View a list of the brawler's levels.",
+        "description": "View a list of brawler levels.",
         "options": [
             {
                 "type": 6,
@@ -177,7 +172,7 @@
     {
         "type": 1,
         "name": "powerpoints",
-        "description": "View a list of the brawler's power points.",
+        "description": "View a list of the brawler power points.",
         "options": [
             {
                 "type": 6,
@@ -194,7 +189,7 @@
     {
         "type": 1,
         "name": "profile",
-        "description": "View the profile statistics.",
+        "description": "View various profile statistics.",
         "options": [
             {
                 "type": 6,
@@ -206,12 +201,12 @@
     {
         "type": 1,
         "name": "select",
-        "description": "Select a skin.",
+        "description": "Choose a specific brawler skin to display.",
         "options": [
             {
                 "type": 3,
                 "name": "brawler",
-                "description": "The name of the brawler",
+                "description": "The name of the brawler.",
                 "required": false
             },
             {
@@ -225,7 +220,7 @@
     {
         "type": 1,
         "name": "shop",
-        "description": "Purchase special boxes and magnificent skins."
+        "description": "Purchase special boxes and magnificent skins!"
     },
     {
         "type": 1,
@@ -242,12 +237,12 @@
     {
         "type": 1,
         "name": "trophyroad",
-        "description": "View what the trophy road rewards are."
+        "description": "Take a closer look at the trophy road rewards."
     },
     {
         "type": 1,
         "name": "upgrade",
-        "description": "Upgrade a brawler.",
+        "description": "Upgrade a brawler to a higher level.",
         "options": [
             {
                 "type": 3,
@@ -259,12 +254,7 @@
     },
     {
         "type": 1,
-        "name": "version",
-        "description": "are we there yet?"
-    },
-    {
-        "type": 1,
         "name": "vote",
-        "description": "View the top.gg vote link."
+        "description": "Vote for the bot on top.gg!"
     }
 ]
