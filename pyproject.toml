@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "brawlbox"
-version = "2.2.0"
+version = "2.3.0"
 description = "Brawl Box — the loot box simulator for Brawl Stars."
 authors = ["Robin Mahieu <robin.mahieu@protonmail.com>"]
 
