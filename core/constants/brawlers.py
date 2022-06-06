@@ -200,6 +200,12 @@ class BrawlersConstants:
             "gadgets": ["Watchtower", "Radio Check"],
             "starpowers": ["Foot Patrol", "X-Factor"],
         },
+        "Bonnie": {
+            "rarity": "Epic",
+            "emoji": "<:B:983273470278373417>",
+            "gadgets": ["Sugar Rush"],
+            "starpowers": ["Black Powder", "Wisdom Tooth"],
+        },,
         "Mortis": {
             "rarity": "Mythic",
             "emoji": "<:M:776006754424979456>",
