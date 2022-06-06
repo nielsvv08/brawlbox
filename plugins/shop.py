@@ -42,16 +42,25 @@ fields = [
     )
 ]
 
+new_fields = [
+    f"{i}. {_emoji} **{skin}** — {price} gems {emoji.gems}"
+    for i, (skin, (_, _emoji, price)) in enumerate(
+        constants.brawlers.new_shop_gem_skins.items(), start=26
+    )
+]
+
+
 second_embed["embeds"][0]["fields"] = [
     {"name": "Gem Skins", "value": "\n".join(fields[:11]), "inline": True},
     {"name": "\u200e", "value": "\n".join(fields[11:]), "inline": True},
+    {"name": "✨ NEW!", "value": "\n".join(new_fields), "inline": False},
 ]
 
 third_embed = deepcopy(base_embed)
 fields = [
     f"{i}. {_emoji} **{skin}** — {r(price)} star points {emoji.star_points}"
     for i, (skin, (_, _emoji, price)) in enumerate(
-        constants.brawlers.shop_star_skins.items(), start=26
+        constants.brawlers.shop_star_skins.items(), start=31
     )
 ]
 

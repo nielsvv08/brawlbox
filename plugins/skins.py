@@ -27,7 +27,10 @@ second_embed["embeds"][0]["description"] = "\n".join(
 third_embed["embeds"][0]["title"] += "Gems"
 third_embed["embeds"][0]["description"] = "\n".join(
     f"{emoji} {name}"
-    for name, (_, emoji, __) in constants.brawlers.shop_gem_skins.items()
+    for name, (_, emoji, __) in dict(
+        **constants.brawlers.shop_gem_skins,
+        **constants.brawlers.new_shop_gem_skins,
+    ).items()
 )
 
 fourth_embed["embeds"][0]["title"] += "Star Points"

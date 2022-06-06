@@ -403,27 +403,35 @@ class BrawlersConstants:
     emoji = {k: v["emoji"] for k, v in brawlers.items()}
 
     shop_gem_skins = {
-        "Bandita Shelly": ("Shelly", "<:bs:597723269923078156>", 30),
-        "Rockstar Colt": ("Colt", "<:rockc:597722687074467863>", 30),
-        "Panda Nita": ("Nita", "<:pn:597723031577690153>", 30),
-        "White Crow": ("Crow", "<:whc:597722720301613056>", 80),
-        "Sakura Spike": ("Spike", "<:ss:597723306845667328>", 80),
-        "El Rudo Primo": ("El Primo", "<:rup:597722827172347924>", 80),
-        "Viking Bull": ("Bull", "<:vb:597722616148656128>", 80),
-        "Road Rage Carl": ("Carl", "<:roc:597722660129996800>", 80),
-        "Hog Rider Carl": ("Carl", "<:hrc:609102124009259049>", 80),
-        "Maple Barley": ("Barley", "<:mb:597722509894221845>", 80),
-        "Sally Leon": ("Leon", "<:sl:647789849666912286>", 80),
-        "Leonard Carl": ("Carl", "<:le:647789849612648469>", 80),
-        "Spicy Mike": ("Dynamike", "<:spd:597722785862647850>", 150),
-        "Popcorn Rico": ("Rico", "<:pr:597723232983973899>", 150),
-        "Shiba Nita": ("Nita", "<:sn:597723031305060387>", 150),
-        "Bakesale Barley": ("Barley", "<:bb:597722509747683339>", 150),
-        "Robo Spike": ("Spike", "<:rs:597723306786947104>", 150),
-        "El Brown": ("El Primo", "<:el:647789850191331338>", 150),
-        "Robo Dynamike": ("Dynamike", "<:rd:597722785782956032>", 300),
-        "Mecha Bo": ("Bo", "<:mbo:597722541951549441>", 300),
-        "Mecha Crow": ("Crow", "<:mc:597722720209207296>", 300),
+        "Bandita Shelly": ("Shelly", "<:bs:597723269923078156>", 29),
+        "Rockstar Colt": ("Colt", "<:rockc:597722687074467863>", 29),
+        "Panda Nita": ("Nita", "<:pn:597723031577690153>", 29),
+        "White Crow": ("Crow", "<:whc:597722720301613056>", 79),
+        "Sakura Spike": ("Spike", "<:ss:597723306845667328>", 79),
+        "El Rudo Primo": ("El Primo", "<:rup:597722827172347924>", 79),
+        "Viking Bull": ("Bull", "<:vb:597722616148656128>", 79),
+        "Road Rage Carl": ("Carl", "<:roc:597722660129996800>", 79),
+        "Hog Rider Carl": ("Carl", "<:hrc:609102124009259049>", 79),
+        "Maple Barley": ("Barley", "<:mb:597722509894221845>", 79),
+        "Sally Leon": ("Leon", "<:sl:647789849666912286>", 79),
+        "Leonard Carl": ("Carl", "<:le:647789849612648469>", 79),
+        "Spicy Mike": ("Dynamike", "<:spd:597722785862647850>", 149),
+        "Popcorn Rico": ("Rico", "<:pr:597723232983973899>", 149),
+        "Shiba Nita": ("Nita", "<:sn:597723031305060387>", 149),
+        "Bakesale Barley": ("Barley", "<:bb:597722509747683339>", 149),
+        "Robo Spike": ("Spike", "<:rs:597723306786947104>", 149),
+        "El Brown": ("El Primo", "<:el:647789850191331338>", 149),
+        "Robo Dynamike": ("Dynamike", "<:rd:597722785782956032>", 299),
+        "Mecha Bo": ("Bo", "<:mbo:597722541951549441>", 299),
+        "Mecha Crow": ("Crow", "<:mc:597722720209207296>", 299),
+    }
+
+    new_shop_gem_skins = {
+        "Ivy Belle": ("Belle", "<:I:983298278194028594>", 79),
+        "Ruby Prince Sprout": ("Sprout", "<:R:983298272493989898>", 79),
+        "Tempest Tara": ("Tara", "<:T:983298276319170580>", 149),
+        "Mantis Rosa": ("Rosa", "<:M:983298273924227084>", 149),
+        "Monster Truck Meg": ("Meg", "<:M:983298270145150976>", 149),
     }
 
     shop_star_skins = {
@@ -462,6 +470,9 @@ class BrawlersConstants:
     }
 
     for skin, properties in shop_gem_skins.items():
+        emoji[skin] = properties[1]
+
+    for skin, properties in new_shop_gem_skins.items():
         emoji[skin] = properties[1]
 
     for skin, properties in shop_star_skins.items():

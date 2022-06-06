@@ -57,10 +57,34 @@ async def buy_commands(application, interaction):
             set_query = {
                 f"brawlers.{brawler_name}": profile["brawlers"][brawler_name]
             }
-        case num if 26 <= num <= 31:
+        case num if 26 <= num <= 30:
+            skin, (brawler_name, emoji, price) = tuple(
+                constants.brawlers.new_shop_gem_skins.items()
+            )[number - 26]
+
+            if profile["brawlers"].get(brawler_name) is None:
+                profile["brawlers"][brawler_name] = {
+                    "unlocked": False,
+                    "level": 1,
+                    "powerpoints": 0,
+                }
+
+            if profile["brawlers"][brawler_name].get("skins") is None:
+                profile["brawlers"][brawler_name]["skins"] = []
+
+            if skin in profile["brawlers"][brawler_name]["skins"]:
+                return f"You already purchased the {emoji} {skin} skin. ❌"
+
+            profile["brawlers"][brawler_name]["skins"].append(skin)
+
+            inc_query = {"gems": -price}
+            set_query = {
+                f"brawlers.{brawler_name}": profile["brawlers"][brawler_name]
+            }
+        case num if 31 <= num <= 36:
             skin, (brawler_name, emoji, price) = tuple(
                 constants.brawlers.shop_star_skins.items()
-            )[number - 26]
+            )[number - 31]
 
             if profile["brawlers"].get(brawler_name) is None:
                 profile["brawlers"][brawler_name] = {
