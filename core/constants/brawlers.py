@@ -143,7 +143,7 @@ class BrawlersConstants:
         "Jacky": {
             "rarity": "Super Rare",
             "emoji": "<:J:776007474867339296>",
-            "gadgets": ["Pneumatic Booster"],
+            "gadgets": ["Pneumatic Booster", "Rebuild"],
             "starpowers": ["Counter Crush", "Hardy Hard Hat"],
         },
         "Piper": {
@@ -205,7 +205,7 @@ class BrawlersConstants:
             "emoji": "<:B:983273470278373417>",
             "gadgets": ["Sugar Rush"],
             "starpowers": ["Black Powder", "Wisdom Tooth"],
-        },,
+        },
         "Mortis": {
             "rarity": "Mythic",
             "emoji": "<:M:776006754424979456>",
@@ -281,13 +281,13 @@ class BrawlersConstants:
         "Amber": {
             "rarity": "Legendary",
             "emoji": "<:A:776006753745502208>",
-            "gadgets": ["Fire Starters"],
+            "gadgets": ["Fire Starters", "Dancing Flames"],
             "starpowers": ["Wild Flames", "Scorchin' Siphon"],
         },
         "Meg": {
             "rarity": "Legendary",
             "emoji": "<:M:892446763103973398>",
-            "gadgets": ["Jolting Volts"],
+            "gadgets": ["Jolting Volts", "Toolbox"],
             "starpowers": ["Force Field", "Self Destruction"],
         },
         "Gale": {
@@ -301,7 +301,7 @@ class BrawlersConstants:
             "rarity": "Chromatic",
             "droprate": "Epic",
             "emoji": "<:S:776007475261603841>",
-            "gadgets": ["Power Surge"],
+            "gadgets": ["Power Surge", "Power Shield"],
             "starpowers": ["To The Max!", "Serve Ice Cold"],
         },
         "Colette": {
@@ -364,14 +364,14 @@ class BrawlersConstants:
             "rarity": "Chromatic",
             "droprate": "Mythic",
             "emoji": "<:E:950762267522269224>",
-            "gadgets": ["Gotta Go!"],
+            "gadgets": ["Gotta Go!", "Motherly Love"],
             "starpowers": ["Unnatural Order", "Happy Surprise"],
         },
         "Janet": {
             "rarity": "Chromatic",
             "droprate": "Legendary",
             "emoji": "<:J:970789140922769438>",
-            "gadgets": ["Drop The Bass"],
+            "gadgets": ["Drop The Bass", "Backstage Pass"],
             "starpowers": ["Stage View", "Vocal Warm Up"],
         },
     }
