@@ -203,7 +203,7 @@ class BrawlersConstants:
         "Bonnie": {
             "rarity": "Epic",
             "emoji": "<:B:983273470278373417>",
-            "gadgets": ["Sugar Rush"],
+            "gadgets": ["Sugar Rush", "Crash Test"],
             "starpowers": ["Black Powder", "Wisdom Tooth"],
         },
         "Mortis": {
