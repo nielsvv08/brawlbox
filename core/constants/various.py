@@ -110,7 +110,7 @@ class VariousConstants:
         "progress. It is going to remove every brawler — including their "
         "level, power points, star powers and gadgets.\n\n"
         "You are still going to keep all of the skins, coins, gems, star "
-        "ponts, big boxes and mega boxes that you collected.\n\n"
+        "points, big boxes and mega boxes that you collected.\n\n"
     )
 
     prestige_explanation = prestige_base_message + (
