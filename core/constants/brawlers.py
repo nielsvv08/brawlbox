@@ -24,55 +24,55 @@ class BrawlersConstants:
             "rarity": "Trophy Road",
             "emoji": "<:S:776007475156484146>",
             "gadgets": ["Fast Forward", "Clay Pigeons"],
-            "starpowers": ["Band-Aid", "Shell Shock"],
+            "starpowers": ["Shell Shock", "Band-Aid"],
         },
         "Colt": {
             "rarity": "Trophy Road",
             "emoji": "<:C:776006754051162113>",
             "gadgets": ["Speedloader", "Silver Bullet"],
-            "starpowers": ["Magnum Special", "Slick Boots"],
+            "starpowers": ["Slick Boots", "Magnum Special"],
         },
         "Bull": {
             "rarity": "Trophy Road",
             "emoji": "<:B:776006754265333780>",
             "gadgets": ["T-Bone Injector", "Stomper"],
-            "starpowers": ["Tough Guy", "Berserker"],
+            "starpowers": ["Berserker", "Tough Guy"],
         },
         "Jessie": {
             "rarity": "Trophy Road",
             "emoji": "<:J:776006754034122763>",
             "gadgets": ["Spark Plug", "Recoil Spring"],
-            "starpowers": ["Shocky", "Energize"],
+            "starpowers": ["Energize", "Shocky"],
         },
         "Nita": {
             "rarity": "Trophy Road",
             "emoji": "<:N:776007475156746261>",
             "gadgets": ["Bear Paws", "Faux Fur"],
-            "starpowers": ["Hyper Bear", "Bear With Me"],
+            "starpowers": ["Bear With Me", "Hyper Bear"],
         },
         "Dynamike": {
             "rarity": "Trophy Road",
             "emoji": "<:D:776006754495627314>",
             "gadgets": ["Fidget Spinner", "Satchel Charge"],
-            "starpowers": ["Demolition", "Dyna-Jump"],
+            "starpowers": ["Dyna-Jump", "Demolition"],
         },
         "Brock": {
             "rarity": "Trophy Road",
             "emoji": "<:B:776006754433105931>",
             "gadgets": ["Rocket Laces", "Rocket Fuel"],
-            "starpowers": ["Rocket No. Four", "Incendiary"],
+            "starpowers": ["Incendiary", "Rocket No. Four"],
         },
         "Bo": {
             "rarity": "Trophy Road",
             "emoji": "<:B:776006754488156220>",
             "gadgets": ["Super Totem", "Tripwire"],
-            "starpowers": ["Snare a Bear", "Circling Eagle"],
+            "starpowers": ["Circling Eagle", "Snare a Bear"],
         },
         "Tick": {
             "rarity": "Trophy Road",
             "emoji": "<:T:776007475433963521>",
             "gadgets": ["Backup Mine", "Last Hurrah"],
-            "starpowers": ["Automa-Tick Reload", "Well Oiled"],
+            "starpowers": ["Well Oiled", "Automa-Tick Reload"],
         },
         "8-Bit": {
             "rarity": "Trophy Road",
@@ -96,43 +96,43 @@ class BrawlersConstants:
             "rarity": "Rare",
             "emoji": "<:B:776006754488025118>",
             "gadgets": ["Sticky Syrup Mixer", "Herbal Tonic"],
-            "starpowers": ["Extra Noxious", "Medical Use"],
+            "starpowers": ["Medical Use", "Extra Noxious"],
         },
         "El Primo": {
             "rarity": "Rare",
             "emoji": "<:E:776006754139111434>",
             "gadgets": ["Suplex Supplement", "Asteroid Belt"],
-            "starpowers": ["Meteor Rush", "El Fuego"],
+            "starpowers": ["El Fuego", "Meteor Rush"],
         },
         "Poco": {
             "rarity": "Rare",
             "emoji": "<:P:776007474792235038>",
             "gadgets": ["Tuning Fork", "Protective Tunes"],
-            "starpowers": ["Screeching Solo", "Da Capo!"],
+            "starpowers": ["Da Capo!", "Screeching Solo"],
         },
         "Rosa": {
             "rarity": "Rare",
             "emoji": "<:R:776007475052150805>",
             "gadgets": ["Grow Light", "Unfriendly Bushes"],
-            "starpowers": ["Thorny Gloves", "Plant Life"],
+            "starpowers": ["Plant Life", "Thorny Gloves"],
         },
         "Rico": {
             "rarity": "Super Rare",
             "emoji": "<:R:776007475072860180>",
             "gadgets": ["Multiball Launcher", "Bouncy Castle"],
-            "starpowers": ["Robo Retreat", "Super Bouncy"],
+            "starpowers": ["Super Bouncy", "Robo Retreat"],
         },
         "Darryl": {
             "rarity": "Super Rare",
             "emoji": "<:D:776006754114732052>",
             "gadgets": ["Recoiling Rotator", "Tar Barrel"],
-            "starpowers": ["Rolling Reload", "Steel Hoops"],
+            "starpowers": ["Steel Hoops", "Rolling Reload"],
         },
         "Penny": {
             "rarity": "Super Rare",
             "emoji": "<:P:776007474838765589>",
             "gadgets": ["Pocket Detonator", "Captain's Compass"],
-            "starpowers": ["Balls of Fire", "Last Blast"],
+            "starpowers": ["Last Blast", "Balls of Fire"],
         },
         "Carl": {
             "rarity": "Super Rare",
@@ -150,19 +150,19 @@ class BrawlersConstants:
             "rarity": "Epic",
             "emoji": "<:P:776007475102220329>",
             "gadgets": ["Auto Aimer", "Homemade Recipe"],
-            "starpowers": ["Snappy Sniping", "Ambush"],
+            "starpowers": ["Ambush", "Snappy Sniping"],
         },
         "Pam": {
             "rarity": "Epic",
             "emoji": "<:P:776007475329499147>",
             "gadgets": ["Pulse Modulator", "Scrapsucker"],
-            "starpowers": ["Mama's Squeeze", "Mama's Hug"],
+            "starpowers": ["Mama's Hug", "Mama's Squeeze"],
         },
         "Frank": {
             "rarity": "Epic",
             "emoji": "<:F:776006753753628682>",
             "gadgets": ["Active Noise Cancelling", "Irresistible Attraction"],
-            "starpowers": ["Sponge", "Power Grab"],
+            "starpowers": ["Power Grab", "Sponge"],
         },
         "Bibi": {
             "rarity": "Epic",
@@ -210,19 +210,19 @@ class BrawlersConstants:
             "rarity": "Mythic",
             "emoji": "<:M:776006754424979456>",
             "gadgets": ["Combo Spinner", "Survival Shovel"],
-            "starpowers": ["Coiled Snake", "Creepy Harvest"],
+            "starpowers": ["Creepy Harvest", "Coiled Snake"],
         },
         "Tara": {
             "rarity": "Mythic",
             "emoji": "<:T:776007475328581642>",
             "gadgets": ["Psychic Enhancer", "Support From Beyond"],
-            "starpowers": ["Healing Shade", "Black Portal"],
+            "starpowers": ["Black Portal", "Healing Shade"],
         },
         "Gene": {
             "rarity": "Mythic",
             "emoji": "<:G:776006754810068992>",
             "gadgets": ["Lamp Blowout", "Vengeful Spirits"],
-            "starpowers": ["Spirit Slap", "Magic Puffs"],
+            "starpowers": ["Magic Puffs", "Spirit Slap"],
         },
         "Max": {
             "rarity": "Mythic",
@@ -258,19 +258,19 @@ class BrawlersConstants:
             "rarity": "Legendary",
             "emoji": "<:S:776007474016288778>",
             "gadgets": ["Popping Pincushion", "Life Plant"],
-            "starpowers": ["Curveball", "Fertilize"],
+            "starpowers": ["Fertilize", "Curveball"],
         },
         "Crow": {
             "rarity": "Legendary",
             "emoji": "<:C:776006753501708329>",
             "gadgets": ["Defense Booster", "Slowing Toxin"],
-            "starpowers": ["Carrion Crow", "Extra Toxic"],
+            "starpowers": ["Extra Toxic", "Carrion Crow"],
         },
         "Leon": {
             "rarity": "Legendary",
             "emoji": "<:L:776007475077578752>",
             "gadgets": ["Clone Projector", "Lollipop Drop"],
-            "starpowers": ["Invisiheal", "Smoke Trails"],
+            "starpowers": ["Smoke Trails", "Invisiheal"],
         },
         "Sandy": {
             "rarity": "Legendary",
@@ -394,7 +394,7 @@ class BrawlersConstants:
         "Honey Coat": "Honeycomb",  # Bea
         "Snare a Bear": "Snare A Bear",  # Bo
         "Rocket No. Four": "Rocket No. 4",  # Brock
-        "Incediary": "More Rockets!",  # Brock
+        "Incendiary": "More Rockets!",  # Brock
         "Run n' Gun": "Run N Gun",  # Max
         "Self Destruction": "Heavy Metal",  # Meg
         "Tin Can": "Revolving Door",  # Mr P
