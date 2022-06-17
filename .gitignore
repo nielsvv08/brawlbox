@@ -1,5 +1,6 @@
 __pycache__/
 .interactions/
 .vscode/
+scripts/
 
 .env
