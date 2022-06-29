@@ -384,6 +384,8 @@ class BrawlersConstants:
 
     gadgets_overwrite = {
         "Active Noise Cancelling": "Active Noise Canceling",  # Frank
+        "Pocket Detonator": "Salty Barrel",  # Penny
+        "Captain's Compass": "Trusty Spyglass",  # Penny
         "Sleep Simulator": "Sleep Stimulator",  # Sandy
         "Backup Mine": "Mine Mania",  # Tick
     }
@@ -398,6 +400,8 @@ class BrawlersConstants:
         "Run n' Gun": "Run N Gun",  # Max
         "Self Destruction": "Heavy Metal",  # Meg
         "Tin Can": "Revolving Door",  # Mr P
+        "Last Blast": "Heavy Coffers",  # Penny
+        "Balls of Fire": "Master Blaster",  # Penny
     }
 
     emoji = {k: v["emoji"] for k, v in brawlers.items()}
