@@ -16,7 +16,7 @@ class BattleConstants:
         "We are the champions!",
         "epic victory royale",
         "Obviously.",
-        "Never in doubt!"
+        "Never in doubt!",
         # PiesPlazma
         "GGWP :D",
         "let's goooo",
