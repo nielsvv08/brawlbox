@@ -362,17 +362,24 @@ class BrawlersConstants:
         },
         "Eve": {
             "rarity": "Chromatic",
-            "droprate": "Mythic",
+            "droprate": "Epic",
             "emoji": "<:E:950762267522269224>",
             "gadgets": ["Gotta Go!", "Motherly Love"],
             "starpowers": ["Unnatural Order", "Happy Surprise"],
         },
         "Janet": {
             "rarity": "Chromatic",
-            "droprate": "Legendary",
+            "droprate": "Mythic",
             "emoji": "<:J:970789140922769438>",
             "gadgets": ["Drop The Bass", "Backstage Pass"],
             "starpowers": ["Stage View", "Vocal Warm Up"],
+        },
+        "Otis": {
+            "rarity": "Chromatic",
+            "droprate": "Legendary",
+            "emoji": "<:O:992111448274763778>",
+            "gadgets": ["Dormant Star", "Phat Splatter"],
+            "starpowers": ["Stencil Glue", "Ink Refills"],
         },
     }
 
