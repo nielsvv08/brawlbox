@@ -1,3 +1,5 @@
+import datetime
+
 from motor.motor_asyncio import AsyncIOMotorClient
 
 from core.config import Config as config
@@ -33,6 +35,13 @@ class MongoClient:
                 return profile, db
 
         return None, None
+
+    async def get_shop(self, user_id):
+        query = {"id": int(user_id)}
+
+        db = self.databases[0]
+
+        return await db.data.shop.find_one(query)
 
     async def insert_guild(self, guild_id, guild_name):
         struct = {
@@ -73,6 +82,20 @@ class MongoClient:
         db = self.databases[0]
 
         await db.data.players.insert_one(struct)
+
+    async def insert_shop(self, user_id, set_query):
+        struct = {"id": int(user_id)}
+        struct.update(set_query)
+
+        today = datetime.datetime.utcnow()
+
+        struct["expireAt"] = datetime.datetime(
+            today.year, today.month, today.day, 23, 59, 59
+        )
+
+        db = self.databases[0]
+
+        await db.data.shop.insert_one(struct)
 
     async def delete_shop(self, user_id):
         query = {"id": int(user_id)}

@@ -5,6 +5,7 @@ import discourtesy
 from core.config import Config as config
 from core.constants import Constants as constants
 from core.paginate import Paginate
+from core.random import choose_skins
 from core.utils import r
 
 emoji = constants.emoji
@@ -20,6 +21,11 @@ base_embed = discourtesy.utils.embed(
 
 first_embed = deepcopy(base_embed)
 
+first_embed["embeds"][0]["description"] += (
+    "\n\nYou can buy multiple boxes at the same time by filling out the "
+    "optional `amount` argument when executing the slash command."
+)
+
 fields = (
     f"1. {emoji.big_box} **big box** = 2,000 coins {emoji.coins}",
     f"2. {emoji.big_box} **big box** = 30 gems {emoji.gems}",
@@ -32,47 +38,96 @@ first_embed["embeds"][0]["fields"] = [
     {"name": "Special Boxes", "value": "\n".join(fields)},
 ]
 
-
-second_embed = deepcopy(base_embed)
-
-fields = [
-    f"{i}. {_emoji} **{skin}** — {price} gems {emoji.gems}"
+second_embed_new_fields = [
+    f"{i}. {_emoji} **{skin}** = {price} gems {emoji.gems}"
     for i, (skin, (_, _emoji, price)) in enumerate(
-        constants.brawlers.shop_gem_skins.items(), start=5
+        constants.brawlers.new_shop_gem_skins.items(), start=5
     )
 ]
-
-new_fields = [
-    f"{i}. {_emoji} **{skin}** — {price} gems {emoji.gems}"
-    for i, (skin, (_, _emoji, price)) in enumerate(
-        constants.brawlers.new_shop_gem_skins.items(), start=26
-    )
-]
-
-
-second_embed["embeds"][0]["fields"] = [
-    {"name": "Gem Skins", "value": "\n".join(fields[:11]), "inline": True},
-    {"name": "\u200e", "value": "\n".join(fields[11:]), "inline": True},
-    {"name": "✨ NEW!", "value": "\n".join(new_fields), "inline": False},
-]
-
-third_embed = deepcopy(base_embed)
-fields = [
-    f"{i}. {_emoji} **{skin}** — {r(price)} star points {emoji.star_points}"
-    for i, (skin, (_, _emoji, price)) in enumerate(
-        constants.brawlers.shop_star_skins.items(), start=31
-    )
-]
-
-third_embed["embeds"][0]["fields"] = [
-    {"name": "Star Skins", "value": "\n".join(fields), "inline": True},
-]
-
-embeds = (first_embed, second_embed, third_embed)
 
 
 @discourtesy.command("shop")
 async def shop_command(application, interaction):
+    user = interaction["member"]["user"]
+
+    profile, _ = await application.mongo.get_profile(user["id"])
+
+    if profile is None:
+        complete_username = user["username"] + "#" + user["discriminator"]
+        return constants.errors.profile_not_found.format(complete_username)
+
+    shop = await application.mongo.get_shop(user["id"])
+
+    if shop:
+        available_skins = shop["skins"]
+    else:
+        unlocked_skins = set()
+
+        for brawler in constants.brawlers.brawlers:
+            skins = profile["brawlers"].get(brawler, {}).get("skins", [])
+
+            for skin in skins:
+                unlocked_skins.add(skin)
+
+        locked_gem_skins = list(
+            set(constants.brawlers.shop_gem_skins.keys()).difference(
+                unlocked_skins
+            )
+        )
+
+        locked_star_skins = list(
+            set(constants.brawlers.shop_star_skins.keys()).difference(
+                unlocked_skins
+            )
+        )
+
+        available_gem_skins = choose_skins(locked_gem_skins, 3)
+        available_star_skins = choose_skins(locked_star_skins, 1)
+
+        available_skins = available_gem_skins + available_star_skins
+
+        set_query = {"skins": available_skins}
+        await application.mongo.insert_shop(user["id"], set_query)
+
+    daily_skins = list()
+
+    for i, skin in enumerate(
+        available_skins, start=5 + len(constants.brawlers.new_shop_gem_skins)
+    ):
+        try:
+            _, _emoji, price = constants.brawlers.shop_gem_skins[skin]
+
+            daily_skins.append(
+                f"{i}. {_emoji} **{skin}** = {price} gems {emoji.gems}"
+            )
+        except KeyError:
+            _, _emoji, price = constants.brawlers.shop_star_skins[skin]
+
+            daily_skins.append(
+                f"{i}. {_emoji} **{skin}** = {r(price)} star points "
+                f"{emoji.star_points}"
+            )
+
+    if daily_skins:
+        daily_skins.append("\nThe daily deals reset at midnight UTC.")
+    else:
+        daily_skins.append("You already purchased every skin available.")
+
+    second_embed = deepcopy(base_embed)
+
+    second_embed["embeds"][0]["fields"] = [
+        {
+            "name": "✨ NEW!",
+            "value": "\n".join(second_embed_new_fields),
+        },
+        {
+            "name": "Daily Deals",
+            "value": "\n".join(daily_skins),
+        },
+    ]
+
+    embeds = (first_embed, second_embed)
+
     paginate = Paginate("shop", application, interaction, *embeds)
     await paginate.start()
 

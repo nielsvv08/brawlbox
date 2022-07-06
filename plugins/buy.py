@@ -33,80 +33,65 @@ async def buy_commands(application, interaction):
             inc_query = {"coins": -3000 * amount, "megaboxes": amount}
         case 4:
             inc_query = {"gems": -45 * amount, "megaboxes": amount}
-        case num if 5 <= num <= 25:
-            skin, (brawler_name, emoji, price) = tuple(
-                constants.brawlers.shop_gem_skins.items()
-            )[number - 5]
-
-            if profile["brawlers"].get(brawler_name) is None:
-                profile["brawlers"][brawler_name] = {
-                    "unlocked": False,
-                    "level": 1,
-                    "powerpoints": 0,
-                }
-
-            if profile["brawlers"][brawler_name].get("skins") is None:
-                profile["brawlers"][brawler_name]["skins"] = []
-
-            if skin in profile["brawlers"][brawler_name]["skins"]:
-                return f"You already purchased the {emoji} {skin} skin. ❌"
-
-            profile["brawlers"][brawler_name]["skins"].append(skin)
-
-            inc_query = {"gems": -price}
-            set_query = {
-                f"brawlers.{brawler_name}": profile["brawlers"][brawler_name]
-            }
-        case num if 26 <= num <= 30:
+        case num if num <= 9:
             skin, (brawler_name, emoji, price) = tuple(
                 constants.brawlers.new_shop_gem_skins.items()
-            )[number - 26]
-
-            if profile["brawlers"].get(brawler_name) is None:
-                profile["brawlers"][brawler_name] = {
-                    "unlocked": False,
-                    "level": 1,
-                    "powerpoints": 0,
-                }
-
-            if profile["brawlers"][brawler_name].get("skins") is None:
-                profile["brawlers"][brawler_name]["skins"] = []
-
-            if skin in profile["brawlers"][brawler_name]["skins"]:
-                return f"You already purchased the {emoji} {skin} skin. ❌"
-
-            profile["brawlers"][brawler_name]["skins"].append(skin)
+            )[number - 5]
 
             inc_query = {"gems": -price}
-            set_query = {
-                f"brawlers.{brawler_name}": profile["brawlers"][brawler_name]
-            }
-        case num if 31 <= num <= 36:
-            skin, (brawler_name, emoji, price) = tuple(
-                constants.brawlers.shop_star_skins.items()
-            )[number - 31]
+        case num if num <= 13:
+            shop = await application.mongo.get_shop(user["id"])
 
-            if profile["brawlers"].get(brawler_name) is None:
-                profile["brawlers"][brawler_name] = {
-                    "unlocked": False,
-                    "level": 1,
-                    "powerpoints": 0,
-                }
+            if not shop:
+                return (
+                    "You haven't generated today's shop yet. "
+                    "Use the `/shop` command and check the second page "
+                    "to see which skins are available today."
+                )
 
-            if profile["brawlers"][brawler_name].get("skins") is None:
-                profile["brawlers"][brawler_name]["skins"] = []
+            try:
+                skin = shop["skins"][num - 10]
+            except IndexError:
+                return f"There is no item associated with the number {number}."
 
-            if skin in profile["brawlers"][brawler_name]["skins"]:
-                return f"You already purchased the {emoji} {skin} skin. ❌"
+            try:
+                (
+                    brawler_name,
+                    emoji,
+                    price,
+                ) = constants.brawlers.shop_gem_skins[skin]
 
-            profile["brawlers"][brawler_name]["skins"].append(skin)
+                inc_query = {"gems": -price}
+            except KeyError:
+                (
+                    brawler_name,
+                    emoji,
+                    price,
+                ) = constants.brawlers.shop_star_skins[skin]
 
-            inc_query = {"starpoints": -price}
-            set_query = {
-                f"brawlers.{brawler_name}": profile["brawlers"][brawler_name]
-            }
+                inc_query = {"starpoints": -price}
         case _:
             return f"There is no item associated with the number {number}."
+
+    if number > 4:
+        if profile["brawlers"].get(brawler_name) is None:
+            profile["brawlers"][brawler_name] = {
+                "unlocked": False,
+                "level": 1,
+                "powerpoints": 0,
+            }
+
+        if profile["brawlers"][brawler_name].get("skins") is None:
+            profile["brawlers"][brawler_name]["skins"] = []
+
+        if skin in profile["brawlers"][brawler_name]["skins"]:
+            return f"You already purchased the {emoji} {skin} skin. ❌"
+
+        profile["brawlers"][brawler_name]["skins"].append(skin)
+
+        set_query = {
+            f"brawlers.{brawler_name}": profile["brawlers"][brawler_name]
+        }
 
     currency = tuple(inc_query)[0]
     currency_amount = abs(tuple(inc_query.items())[0][1])
