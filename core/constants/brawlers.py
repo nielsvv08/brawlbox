@@ -130,7 +130,7 @@ class BrawlersConstants:
         },
         "Penny": {
             "rarity": "Super Rare",
-            "emoji": "<:P:776007474838765589>",
+            "emoji": "<:P:994235836004569088>",
             "gadgets": ["Pocket Detonator", "Captain's Compass"],
             "starpowers": ["Last Blast", "Balls of Fire"],
         },
