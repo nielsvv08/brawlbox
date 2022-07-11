@@ -19,20 +19,7 @@ class VariousConstants:
         ("Rare", "<:rb:625392826062077971>", "rare"),
         ("Super Rare", "<:sr:625392826188038154>", "sr"),
         (
-            "Epic + "
-            + " ".join(
-                [
-                    brawlers_constants.emoji[x]
-                    for x in brawlers_constants.chromatic_epic_brawlers
-                ][:4]
-            )
-            + "\n"
-            + "".join(
-                [
-                    brawlers_constants.emoji[x]
-                    for x in brawlers_constants.chromatic_epic_brawlers
-                ][4:]
-            ),
+            "Epic + ",
             "<:eb:625392825793511451>",
             "epic",
         ),

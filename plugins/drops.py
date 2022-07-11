@@ -3,6 +3,7 @@ import discourtesy
 from core import random
 from core.config import Config as config
 from core.constants import Constants as constants
+from core.utils import split_in_two
 
 
 @discourtesy.command("drops")
@@ -21,7 +22,30 @@ async def drops_command(application, interaction):
 
     for name, emoji, key in constants.various.drops_field_info:
         rate = droprates.get(key, 0.0)
+
         value = emoji + (" **{:0.3f}%**".format(rate) if rate else " 0.000%")
+
+        if key == "epic":
+            epic_chromatic_brawlers = split_in_two(
+                constants.brawlers.chromatic_brawlers
+            )
+
+            value = (
+                "".join(
+                    [
+                        constants.brawlers.emoji[x]
+                        for x in epic_chromatic_brawlers[0]
+                    ]
+                )
+                + "\n"
+                + "".join(
+                    [
+                        constants.brawlers.emoji[x]
+                        for x in epic_chromatic_brawlers[1]
+                    ]
+                )
+                + f"\n{value}"
+            )
 
         fields.append({"name": name, "value": value, "inline": True})
 
