@@ -82,9 +82,9 @@ async def general_box_component(application, interaction, tries):
         author_id = interaction["message"]["interaction"]["user"]["id"]
         first_time = True
     except KeyError:
-        author_id = interaction["message"]["embeds"][0]["author"][
-            "icon_url"  # very hacky but whatever
-        ].split("/")[4]
+        author_id = interaction["message"]["embeds"][0]["thumbnail"][
+            "url"  # very hacky but whatever
+        ].split("?id=")[-1]
         first_time = False
 
     user = interaction["member"]["user"]
@@ -107,7 +107,7 @@ async def general_box_component(application, interaction, tries):
             profile["boxcounter"] += 1
 
             confirm_buttons = constants.buttons.box_another_confirm
-            thumbnail = constants.various.box_thumbnail
+            thumbnail = f"{constants.various.box_thumbnail}?id={user['id']}"
         case 4:
             if profile["bigboxes"] < 1:
                 embed = discourtesy.utils.embed(
@@ -125,7 +125,7 @@ async def general_box_component(application, interaction, tries):
             profile["bigcounter"] += 1
 
             confirm_buttons = constants.buttons.bigbox_another_confirm
-            thumbnail = constants.various.bigbox_thumbnail
+            thumbnail = f"{constants.various.bigbox_thumbnail}?id={user['id']}"
         case 8:
             if profile["megaboxes"] < 1:
                 embed = discourtesy.utils.embed(
@@ -145,7 +145,9 @@ async def general_box_component(application, interaction, tries):
             profile["megacounter"] += 1
 
             confirm_buttons = constants.buttons.megabox_another_confirm
-            thumbnail = constants.various.megabox_thumbnail
+            thumbnail = (
+                f"{constants.various.megabox_thumbnail}?id={user['id']}"
+            )
 
     application.box_cooldown.update({user["id"]: time.time()})
 
@@ -208,11 +210,11 @@ async def box_component(application, interaction):
     return await general_box_component(application, interaction, 1)
 
 
-@discourtesy.component("bigbox_confirm", callback_type=4, timeout=10)
+@discourtesy.component("bigbox_confirm", callback_type=4, timeout=13)
 async def bigbox_component(application, interaction):
     return await general_box_component(application, interaction, 4)
 
 
-@discourtesy.component("megabox_confirm", callback_type=4, timeout=10)
+@discourtesy.component("megabox_confirm", callback_type=4, timeout=13)
 async def megabox_component(application, interaction):
     return await general_box_component(application, interaction, 8)
