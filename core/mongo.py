@@ -87,11 +87,14 @@ class MongoClient:
         struct = {"id": int(user_id)}
         struct.update(set_query)
 
-        today = datetime.datetime.utcnow()
-
-        struct["expireAt"] = datetime.datetime(
-            today.year, today.month, today.day, 23, 59, 59
-        )
+        struct["expireAt"] = datetime.datetime.utcnow().replace(
+            hour=0,
+            minute=0,
+            second=0,
+            tzinfo=datetime.timezone(datetime.timedelta()),
+        ) + datetime.timedelta(
+            days=1
+        )  # why is datetime such a pain argh
 
         db = self.databases[0]
 

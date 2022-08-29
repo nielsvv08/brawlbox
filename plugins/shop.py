@@ -1,3 +1,4 @@
+import datetime
 from copy import deepcopy
 
 import discourtesy
@@ -109,7 +110,21 @@ async def shop_command(application, interaction):
             )
 
     if daily_skins:
-        daily_skins.append("\nThe daily deals reset at midnight UTC.")
+        midnight = datetime.datetime.utcnow().replace(
+            hour=0,
+            minute=0,
+            second=0,
+            tzinfo=datetime.timezone(datetime.timedelta()),
+        ) + datetime.timedelta(
+            days=1
+        )  # why is datetime such a pain argh
+
+        timestamp = f"<t:{int(datetime.datetime.timestamp(midnight))}:t>"
+
+        daily_skins.append(
+            "\nThe daily deals reset at midnight UTC, which should be at "
+            f"{timestamp} local time."
+        )
     else:
         daily_skins.append("You already purchased every skin available.")
 
@@ -117,7 +132,7 @@ async def shop_command(application, interaction):
 
     second_embed["embeds"][0]["fields"] = [
         {
-            "name": "✨ NEW!",
+            "name": "✨ New Skins!",
             "value": "\n".join(second_embed_new_fields),
         },
         {
