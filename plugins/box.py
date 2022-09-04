@@ -82,8 +82,9 @@ async def general_box_component(application, interaction, tries):
         author_id = interaction["message"]["interaction"]["user"]["id"]
         first_time = True
     except KeyError:
-        author_id = interaction["message"]["embeds"][0]["thumbnail"][
-            "url"  # very hacky but whatever
+        print(interaction)
+        author_id = interaction["message"]["embeds"][0]["author"][
+            "icon_url"  # very hacky but whatever
         ].split("?id=")[-1]
         first_time = False
 
@@ -107,7 +108,7 @@ async def general_box_component(application, interaction, tries):
             profile["boxcounter"] += 1
 
             confirm_buttons = constants.buttons.box_another_confirm
-            thumbnail = f"{constants.various.box_thumbnail}?id={user['id']}"
+            thumbnail = constants.various.box_thumbnail
         case 4:
             if profile["bigboxes"] < 1:
                 embed = discourtesy.utils.embed(
@@ -125,7 +126,7 @@ async def general_box_component(application, interaction, tries):
             profile["bigcounter"] += 1
 
             confirm_buttons = constants.buttons.bigbox_another_confirm
-            thumbnail = f"{constants.various.bigbox_thumbnail}?id={user['id']}"
+            thumbnail = constants.various.bigbox_thumbnail
         case 8:
             if profile["megaboxes"] < 1:
                 embed = discourtesy.utils.embed(
@@ -145,9 +146,7 @@ async def general_box_component(application, interaction, tries):
             profile["megacounter"] += 1
 
             confirm_buttons = constants.buttons.megabox_another_confirm
-            thumbnail = (
-                f"{constants.various.megabox_thumbnail}?id={user['id']}"
-            )
+            thumbnail = constants.various.megabox_thumbnail
 
     application.box_cooldown.update({user["id"]: time.time()})
 
@@ -171,13 +170,15 @@ async def general_box_component(application, interaction, tries):
         profile, item = random.get_random_box_item(profile)
         description += f"{item}\n"
 
+    icon_url_with_id = f"{discourtesy.utils.avatar_url(user)}?id={user['id']}"
+
     embed = discourtesy.utils.embed(
         {
             "color": config.colour,
             "description": description,
             "author": {
                 "name": user["username"],
-                "icon_url": discourtesy.utils.avatar_url(user),
+                "icon_url": icon_url_with_id,
             },
             "thumbnail": {"url": thumbnail},
         }
