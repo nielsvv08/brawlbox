@@ -191,7 +191,7 @@ class BrawlersConstants:
         "Griff": {
             "rarity": "Epic",
             "emoji": "<:G:854635938582626314>",
-            "gadgets": ["Piggy Bank"],
+            "gadgets": ["Piggy Bank", "Coin Shower"],
             "starpowers": ["Keep The Change", "Business Resilience"],
         },
         "Grom": {
@@ -336,7 +336,7 @@ class BrawlersConstants:
             "rarity": "Chromatic",
             "droprate": "Epic",
             "emoji": "<:B:854635938360721408>",
-            "gadgets": ["Reserve Buoy"],
+            "gadgets": ["Reserve Buoy", "X-Ray-Shades"],
             "starpowers": ["Tougher Torpedo", "Eyes Sharp"],
         },
         "Ash": {
