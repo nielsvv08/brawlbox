@@ -9,7 +9,7 @@ from core.constants import Constants as constants
 def generate_coins(tries):
     multiplier = math.sqrt(tries)  # 1 --> 1, 4 --> 2, 8 --> ≈2.8
 
-    return normal_distribution(300 * multiplier, 24 * multiplier)
+    return normal_distribution(240 * multiplier, 24 * multiplier)
 
 
 def generate_gems(tries):
@@ -17,7 +17,7 @@ def generate_gems(tries):
 
     for _ in range(tries):
         if random.randint(1, 4) == 1:  # 25% chance
-            return normal_distribution(8 * multiplier, 2 * multiplier)
+            return normal_distribution(5 * multiplier, 2 * multiplier)
 
     return 0
 
