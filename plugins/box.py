@@ -82,7 +82,6 @@ async def general_box_component(application, interaction, tries):
         author_id = interaction["message"]["interaction"]["user"]["id"]
         first_time = True
     except KeyError:
-        print(interaction)
         author_id = interaction["message"]["embeds"][0]["author"][
             "icon_url"  # very hacky but whatever
         ].split("?id=")[-1]
