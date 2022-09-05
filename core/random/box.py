@@ -17,7 +17,7 @@ def generate_gems(tries):
 
     for _ in range(tries):
         if random.randint(1, 4) == 1:  # 25% chance
-            return normal_distribution(5 * multiplier, 2 * multiplier)
+            return normal_distribution(5 * multiplier, 1.3 * multiplier)
 
     return 0
 
