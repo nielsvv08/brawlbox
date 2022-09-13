@@ -71,6 +71,12 @@ async def brawler_command(application, interaction):
 
         skins = brawler.get("skins", [])
 
+        if (
+            brawler_name == "Shelly"
+            and int(user["id"]) in application.cache.member_ids
+        ):
+            skins.append("Star Shelly")
+
         if skins:
             if skin != brawler_name:
                 skins[skins.index(skin)] = f"**{skin}**\n"
