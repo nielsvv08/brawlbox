@@ -32,7 +32,13 @@ async def brawler_command(application, interaction):
     else:
         thumbnail = constants.brawlers.skin_icon_url.format(brawler_name, skin)
 
-    if brawler is None:
+    unlocked = (
+        profile["brawlers"]
+        .get(brawler_name, {"unlocked": False})
+        .get("unlocked", True)
+    )
+
+    if not unlocked:
         description = "Status: Locked 🔒"
     else:
         gadgets = [
