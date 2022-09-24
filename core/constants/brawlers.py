@@ -391,7 +391,7 @@ class BrawlersConstants:
             "rarity": "Chromatic",
             "droprate": "Legendary",
             "emoji": "<:S:1016081621117575190>",
-            "gadgets": ["Magnetic Field"],
+            "gadgets": ["Magnetic Field", "Pulse Repellent"],
             "starpowers": ["Hearty Recovery", "Remote Recharge"],
         },
     }
