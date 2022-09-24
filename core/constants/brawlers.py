@@ -146,6 +146,12 @@ class BrawlersConstants:
             "gadgets": ["Pneumatic Booster", "Rebuild"],
             "starpowers": ["Counter Crush", "Hardy Hard Hat"],
         },
+        "Gus": {
+            "rarity": "Super Rare",
+            "emoji": "<:G:1023246681975832667>",
+            "gadgets": ["Kooky Popper"],
+            "starpowers": ["Health Bonanza, Spirit Animal"],
+        },
         "Piper": {
             "rarity": "Epic",
             "emoji": "<:P:776007475102220329>",
