@@ -150,7 +150,7 @@ class BrawlersConstants:
             "rarity": "Super Rare",
             "emoji": "<:G:1023246681975832667>",
             "gadgets": ["Kooky Popper"],
-            "starpowers": ["Health Bonanza, Spirit Animal"],
+            "starpowers": ["Health Bonanza", "Spirit Animal"],
         },
         "Piper": {
             "rarity": "Epic",
