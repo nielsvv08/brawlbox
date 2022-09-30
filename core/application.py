@@ -1,7 +1,7 @@
 import asyncio
 import copy
-import time
 import sys
+import time
 
 import discourtesy
 from loguru import logger

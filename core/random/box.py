@@ -2,8 +2,8 @@ import copy
 import math
 import random
 
-from .normal import normal_distribution
 from core.constants import Constants as constants
+from .normal import normal_distribution
 
 
 def generate_coins(tries):
