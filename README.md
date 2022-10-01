@@ -61,12 +61,15 @@ poetry run uvicorn app:app
 
 ## Contributing
 
+Before contributing to Brawl Box, make sure to read through the [contribution guidelines][contribution-guidelines].
+
 There is a `#development` channel in the support server at [https://discord.gg/bXQaeFM][discord-support-server] dedicated to communication about the development process.
 
 This project is licensed under the terms of the [AGPL-3.0][agpl-3.0-license] license.
 
 [agpl-3.0-license]: <https://github.com/nielsvv08/brawlbox/blob/main/LICENSE>
 [commands.json]: <https://github.com/nielsvv08/brawlbox/blob/main/commands.json>
+[contribution-guidelines]: <https://github.com/nielsvv08/brawlbox/blob/main/CONTRIBUTING.md>
 [discord-developer-portal]: <https://discord.com/developers/applications>
 [discord-message-components]: <https://discord.com/developers/docs/interactions/message-components>
 [discord-slash-commands]: <https://discord.com/developers/docs/interactions/application-commands>
