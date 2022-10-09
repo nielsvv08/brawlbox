@@ -26,6 +26,12 @@ class BrawlersConstants:
             "gadgets": ["Fast Forward", "Clay Pigeons"],
             "starpowers": ["Shell Shock", "Band-Aid"],
         },
+        "Nita": {
+            "rarity": "Trophy Road",
+            "emoji": "<:N:776007475156746261>",
+            "gadgets": ["Bear Paws", "Faux Fur"],
+            "starpowers": ["Bear With Me", "Hyper Bear"],
+        },
         "Colt": {
             "rarity": "Trophy Road",
             "emoji": "<:C:776006754051162113>",
@@ -44,23 +50,17 @@ class BrawlersConstants:
             "gadgets": ["Spark Plug", "Recoil Spring"],
             "starpowers": ["Energize", "Shocky"],
         },
-        "Nita": {
+        "Brock": {
             "rarity": "Trophy Road",
-            "emoji": "<:N:776007475156746261>",
-            "gadgets": ["Bear Paws", "Faux Fur"],
-            "starpowers": ["Bear With Me", "Hyper Bear"],
+            "emoji": "<:B:776006754433105931>",
+            "gadgets": ["Rocket Laces", "Rocket Fuel"],
+            "starpowers": ["Incendiary", "Rocket No. Four"],
         },
         "Dynamike": {
             "rarity": "Trophy Road",
             "emoji": "<:D:776006754495627314>",
             "gadgets": ["Fidget Spinner", "Satchel Charge"],
             "starpowers": ["Dyna-Jump", "Demolition"],
-        },
-        "Brock": {
-            "rarity": "Trophy Road",
-            "emoji": "<:B:776006754433105931>",
-            "gadgets": ["Rocket Laces", "Rocket Fuel"],
-            "starpowers": ["Incendiary", "Rocket No. Four"],
         },
         "Bo": {
             "rarity": "Trophy Road",
