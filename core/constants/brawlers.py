@@ -382,17 +382,24 @@ class BrawlersConstants:
         },
         "Otis": {
             "rarity": "Chromatic",
-            "droprate": "Mythic",
+            "droprate": "Epic",
             "emoji": "<:O:992111448274763778>",
             "gadgets": ["Dormant Star", "Phat Splatter"],
             "starpowers": ["Stencil Glue", "Ink Refills"],
         },
         "Sam": {
             "rarity": "Chromatic",
-            "droprate": "Legendary",
+            "droprate": "Mythic",
             "emoji": "<:S:1016081621117575190>",
             "gadgets": ["Magnetic Field", "Pulse Repellent"],
             "starpowers": ["Hearty Recovery", "Remote Recharge"],
+        },
+        "Buster": {
+            "rarity": "Chromatic",
+            "droprate": "Legendary",
+            "emoji": "<:B:1039257726250930256>",
+            "gadgets": ["Utility Belt", "Slo-Mo Replay"],
+            "starpowers": ["Blockbuster", "Kevlar Vest"],
         },
     }
 
