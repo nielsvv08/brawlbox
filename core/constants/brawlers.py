@@ -398,7 +398,7 @@ class BrawlersConstants:
             "rarity": "Chromatic",
             "droprate": "Legendary",
             "emoji": "<:B:1039257726250930256>",
-            "gadgets": ["Utility Belt", "Slo-Mo Replay"],
+            "gadgets": ["Utility Belt"],
             "starpowers": ["Blockbuster", "Kevlar Vest"],
         },
     }
