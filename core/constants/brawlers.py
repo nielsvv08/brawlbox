@@ -149,7 +149,7 @@ class BrawlersConstants:
         "Gus": {
             "rarity": "Super Rare",
             "emoji": "<:G:1023246681975832667>",
-            "gadgets": ["Kooky Popper"],
+            "gadgets": ["Kooky Popper", "Soul Switcher"],
             "starpowers": ["Health Bonanza", "Spirit Animal"],
         },
         "Piper": {
