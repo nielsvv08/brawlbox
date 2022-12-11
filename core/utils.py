@@ -1,5 +1,3 @@
-from math import ceil
-
 from core.constants import Constants as constants
 
 
@@ -34,19 +32,3 @@ def get_skin(application, profile, brawler_name):
 
 def max_gadgets(brawler_name):
     return len(constants.brawlers.brawlers[brawler_name]["gadgets"])
-
-
-def split_in_three(long_list):
-    cursor = ceil(len(long_list) / 3)
-
-    return (
-        long_list[:cursor],
-        long_list[cursor : 2 * cursor],
-        long_list[2 * cursor :],
-    )
-
-
-def split_in_two(long_list):
-    cursor = ceil(len(long_list) / 2)
-
-    return long_list[:cursor], long_list[cursor:]

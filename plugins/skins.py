@@ -5,7 +5,7 @@ import discourtesy
 from core.config import Config as config
 from core.constants import Constants as constants
 from core.paginate import Paginate
-from core.utils import split_in_three, split_in_two
+from core.split import split_in_three, split_in_two
 
 
 base_embed = discourtesy.utils.embed(

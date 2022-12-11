@@ -3,7 +3,7 @@ import discourtesy
 from core import random
 from core.config import Config as config
 from core.constants import Constants as constants
-from core.utils import split_in_two
+from core.split import split_in_two
 
 
 @discourtesy.command("drops")

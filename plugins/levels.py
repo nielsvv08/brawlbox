@@ -46,7 +46,18 @@ async def levels_command(application, interaction):
                     "name": user["username"],
                     "icon_url": discourtesy.utils.avatar_url(user),
                 },
-                "fields": fields[6:],
+                "fields": fields[6:12],
+            }
+        ),
+        discourtesy.utils.embed(
+            {
+                "title": "Levels",
+                "color": config.colour,
+                "author": {
+                    "name": user["username"],
+                    "icon_url": discourtesy.utils.avatar_url(user),
+                },
+                "fields": fields[12:],
             }
         ),
     ]

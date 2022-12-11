@@ -1,3 +1,6 @@
+from core.split import split_in_two, split_in_three
+
+
 class BrawlersConstants:
     alternative_brawlers = {
         "Dyna": "Dynamike",
@@ -585,18 +588,21 @@ class BrawlersConstants:
     }
 
     brawler_categories = {
-        "⚪ Trophy Road": trophy_road_brawlers[:4],
-        "\u200e": trophy_road_brawlers[4:8],
-        "\u200e\u200e": trophy_road_brawlers[8:],
+        "⚪ Trophy Road": split_in_three(trophy_road_brawlers)[0],
+        "\u200e": split_in_three(trophy_road_brawlers)[1],
+        "\u200e" * 2: split_in_three(trophy_road_brawlers)[2],
         "🟢 Rare": rare_brawlers,
-        "🔵 Super Rare": super_rare_brawlers,
-        "🟣 Epic": epic_brawlers[:5],
-        "\u200e\u200e\u200e": epic_brawlers[5:],
-        "🔴 Mythic": mythic_brawlers[:4],
-        "\u200e\u200e\u200e\u200e": mythic_brawlers[4:],
+        "🔵 Super Rare": split_in_two(super_rare_brawlers)[0],
+        "\u200e" * 3: split_in_two(super_rare_brawlers)[1],
+        "🟣 Epic": split_in_three(epic_brawlers)[0],
+        "\u200e" * 4: split_in_three(epic_brawlers)[1],
+        "\u200e" * 5: split_in_three(epic_brawlers)[2],
+        "🔴 Mythic": split_in_two(mythic_brawlers)[0],
+        "\u200e" * 6: split_in_two(mythic_brawlers)[1],
         "🟡 Legendary": legendary_brawlers,
-        "🟠 Chromatic": chromatic_brawlers[:7],
-        "\u200e\u200e\u200e\u200e\u200e": chromatic_brawlers[7:],
+        "🟠 Chromatic": split_in_three(chromatic_brawlers)[0],
+        "\u200e" * 7: split_in_three(chromatic_brawlers)[1],
+        "\u200e" * 8: split_in_three(chromatic_brawlers)[2],
     }
 
     rarity_emoji = {
