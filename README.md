@@ -49,7 +49,7 @@ The bot can be configured by a few environment variables. Rename the `.env.examp
 
 ## Command Registry
 
-In order for commands to show up in the selection menu, they should be registred first. This is accomplished by sending a `PUT` request with the command objects as JSON data to the `https://discord.com/api/v8/applications/{application_id}/commands` endpoint. The specific configuration for Brawl Box can be found in the [`commands.json`][commands.json] file.
+In order for commands to show up in the selection menu, they should be registred first. This is accomplished by sending a `PUT` request with the command objects as JSON data to the `https://discord.com/api/v10/applications/{application_id}/commands` endpoint. The specific configuration for Brawl Box can be found in the [`commands.json`][commands.json] file.
 
 ## Startup
 
