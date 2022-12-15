@@ -19,34 +19,36 @@ class VariousConstants:
         ("Rare", "<:rb:625392826062077971>", "rare"),
         ("Super Rare", "<:sr:625392826188038154>", "sr"),
         (
-            "Epic + ",
+            "Epic (+ Old Chromatic)",
             "<:eb:625392825793511451>",
             "epic",
         ),
         (
-            "Mythic + "
+            "Mythic (+ "
             + " ".join(
                 [
                     brawlers_constants.emoji[x]
                     for x in brawlers_constants.chromatic_mythic_brawlers
                 ]
-            ),
+            )
+            + ")",
             "<:mb:625392825915408384>",
             "mythic",
         ),
         (
-            "Legendary + "
+            "Legendary (+ "
             + " ".join(
                 [
                     brawlers_constants.emoji[x]
                     for x in brawlers_constants.chromatic_legendary_brawlers
                 ]
-            ),
+            )
+            + ")",
             "<:lb:625392826053820430>",
             "legen",
         ),
-        ("Star Power", "<:st:625392825940443193>", "star"),
         ("Gadget", "<:ga:689837070264303673>", "gadget"),
+        ("Star Power", "<:st:625392825940443193>", "star"),
     ]
 
     # invite

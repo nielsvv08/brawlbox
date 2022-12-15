@@ -25,37 +25,7 @@ async def drops_command(application, interaction):
 
         value = emoji + (" **{:0.3f}%**".format(rate) if rate else " 0.000%")
 
-        if key == "epic":
-            chromatic_epic_brawlers = split_in_two(
-                constants.brawlers.chromatic_epic_brawlers
-            )
-
-            value = (
-                "".join(
-                    [
-                        constants.brawlers.emoji[x]
-                        for x in chromatic_epic_brawlers[0]
-                    ]
-                )
-                + "\n"
-                + "".join(
-                    [
-                        constants.brawlers.emoji[x]
-                        for x in chromatic_epic_brawlers[1]
-                    ]
-                )
-                + f"\n{value}"
-            )
-
         fields.append({"name": name, "value": value, "inline": True})
-
-    fields.append(
-        {
-            "name": "Gems",
-            "value": f"{constants.emoji.gems} 25%",
-            "inline": True,
-        }
-    )
 
     return discourtesy.utils.embed(
         {
