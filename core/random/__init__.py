@@ -6,6 +6,7 @@ from .battle import (
 )
 from .box import (
     generate_coins,
+    generate_starpoints,
     generate_gems,
     get_droprates,
     get_random_box_item,

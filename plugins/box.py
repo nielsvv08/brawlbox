@@ -157,10 +157,16 @@ async def general_box_component(application, interaction, tries):
     coins = random.generate_coins(tries)
     profile["coins"] += coins
 
+    starpoints = random.generate_starpoints(tries)
+    profile["starpoints"] += starpoints
+
     gems = random.generate_gems(tries)
     profile["gems"] += gems
 
     description = f"{emoji.coins} {coins}\n"
+
+    if starpoints:
+        description += f"{emoji.star_points} {starpoints}\n"
 
     if gems:
         description += f"{emoji.gems} {gems}\n"

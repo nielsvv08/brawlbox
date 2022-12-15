@@ -12,6 +12,16 @@ def generate_coins(tries):
     return normal_distribution(240 * multiplier, 24 * multiplier)
 
 
+def generate_starpoints(tries):
+    multiplier = math.sqrt(tries)  # 1 --> 1, 4 --> 2, 8 --> ≈2.8
+
+    for _ in range(tries):
+        if random.randint(1, 100) == 1:  # 1% chance
+            return normal_distribution(100 * multiplier, 3 * multiplier)
+
+    return 0
+
+
 def generate_gems(tries):
     multiplier = math.sqrt(tries)  # 1 --> 1, 4 --> 2, 8 --> ≈2.8
 
@@ -84,8 +94,7 @@ def get_droprates(profile):
 def get_random_box_item(profile):
     drops, droprates = get_droprates(profile)
 
-    profile["tr_exp"] += 1
-    profile["starpoints"] += round(0.5 + (math.sqrt(profile["tier"]) / 10), 10)
+    # profile["tr_exp"] += 1
 
     out = random.randint(0, 10000)
 
