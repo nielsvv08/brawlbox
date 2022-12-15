@@ -23,77 +23,37 @@ class BrawlersConstants:
     }
 
     brawlers = {
+        # Starting Brawler
         "Shelly": {
-            "rarity": "Trophy Road",
+            "rarity": "Starting Brawler",
             "emoji": "<:S:776007475156484146>",
             "gadgets": ["Fast Forward", "Clay Pigeons"],
             "starpowers": ["Shell Shock", "Band-Aid"],
         },
+        # Rare
         "Nita": {
-            "rarity": "Trophy Road",
+            "rarity": "Rare",
             "emoji": "<:N:776007475156746261>",
             "gadgets": ["Bear Paws", "Faux Fur"],
             "starpowers": ["Bear With Me", "Hyper Bear"],
         },
         "Colt": {
-            "rarity": "Trophy Road",
+            "rarity": "Rare",
             "emoji": "<:C:776006754051162113>",
             "gadgets": ["Speedloader", "Silver Bullet"],
             "starpowers": ["Slick Boots", "Magnum Special"],
         },
         "Bull": {
-            "rarity": "Trophy Road",
+            "rarity": "Rare",
             "emoji": "<:B:776006754265333780>",
             "gadgets": ["T-Bone Injector", "Stomper"],
             "starpowers": ["Berserker", "Tough Guy"],
         },
-        "Jessie": {
-            "rarity": "Trophy Road",
-            "emoji": "<:J:776006754034122763>",
-            "gadgets": ["Spark Plug", "Recoil Spring"],
-            "starpowers": ["Energize", "Shocky"],
-        },
         "Brock": {
-            "rarity": "Trophy Road",
+            "rarity": "Rare",
             "emoji": "<:B:776006754433105931>",
             "gadgets": ["Rocket Laces", "Rocket Fuel"],
             "starpowers": ["Incendiary", "Rocket No. Four"],
-        },
-        "Dynamike": {
-            "rarity": "Trophy Road",
-            "emoji": "<:D:776006754495627314>",
-            "gadgets": ["Fidget Spinner", "Satchel Charge"],
-            "starpowers": ["Dyna-Jump", "Demolition"],
-        },
-        "Bo": {
-            "rarity": "Trophy Road",
-            "emoji": "<:B:776006754488156220>",
-            "gadgets": ["Super Totem", "Tripwire"],
-            "starpowers": ["Circling Eagle", "Snare a Bear"],
-        },
-        "Tick": {
-            "rarity": "Trophy Road",
-            "emoji": "<:T:776007475433963521>",
-            "gadgets": ["Backup Mine", "Last Hurrah"],
-            "starpowers": ["Well Oiled", "Automa-Tick Reload"],
-        },
-        "8-Bit": {
-            "rarity": "Trophy Road",
-            "emoji": "<:8:776006752885145610>",
-            "gadgets": ["Cheat Cartridge", "Extra Credits"],
-            "starpowers": ["Boosted Booster", "Extra Life"],
-        },
-        "Emz": {
-            "rarity": "Trophy Road",
-            "emoji": "<:E:776006754479374367>",
-            "gadgets": ["Friendzoner", "Acid Spray"],
-            "starpowers": ["Bad Karma", "Hype"],
-        },
-        "Stu": {
-            "rarity": "Trophy Road",
-            "emoji": "<:S:821042120222572625>",
-            "gadgets": ["Speed Zone", "Breakthrough"],
-            "starpowers": ["Zero Drag", "Gaso-Heal"],
         },
         "Barley": {
             "rarity": "Rare",
@@ -118,6 +78,31 @@ class BrawlersConstants:
             "emoji": "<:R:776007475052150805>",
             "gadgets": ["Grow Light", "Unfriendly Bushes"],
             "starpowers": ["Plant Life", "Thorny Gloves"],
+        },
+        # Super Rare
+        "Jessie": {
+            "rarity": "Super Rare",
+            "emoji": "<:J:776006754034122763>",
+            "gadgets": ["Spark Plug", "Recoil Spring"],
+            "starpowers": ["Energize", "Shocky"],
+        },
+        "Dynamike": {
+            "rarity": "Super Rare",
+            "emoji": "<:D:776006754495627314>",
+            "gadgets": ["Fidget Spinner", "Satchel Charge"],
+            "starpowers": ["Dyna-Jump", "Demolition"],
+        },
+        "Tick": {
+            "rarity": "Super Rare",
+            "emoji": "<:T:776007475433963521>",
+            "gadgets": ["Backup Mine", "Last Hurrah"],
+            "starpowers": ["Well Oiled", "Automa-Tick Reload"],
+        },
+        "8-Bit": {
+            "rarity": "Super Rare",
+            "emoji": "<:8:776006752885145610>",
+            "gadgets": ["Cheat Cartridge", "Extra Credits"],
+            "starpowers": ["Boosted Booster", "Extra Life"],
         },
         "Rico": {
             "rarity": "Super Rare",
@@ -154,6 +139,25 @@ class BrawlersConstants:
             "emoji": "<:G:1023246681975832667>",
             "gadgets": ["Kooky Popper", "Soul Switcher"],
             "starpowers": ["Health Bonanza", "Spirit Animal"],
+        },
+        # Epic
+        "Bo": {
+            "rarity": "Epic",
+            "emoji": "<:B:776006754488156220>",
+            "gadgets": ["Super Totem", "Tripwire"],
+            "starpowers": ["Circling Eagle", "Snare a Bear"],
+        },
+        "Emz": {
+            "rarity": "Epic",
+            "emoji": "<:E:776006754479374367>",
+            "gadgets": ["Friendzoner", "Acid Spray"],
+            "starpowers": ["Bad Karma", "Hype"],
+        },
+        "Stu": {
+            "rarity": "Epic",
+            "emoji": "<:S:821042120222572625>",
+            "gadgets": ["Speed Zone", "Breakthrough"],
+            "starpowers": ["Zero Drag", "Gaso-Heal"],
         },
         "Piper": {
             "rarity": "Epic",
@@ -215,6 +219,7 @@ class BrawlersConstants:
             "gadgets": ["Sugar Rush", "Crash Test"],
             "starpowers": ["Black Powder", "Wisdom Tooth"],
         },
+        # Mythic
         "Mortis": {
             "rarity": "Mythic",
             "emoji": "<:M:776006754424979456>",
@@ -263,6 +268,7 @@ class BrawlersConstants:
             "gadgets": ["Windup", "Residue"],
             "starpowers": ["Chain Reaction", "Super Sticky"],
         },
+        # Legendary
         "Spike": {
             "rarity": "Legendary",
             "emoji": "<:S:776007474016288778>",
@@ -299,6 +305,7 @@ class BrawlersConstants:
             "gadgets": ["Jolting Volts", "Toolbox"],
             "starpowers": ["Force Field", "Self Destruction"],
         },
+        # Chromatic
         "Gale": {
             "rarity": "Chromatic",
             "droprate": "Epic",
@@ -531,8 +538,8 @@ class BrawlersConstants:
 
     emoji.update(special_skins)
 
-    trophy_road_brawlers = [
-        k for k, v in brawlers.items() if v["rarity"] == "Trophy Road"
+    starting_brawler = [
+        k for k, v in brawlers.items() if v["rarity"] == "Starting Brawler"
     ]
     rare_brawlers = [k for k, v in brawlers.items() if v["rarity"] == "Rare"]
     super_rare_brawlers = [
@@ -579,7 +586,7 @@ class BrawlersConstants:
     }
 
     rarities = {
-        "trophy": trophy_road_brawlers,
+        "trophy": starting_brawler,
         "rare": rare_brawlers,
         "sr": super_rare_brawlers,
         "epic": epic_brawlers + chromatic_epic_brawlers,
@@ -588,12 +595,12 @@ class BrawlersConstants:
     }
 
     brawler_categories = {
-        "⚪ Trophy Road": split_in_three(trophy_road_brawlers)[0],
-        "\u200e": split_in_three(trophy_road_brawlers)[1],
-        "\u200e" * 2: split_in_three(trophy_road_brawlers)[2],
-        "🟢 Rare": rare_brawlers,
-        "🔵 Super Rare": split_in_two(super_rare_brawlers)[0],
-        "\u200e" * 3: split_in_two(super_rare_brawlers)[1],
+        "⚪ Starting Brawler": starting_brawler,
+        "🟢 Rare": split_in_two(rare_brawlers)[0],
+        "\u200e": split_in_two(rare_brawlers)[1],
+        "🔵 Super Rare": split_in_three(super_rare_brawlers)[0],
+        "\u200e" * 2: split_in_three(super_rare_brawlers)[1],
+        "\u200e" * 3: split_in_three(super_rare_brawlers)[2],
         "🟣 Epic": split_in_three(epic_brawlers)[0],
         "\u200e" * 4: split_in_three(epic_brawlers)[1],
         "\u200e" * 5: split_in_three(epic_brawlers)[2],

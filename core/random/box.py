@@ -87,44 +87,6 @@ def get_random_box_item(profile):
     profile["tr_exp"] += 1
     profile["starpoints"] += round(0.5 + (math.sqrt(profile["tier"]) / 10), 10)
 
-    # check trophy road unlocks first
-
-    for index, brawler in enumerate(constants.brawlers.trophy_road_brawlers):
-        required_tr_exp = index * 10
-
-        if (
-            not profile["brawlers"]
-            .get(brawler, {"unlocked": False})
-            .get("unlocked", True)
-            and required_tr_exp <= profile["tr_exp"]
-        ):
-            selected = profile["brawlers"].get(brawler, {}).get("selected")
-            skins = profile["brawlers"].get(brawler, {}).get("skins")
-
-            new_brawler = {
-                "level": 1,
-                "powerpoints": 0,
-            }
-
-            if selected:
-                new_brawler.update({"selected": selected})
-
-            if skins:
-                new_brawler.update({"skins": skins})
-
-            emoji = constants.brawlers.brawlers[brawler]["emoji"]
-            rarity_emoji = constants.brawlers.rarity_emoji["Trophy Road"]
-
-            profile["brawlers"][brawler] = new_brawler
-            profile["tr_exp"] -= required_tr_exp
-
-            message = (
-                f"{emoji} {rarity_emoji} **{brawler}** {rarity_emoji} {emoji}"
-                " (Trophy Road)"
-            )
-
-            return profile, message
-
     out = random.randint(0, 10000)
 
     for rarity in droprates:
