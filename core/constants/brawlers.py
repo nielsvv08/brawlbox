@@ -305,6 +305,12 @@ class BrawlersConstants:
             "gadgets": ["Jolting Volts", "Toolbox"],
             "starpowers": ["Force Field", "Self Destruction"],
         },
+        "Chester": {
+            "rarity": "Legendary",
+            "emoji": "<:C:1052972358073335877>",
+            "gadgets": ["Spicy Dice"],
+            "starpowers": ["Bell'O'Mania", "Sneak Peek"],
+        },
         # Chromatic
         "Gale": {
             "rarity": "Chromatic",
