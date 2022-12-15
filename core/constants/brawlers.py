@@ -496,7 +496,6 @@ class BrawlersConstants:
     }
 
     new_shop_gem_skins = {
-        #
         "World Champion Gus": ("Gus", "<:W:1052981180590473236>", 149),
         "Frost Queen Amber": ("Amber", "<:F:1052981175234342943>", 149),
         "Yeti Sam": ("Sam", "<:Y:1052981177469915196>", 149),
