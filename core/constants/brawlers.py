@@ -471,6 +471,8 @@ class BrawlersConstants:
         "Count Pengula": ("Mr P", "<:C:1013874025619013772>", 79),
         "Mr Fly": ("Mr P", "<:M:1013874041754505328>", 79),
         "Calavera Piper": ("Piper", "<:C:1013874022246797362>", 79),
+        "Octo Fang": ("Fang", "<:O:1013874045831348355>", 79),
+        "Galaxy Storm Lola": ("Lola", "<:G:1013874034305413150>", 79),
         "Spicy Mike": ("Dynamike", "<:spd:597722785862647850>", 149),
         "Popcorn Rico": ("Rico", "<:pr:597723232983973899>", 149),
         "Shiba Nita": ("Nita", "<:sn:597723031305060387>", 149),
@@ -485,17 +487,21 @@ class BrawlersConstants:
         "Werewolf Leon": ("Leon", "<:W:1013874053561462834>", 149),
         "Witch Shelly": ("Shelly", "<:W:1013874055675396116>", 149),
         "Coral Belle": ("Belle", "<:C:1013874023945474170>", 149),
+        "Gold Neko Bea": ("Bea", "<:G:1013874037715382425>", 149),
+        "Empress Bonnie": ("Bonnie", "<:E:1013874032598335558>", 149),
+        "Overlord Byron": ("Byron", "<:O:1013874047882366976>", 149),
         "Robo Dynamike": ("Dynamike", "<:rd:597722785782956032>", 299),
         "Mecha Bo": ("Bo", "<:mbo:597722541951549441>", 299),
         "Mecha Crow": ("Crow", "<:mc:597722720209207296>", 299),
     }
 
     new_shop_gem_skins = {
-        "Octo Fang": ("Fang", "<:O:1013874045831348355>", 79),
-        "Galaxy Storm Lola": ("Lola", "<:G:1013874034305413150>", 79),
-        "Gold Neko Bea": ("Bea", "<:G:1013874037715382425>", 149),
-        "Empress Bonnie": ("Bonnie", "<:E:1013874032598335558>", 149),
-        "Overlord Byron": ("Byron", "<:O:1013874047882366976>", 149),
+        #
+        "World Champion Gus": ("Gus", "<:W:1052981180590473236>", 149),
+        "Frost Queen Amber": ("Amber", "<:F:1052981175234342943>", 149),
+        "Yeti Sam": ("Sam", "<:Y:1052981177469915196>", 149),
+        "Krampus Ash": ("Ash", "<:K:1052981178975662190>", 79),
+        "High Score Griff": ("Griff", "<:H:1052981182142357625>", 79),
     }
 
     shop_star_skins = {
