@@ -6,19 +6,32 @@ application-import-names = core
 import-order-style = pycharm
 
 extend-ignore = 
-    E203, # whitespace before ':'
+    # whitespace before ':'
+    E203,
     # flake8-annotations
-    ANN001, # missing type annotation for function argument
-    ANN002, # missing type annotation for *args
-    ANN003,	# missing type annotation for **kwargs
-    ANN101, # missing type annotation for self in method
-    ANN102, # missing type annotation for cls in classmethod
-    ANN201,	# missing return type annotation for public function
-    ANN202,	# missing return type annotation for protected function
-    ANN203,	# missing return type annotation for secret function
-    ANN204,	# missing return type annotation for special method
-    ANN205,	# missing return type annotation for staticmethod
-    ANN206,	# missing return type annotation for classmethod
+    # missing type annotation for function argument
+    ANN001,
+     # missing type annotation for *args
+    ANN002,
+    # missing type annotation for **kwargs
+    ANN003,
+    # missing type annotation for self in method
+    ANN101,
+    # missing type annotation for cls in classmethod
+    ANN102,
+    # missing return type annotation for public function
+    ANN201,
+    # missing return type annotation for protected function
+    ANN202,
+    # missing return type annotation for secret function
+    ANN203,
+    # missing return type annotation for special method
+    ANN204,
+    # missing return type annotation for staticmethod
+    ANN205,
+    # missing return type annotation for classmethod
+    ANN206,
 
     # pep8-naming
-    N813, # camelcase imported as lowercase
+    # camelcase imported as lowercase
+    N813,
