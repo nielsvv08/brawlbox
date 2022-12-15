@@ -55,17 +55,17 @@ class BrawlersConstants:
             "gadgets": ["Rocket Laces", "Rocket Fuel"],
             "starpowers": ["Incendiary", "Rocket No. Four"],
         },
-        "Barley": {
-            "rarity": "Rare",
-            "emoji": "<:B:776006754488025118>",
-            "gadgets": ["Sticky Syrup Mixer", "Herbal Tonic"],
-            "starpowers": ["Medical Use", "Extra Noxious"],
-        },
         "El Primo": {
             "rarity": "Rare",
             "emoji": "<:E:776006754139111434>",
             "gadgets": ["Suplex Supplement", "Asteroid Belt"],
             "starpowers": ["El Fuego", "Meteor Rush"],
+        },
+        "Barley": {
+            "rarity": "Rare",
+            "emoji": "<:B:776006754488025118>",
+            "gadgets": ["Sticky Syrup Mixer", "Herbal Tonic"],
+            "starpowers": ["Medical Use", "Extra Noxious"],
         },
         "Poco": {
             "rarity": "Rare",
