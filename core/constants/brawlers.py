@@ -268,6 +268,12 @@ class BrawlersConstants:
             "gadgets": ["Windup", "Residue"],
             "starpowers": ["Chain Reaction", "Super Sticky"],
         },
+        "Gray": {
+            "rarity": "Mythic",
+            "emoji": "<:G:1059551285294141511>",
+            "gadgets": ["Walking Cane", "Grand Piano"],
+            "starpowers": ["Fake Injury", "New Perspective"],
+        },
         # Legendary
         "Spike": {
             "rarity": "Legendary",
@@ -308,7 +314,7 @@ class BrawlersConstants:
         "Chester": {
             "rarity": "Legendary",
             "emoji": "<:C:1052972358073335877>",
-            "gadgets": ["Spicy Dice"],
+            "gadgets": ["Spicy Dice", "Candy Beans"],
             "starpowers": ["Bell'O'Mania", "Sneak Peek"],
         },
         # Chromatic
@@ -405,17 +411,24 @@ class BrawlersConstants:
         },
         "Sam": {
             "rarity": "Chromatic",
-            "droprate": "Mythic",
+            "droprate": "Epic",
             "emoji": "<:S:1016081621117575190>",
             "gadgets": ["Magnetic Field", "Pulse Repellent"],
             "starpowers": ["Hearty Recovery", "Remote Recharge"],
         },
         "Buster": {
             "rarity": "Chromatic",
-            "droprate": "Legendary",
+            "droprate": "Mythic",
             "emoji": "<:B:1039257726250930256>",
             "gadgets": ["Utility Belt", "Slo-Mo Replay"],
             "starpowers": ["Blockbuster", "Kevlar Vest"],
+        },
+        "Mandy": {
+            "rarity": "Chromatic",
+            "droprate": "Legendary",
+            "emoji": "<:M:1059551287080914985>",
+            "gadgets": ["Caramelize"],
+            "starpowers": ["In My Sights", "Hard Candy"],
         },
     }
 
