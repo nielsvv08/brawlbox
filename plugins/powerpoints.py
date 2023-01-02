@@ -3,6 +3,7 @@ import discourtesy
 from core.config import Config as config
 from core.constants import Constants as constants
 from core.utils import get_skin
+from plugins.upgrade import check_upgrade
 
 
 @discourtesy.command("powerpoints")
@@ -69,10 +70,20 @@ def get_status(application, profile, brawler_name):
 
     required_pp = constants.brawlers.powerpoint_costs[brawler["level"]]
 
+    highest_level, _ = check_upgrade(profile, brawler_name)
+
     if current_pp >= required_pp:
-        return (
+        status = (
             f"{emoji} — **{current_pp} / {required_pp}** "
             "<:pp:563001978079150102>"
         )
+    else:
+        status = (
+            f"{emoji} — {current_pp} / {required_pp} "
+            "<:pp:563001978079150102>"
+        )
 
-    return f"{emoji} — {current_pp} / {required_pp} <:pp:563001978079150102>"
+    if highest_level > brawler["level"]:
+        status += f" — **🠕{highest_level}**"
+
+    return status
