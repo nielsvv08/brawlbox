@@ -433,7 +433,7 @@ class BrawlersConstants:
             "rarity": "Chromatic",
             "droprate": "Mythic",
             "emoji": "<:M:1059551287080914985>",
-            "gadgets": ["Caramelize"],
+            "gadgets": ["Caramelize", "Cookie Crumbs"],
             "starpowers": ["In My Sights", "Hard Candy"],
         },
         "R-T": {
