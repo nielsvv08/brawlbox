@@ -1,5 +1,6 @@
 from core.config import Config as config
 from core.constants.brawlers import BrawlersConstants as brawlers_constants
+from core.constants.emoji import EmojiConstants as emoji
 
 
 class VariousConstants:
@@ -47,8 +48,8 @@ class VariousConstants:
             "<:lb:625392826053820430>",
             "legen",
         ),
-        ("Gadget", "<:ga:689837070264303673>", "gadget"),
-        ("Star Power", "<:st:625392825940443193>", "star"),
+        ("Gadget", emoji.gadget, "gadget"),
+        ("Star Power", emoji.star_power, "star"),
     ]
 
     # invite

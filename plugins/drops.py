@@ -4,6 +4,8 @@ from core import random
 from core.config import Config as config
 from core.constants import Constants as constants
 
+emoji = constants.emoji
+
 
 @discourtesy.command("drops")
 async def drops_command(application, interaction):
@@ -25,6 +27,14 @@ async def drops_command(application, interaction):
         value = emoji + (" **{:0.3f}%**".format(rate) if rate else " 0.000%")
 
         fields.append({"name": name, "value": value, "inline": True})
+
+    fields.append(
+        {
+            "name": "Gems",
+            "value": f"{emoji.gems} 25%",
+            "inline": True,
+        }
+    )
 
     return discourtesy.utils.embed(
         {

@@ -6,6 +6,9 @@ class EmojiConstants:
     big_box = "<:B:563003560124612649>"
     mega_box = "<:M:563003560325808151>"
 
+    gadget = "<:ga:689837070264303673>"
+    star_power = "<:s:1081892115577057312>"
+
     # currency
 
     coins = "<:C:969263404802011158>"

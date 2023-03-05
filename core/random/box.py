@@ -230,7 +230,7 @@ def get_random_box_item(profile):
 
                 message = (
                     f"**{brawler}'s Star Power**: {real_starpower} "
-                    "<:st:563001977877954590>"
+                    + constants.emoji.star_power
                 )
 
                 return profile, message
