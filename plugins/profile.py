@@ -36,15 +36,15 @@ async def profile_command(application, interaction):
         profile["boxcounter"] + profile["bigcounter"] + profile["megacounter"]
     )
 
-    if box_count < 1000:
+    if box_count >= 100:
         description += "<:1OO:569858643923566596> "
-    elif box_count < 10000:
+    if box_count >= 1000:
         description += "<:1000:569858643810451466> "
-    elif box_count < 50000:
+    if box_count >= 10000:
         description += "<:10000:569858644003520522> "
-    elif box_count < 100000:
+    if box_count >= 50000:
         description += "<:50000:569858643995131914> "
-    else:
+    if box_count >= 100000:
         description += "<:100000:569858643772702743> "
 
     description += " • "  # en space on both sides
