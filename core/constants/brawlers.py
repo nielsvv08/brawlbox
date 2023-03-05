@@ -418,17 +418,24 @@ class BrawlersConstants:
         },
         "Buster": {
             "rarity": "Chromatic",
-            "droprate": "Mythic",
+            "droprate": "Epic",
             "emoji": "<:B:1039257726250930256>",
             "gadgets": ["Utility Belt", "Slo-Mo Replay"],
             "starpowers": ["Blockbuster", "Kevlar Vest"],
         },
         "Mandy": {
             "rarity": "Chromatic",
-            "droprate": "Legendary",
+            "droprate": "Mythic",
             "emoji": "<:M:1059551287080914985>",
             "gadgets": ["Caramelize"],
             "starpowers": ["In My Sights", "Hard Candy"],
+        },
+        "R-T": {
+            "rarity": "Chromatic",
+            "droprate": "Legendary",
+            "emoji": "<:R:1081866518725406782>",
+            "gadgets": ["In Line"],  # second gadget: "Hacks!"
+            "starpowers": ["Quick Maths", "Recording"],
         },
     }
 
