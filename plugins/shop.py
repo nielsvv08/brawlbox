@@ -39,10 +39,21 @@ first_embed["embeds"][0]["fields"] = [
     {"name": "Special Boxes", "value": "\n".join(fields)},
 ]
 
+start_star_skins = 5 + len(constants.brawlers.new_shop_gem_skins)
+start_daily_skins = start_star_skins + len(
+    constants.brawlers.new_shop_star_skins
+)
+
 second_embed_new_fields = [
     f"{i}. {_emoji} **{skin}** = {price} gems {emoji.gems}"
     for i, (skin, (_, _emoji, price)) in enumerate(
         constants.brawlers.new_shop_gem_skins.items(), start=5
+    )
+] + [
+    f"{i}. {_emoji} **{skin}** = {r(price)} star points {emoji.star_points}"
+    for i, (skin, (_, _emoji, price)) in enumerate(
+        constants.brawlers.new_shop_star_skins.items(),
+        start=start_star_skins,
     )
 ]
 
@@ -92,9 +103,7 @@ async def shop_command(application, interaction):
 
     daily_skins = list()
 
-    for i, skin in enumerate(
-        available_skins, start=5 + len(constants.brawlers.new_shop_gem_skins)
-    ):
+    for i, skin in enumerate(available_skins, start=start_daily_skins):
         try:
             _, _emoji, price = constants.brawlers.shop_gem_skins[skin]
 

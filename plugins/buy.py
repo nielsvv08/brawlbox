@@ -24,6 +24,12 @@ async def buy_commands(application, interaction):
 
     set_query = None
 
+    max_new_gem_skins = 4 + len(constants.brawlers.new_shop_gem_skins)
+    max_new_star_skins = max_new_gem_skins + len(
+        constants.brawlers.new_shop_star_skins
+    )
+    max_daily_skins = max_new_star_skins + 4
+
     match number:
         case 1:
             inc_query = {"coins": -2000 * amount, "bigboxes": amount}
@@ -33,13 +39,19 @@ async def buy_commands(application, interaction):
             inc_query = {"coins": -3000 * amount, "megaboxes": amount}
         case 4:
             inc_query = {"gems": -45 * amount, "megaboxes": amount}
-        case num if num <= 9:
+        case num if num <= max_new_gem_skins:
             skin, (brawler_name, emoji, price) = tuple(
                 constants.brawlers.new_shop_gem_skins.items()
-            )[number - 5]
+            )[number - max_new_gem_skins - 1]
 
             inc_query = {"gems": -price}
-        case num if num <= 13:
+        case num if num <= max_new_star_skins:
+            skin, (brawler_name, emoji, price) = tuple(
+                constants.brawlers.new_shop_star_skins.items()
+            )[number - max_new_star_skins - 1]
+
+            inc_query = {"starpoints": -price}
+        case num if num <= max_daily_skins:
             shop = await application.mongo.get_shop(user["id"])
 
             if not shop:

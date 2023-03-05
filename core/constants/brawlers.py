@@ -499,6 +499,8 @@ class BrawlersConstants:
         "Calavera Piper": ("Piper", "<:C:1013874022246797362>", 79),
         "Octo Fang": ("Fang", "<:O:1013874045831348355>", 79),
         "Galaxy Storm Lola": ("Lola", "<:G:1013874034305413150>", 79),
+        "Krampus Ash": ("Ash", "<:K:1052981178975662190>", 79),
+        "High Score Griff": ("Griff", "<:H:1052981182142357625>", 79),
         "Spicy Mike": ("Dynamike", "<:spd:597722785862647850>", 149),
         "Popcorn Rico": ("Rico", "<:pr:597723232983973899>", 149),
         "Shiba Nita": ("Nita", "<:sn:597723031305060387>", 149),
@@ -516,17 +518,26 @@ class BrawlersConstants:
         "Gold Neko Bea": ("Bea", "<:G:1013874037715382425>", 149),
         "Empress Bonnie": ("Bonnie", "<:E:1013874032598335558>", 149),
         "Overlord Byron": ("Byron", "<:O:1013874047882366976>", 149),
-        "Robo Dynamike": ("Dynamike", "<:rd:597722785782956032>", 299),
-        "Mecha Bo": ("Bo", "<:mbo:597722541951549441>", 299),
-        "Mecha Crow": ("Crow", "<:mc:597722720209207296>", 299),
-    }
-
-    new_shop_gem_skins = {
         "World Champion Gus": ("Gus", "<:W:1052981180590473236>", 149),
         "Frost Queen Amber": ("Amber", "<:F:1052981175234342943>", 149),
         "Yeti Sam": ("Sam", "<:Y:1052981177469915196>", 149),
-        "Krampus Ash": ("Ash", "<:K:1052981178975662190>", 79),
-        "High Score Griff": ("Griff", "<:H:1052981182142357625>", 79),
+        "Amber De La Vega": ("Amber", "<:A:1081879860647055360>", 149),
+        "Nutcracker Gale": ("Gale", "<:N:1081879652450173049> ", 149),
+        "Robo Dynamike": ("Dynamike", "<:rd:597722785782956032>", 299),
+        "Mecha Bo": ("Bo", "<:mbo:597722541951549441>", 299),
+        "Mecha Crow": ("Crow", "<:mc:597722720209207296>", 299),
+        "Mecha Mortis": ("Mortis", "<:M:1081879657462370314>", 299),
+    }
+
+    new_shop_gem_skins = {
+        "Oni Otis": ("Otis", "<:O:1081879535907250256>", 149),
+        "Tengu Mike": ("Dynamike", "<:T:1081879533717823518>", 149),
+        "Kitsune Lola": ("Lola", "<:K:1081879531901702174>", 149),
+        "Detective Gray": ("Gray", "<:D:1081879527665434626>", 79),
+    }
+
+    new_shop_star_skins = {
+        "Mariposa Piper": ("Piper", "<:M:1081879529431244910>", 25000),
     }
 
     shop_star_skins = {
@@ -534,6 +545,8 @@ class BrawlersConstants:
         "Linebacker Bull": ("Bull", "<:lb:597722616362696725>", 2500),
         "Light Mecha Bo": ("Bo", "<:lmb:597722542379237377>", 10000),
         "Night Mecha Crow": ("Crow", "<:nmc:597722720289030146>", 10000),
+        "Postal Brock": ("Brock", "<:P:1081879654018842704>", 25000),
+        "Inspector Colette": ("Brock", "<:I:1081879656120205352>", 25000),
         "Gold Mecha Bo": ("Bo", "<:gmb:597722542844674048>", 50000),
         "Gold Mecha Crow": ("Crow", "<:gmc:597722720524042250>", 50000),
     }
@@ -568,6 +581,9 @@ class BrawlersConstants:
         emoji[skin] = properties[1]
 
     for skin, properties in new_shop_gem_skins.items():
+        emoji[skin] = properties[1]
+
+    for skin, properties in new_shop_star_skins.items():
         emoji[skin] = properties[1]
 
     for skin, properties in shop_star_skins.items():
