@@ -4,8 +4,6 @@ from core import random
 from core.config import Config as config
 from core.constants import Constants as constants
 
-emoji = constants.emoji
-
 
 @discourtesy.command("drops")
 async def drops_command(application, interaction):
@@ -31,7 +29,7 @@ async def drops_command(application, interaction):
     fields.append(
         {
             "name": "Gems",
-            "value": f"{emoji.gems} 25%",
+            "value": f"{constants.emoji.gems} 25%",
             "inline": True,
         }
     )

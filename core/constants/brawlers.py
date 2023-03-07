@@ -522,7 +522,7 @@ class BrawlersConstants:
         "Frost Queen Amber": ("Amber", "<:F:1052981175234342943>", 149),
         "Yeti Sam": ("Sam", "<:Y:1052981177469915196>", 149),
         "Amber De La Vega": ("Amber", "<:A:1081879860647055360>", 149),
-        "Nutcracker Gale": ("Gale", "<:N:1081879652450173049> ", 149),
+        "Nutcracker Gale": ("Gale", "<:N:1081879652450173049>", 149),
         "Robo Dynamike": ("Dynamike", "<:rd:597722785782956032>", 299),
         "Mecha Bo": ("Bo", "<:mbo:597722541951549441>", 299),
         "Mecha Crow": ("Crow", "<:mc:597722720209207296>", 299),
