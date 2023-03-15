@@ -546,7 +546,7 @@ class BrawlersConstants:
         "Light Mecha Bo": ("Bo", "<:lmb:597722542379237377>", 10000),
         "Night Mecha Crow": ("Crow", "<:nmc:597722720289030146>", 10000),
         "Postal Brock": ("Brock", "<:P:1081879654018842704>", 25000),
-        "Inspector Colette": ("Brock", "<:I:1081879656120205352>", 25000),
+        "Inspector Colette": ("Colette", "<:I:1081879656120205352>", 25000),
         "Gold Mecha Bo": ("Bo", "<:gmb:597722542844674048>", 50000),
         "Gold Mecha Crow": ("Crow", "<:gmc:597722720524042250>", 50000),
     }
