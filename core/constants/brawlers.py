@@ -274,12 +274,12 @@ class BrawlersConstants:
             "gadgets": ["Walking Cane", "Grand Piano"],
             "starpowers": ["Fake Injury", "New Perspective"],
         },
-        # "Willow": {
-        #     "rarity": "Mythic",
-        #     "emoji": "<:W:1081866517471305728>",
-        #     "gadgets": ["Spellbound"],  # second gadget: "Dive"
-        #     "starpowers": ["Love Is Blind", "Obsession"],
-        # },
+        "Willow": {
+            "rarity": "Mythic",
+            "emoji": "<:W:1081866517471305728>",
+            "gadgets": ["Spellbound"],  # second gadget: "Dive"
+            "starpowers": ["Love Is Blind", "Obsession"],
+        },
         # Legendary
         "Spike": {
             "rarity": "Legendary",
