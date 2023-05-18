@@ -431,17 +431,24 @@ class BrawlersConstants:
         },
         "Mandy": {
             "rarity": "Chromatic",
-            "droprate": "Mythic",
+            "droprate": "Epic",
             "emoji": "<:M:1059551287080914985>",
             "gadgets": ["Caramelize", "Cookie Crumbs"],
             "starpowers": ["In My Sights", "Hard Candy"],
         },
         "R-T": {
             "rarity": "Chromatic",
-            "droprate": "Legendary",
+            "droprate": "Mythic",
             "emoji": "<:R:1081866518725406782>",
             "gadgets": ["In Line"],  # second gadget: "Hacks!"
             "starpowers": ["Quick Maths", "Recording"],
+        },
+        "Maisie": {
+            "rarity": "Chromatic",
+            "droprate": "Legendary",
+            "emoji": "<:M:1108815643345690744>",
+            "gadgets": ["Disengage!", "Finish Them!"],
+            "starpowers": ["Pinpoint Precision", "Tremors"],
         },
     }
 
