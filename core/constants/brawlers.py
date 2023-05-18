@@ -277,7 +277,7 @@ class BrawlersConstants:
         "Willow": {
             "rarity": "Mythic",
             "emoji": "<:W:1081866517471305728>",
-            "gadgets": ["Spellbound"],  # second gadget: "Dive"
+            "gadgets": ["Spellbound", "Dive"],
             "starpowers": ["Love Is Blind", "Obsession"],
         },
         # Legendary
@@ -440,7 +440,7 @@ class BrawlersConstants:
             "rarity": "Chromatic",
             "droprate": "Mythic",
             "emoji": "<:R:1081866518725406782>",
-            "gadgets": ["In Line"],  # second gadget: "Hacks!"
+            "gadgets": ["In Line", "Hacks!"],
             "starpowers": ["Quick Maths", "Recording"],
         },
         "Maisie": {
