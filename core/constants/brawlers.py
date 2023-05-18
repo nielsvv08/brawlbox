@@ -508,6 +508,7 @@ class BrawlersConstants:
         "Galaxy Storm Lola": ("Lola", "<:G:1013874034305413150>", 79),
         "Krampus Ash": ("Ash", "<:K:1052981178975662190>", 79),
         "High Score Griff": ("Griff", "<:H:1052981182142357625>", 79),
+        "Detective Gray": ("Gray", "<:D:1081879527665434626>", 79),
         "Spicy Mike": ("Dynamike", "<:spd:597722785862647850>", 149),
         "Popcorn Rico": ("Rico", "<:pr:597723232983973899>", 149),
         "Shiba Nita": ("Nita", "<:sn:597723031305060387>", 149),
@@ -530,6 +531,9 @@ class BrawlersConstants:
         "Yeti Sam": ("Sam", "<:Y:1052981177469915196>", 149),
         "Amber De La Vega": ("Amber", "<:A:1081879860647055360>", 149),
         "Nutcracker Gale": ("Gale", "<:N:1081879652450173049>", 149),
+        "Oni Otis": ("Otis", "<:O:1081879535907250256>", 149),
+        "Tengu Mike": ("Dynamike", "<:T:1081879533717823518>", 149),
+        "Kitsune Lola": ("Lola", "<:K:1081879531901702174>", 149),
         "Robo Dynamike": ("Dynamike", "<:rd:597722785782956032>", 299),
         "Mecha Bo": ("Bo", "<:mbo:597722541951549441>", 299),
         "Mecha Crow": ("Crow", "<:mc:597722720209207296>", 299),
@@ -537,15 +541,13 @@ class BrawlersConstants:
     }
 
     new_shop_gem_skins = {
-        "Oni Otis": ("Otis", "<:O:1081879535907250256>", 149),
-        "Tengu Mike": ("Dynamike", "<:T:1081879533717823518>", 149),
-        "Kitsune Lola": ("Lola", "<:K:1081879531901702174>", 149),
-        "Detective Gray": ("Gray", "<:D:1081879527665434626>", 79),
+        "Jungle Queen Maisie": ("Maisie", "<:J:1108819493372833884>", 149),
+        "Bananas Colt": ("Colt", "<:B:1108819495113457724>", 149),
+        "Jaguar Spirit Meg": ("Meg", "<:J:1108819497902682223>", 149),
+        "Crocodile Buster": ("Buster", "<:C:1108819500557684859>", 149),
     }
 
-    new_shop_star_skins = {
-        "Mariposa Piper": ("Piper", "<:M:1081879529431244910>", 25000),
-    }
+    new_shop_star_skins = {}
 
     shop_star_skins = {
         "Outlaw Colt": ("Colt", "<:oc:597722687087050753>", 500),
@@ -554,6 +556,7 @@ class BrawlersConstants:
         "Night Mecha Crow": ("Crow", "<:nmc:597722720289030146>", 10000),
         "Postal Brock": ("Brock", "<:P:1081879654018842704>", 25000),
         "Inspector Colette": ("Colette", "<:I:1081879656120205352>", 25000),
+        "Mariposa Piper": ("Piper", "<:M:1081879529431244910>", 25000),
         "Gold Mecha Bo": ("Bo", "<:gmb:597722542844674048>", 50000),
         "Gold Mecha Crow": ("Crow", "<:gmc:597722720524042250>", 50000),
     }
