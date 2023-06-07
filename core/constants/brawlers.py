@@ -219,6 +219,12 @@ class BrawlersConstants:
             "gadgets": ["Sugar Rush", "Crash Test"],
             "starpowers": ["Black Powder", "Wisdom Tooth"],
         },
+        "Hank": {
+            "rarity": "Epic",
+            "emoji": "<:H:1108819447675883650>",
+            "gadgets": ["Water Balloons", "Barricade"],
+            "starpowers": ["It's Gonna Blow", "Take Cover!"],
+        },
         # Mythic
         "Mortis": {
             "rarity": "Mythic",
