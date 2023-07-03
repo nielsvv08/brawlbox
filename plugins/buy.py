@@ -24,11 +24,8 @@ async def buy_commands(application, interaction):
 
     set_query = None
 
-    max_new_gem_skins = 4 + len(constants.brawlers.new_shop_gem_skins)
-    max_new_star_skins = max_new_gem_skins + len(
-        constants.brawlers.new_shop_star_skins
-    )
-    max_daily_skins = max_new_star_skins + 4
+    max_new_gem_skins = 8
+    max_daily_skins = 12
 
     match number:
         case 1:
@@ -45,12 +42,6 @@ async def buy_commands(application, interaction):
             )[number - max_new_gem_skins - 1]
 
             inc_query = {"gems": -price}
-        case num if num <= max_new_star_skins:
-            skin, (brawler_name, emoji, price) = tuple(
-                constants.brawlers.new_shop_star_skins.items()
-            )[number - max_new_star_skins - 1]
-
-            inc_query = {"starpoints": -price}
         case num if num <= max_daily_skins:
             shop = await application.mongo.get_shop(user["id"])
 
@@ -62,7 +53,7 @@ async def buy_commands(application, interaction):
                 )
 
             try:
-                skin = shop["skins"][num - 10]
+                skin = shop["skins"][num - 9]
             except IndexError:
                 return f"There is no item associated with the number {number}."
 

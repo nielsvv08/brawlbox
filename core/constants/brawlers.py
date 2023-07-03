@@ -547,6 +547,10 @@ class BrawlersConstants:
         "Oni Otis": ("Otis", "<:O:1081879535907250256>", 149),
         "Tengu Mike": ("Dynamike", "<:T:1081879533717823518>", 149),
         "Kitsune Lola": ("Lola", "<:K:1081879531901702174>", 149),
+        "Jungle Queen Maisie": ("Maisie", "<:J:1108819493372833884>", 149),
+        "Bananas Colt": ("Colt", "<:B:1108819495113457724>", 149),
+        "Jaguar Spirit Meg": ("Meg", "<:J:1108819497902682223>", 149),
+        "Crocodile Buster": ("Buster", "<:C:1108819500557684859>", 149),
         "Robo Dynamike": ("Dynamike", "<:rd:597722785782956032>", 299),
         "Mecha Bo": ("Bo", "<:mbo:597722541951549441>", 299),
         "Mecha Crow": ("Crow", "<:mc:597722720209207296>", 299),
@@ -554,10 +558,10 @@ class BrawlersConstants:
     }
 
     new_shop_gem_skins = {
-        "Jungle Queen Maisie": ("Maisie", "<:J:1108819493372833884>", 149),
-        "Bananas Colt": ("Colt", "<:B:1108819495113457724>", 149),
-        "Jaguar Spirit Meg": ("Meg", "<:J:1108819497902682223>", 149),
-        "Crocodile Buster": ("Buster", "<:C:1108819500557684859>", 149),
+        "Wood Spirit Chester": ("Chester", "<:W:1125365765105799259>", 79),
+        "Stone Troll Lou": ("Lou", "<:S:1125365769258151998>", 149),
+        "Dark Fairy Janet": ("Janet", "<:D:1125365767102267443>", 149),
+        "Megalodon": ("Meg", "<:M:1125365770810052608>", 199),
     }
 
     new_shop_star_skins = {}
