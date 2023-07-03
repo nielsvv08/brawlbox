@@ -444,17 +444,24 @@ class BrawlersConstants:
         },
         "R-T": {
             "rarity": "Chromatic",
-            "droprate": "Mythic",
+            "droprate": "Epic",
             "emoji": "<:R:1081866518725406782>",
             "gadgets": ["In Line", "Hacks!"],
             "starpowers": ["Quick Maths", "Recording"],
         },
         "Maisie": {
             "rarity": "Chromatic",
-            "droprate": "Legendary",
+            "droprate": "Mythic",
             "emoji": "<:M:1108815643345690744>",
             "gadgets": ["Disengage!", "Finish Them!"],
             "starpowers": ["Pinpoint Precision", "Tremors"],
+        },
+        "Cordelius": {
+            "rarity": "Chromatic",
+            "droprate": "Legendary",
+            "emoji": "<:C:1125365776006774784>",
+            "gadgets": ["Replanting", "Poison Mushroom"],
+            "starpowers": ["Comboshrooms", "Mushroom Kingdom"],
         },
     }
 
