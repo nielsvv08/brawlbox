@@ -286,6 +286,12 @@ class BrawlersConstants:
             "gadgets": ["Spellbound", "Dive"],
             "starpowers": ["Love Is Blind", "Obsession"],
         },
+        "Doug": {
+            "rarity": "Mythic",
+            "emoji": "<:D:1125365773729271829>",
+            "gadgets": ["Double Sausage", "Extra Mustard"],
+            "starpowers": ["Fast Food", "Self Service"],
+        },
         # Legendary
         "Spike": {
             "rarity": "Legendary",
