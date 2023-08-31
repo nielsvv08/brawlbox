@@ -13,4 +13,3 @@ class Config:
     mongo_uris = os.getenv("mongo_uris").split(", ")
 
     colour = int(os.getenv("colour", 0))
-    top_gg_token = os.getenv("top_gg_token", "")

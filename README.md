@@ -45,7 +45,6 @@ The bot can be configured by a few environment variables. Rename the `.env.examp
 ### Optional
 
 - `colour`: the main colour theme throughout the bot as an integer.
-- `top_gg_token`: the authentication key to interact with the top.gg API.
 
 ## Command Registry
 
