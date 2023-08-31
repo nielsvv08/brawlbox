@@ -7,7 +7,6 @@ from core.config import Config as config
 
 class MongoClient:
     def __init__(self):
-
         self.databases = [
             AsyncIOMotorClient(mongo_uri) for mongo_uri in config.mongo_uris
         ]

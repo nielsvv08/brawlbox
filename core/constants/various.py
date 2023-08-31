@@ -1,4 +1,3 @@
-from core.config import Config as config
 from core.constants.brawlers import BrawlersConstants as brawlers_constants
 from core.constants.emoji import EmojiConstants as emoji
 
