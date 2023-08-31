@@ -4,7 +4,6 @@ from core.constants.emoji import EmojiConstants as emoji
 
 
 class VariousConstants:
-
     # box
 
     box_thumbnail = "https://papier.dis.tf/static/brawlbox/boxes/box.png"
@@ -112,25 +111,6 @@ class VariousConstants:
         "**You can prestige right now!** To do so, click the check mark "
         "button below to confirm."
     )
-
-    # vote
-
-    vote_thumbnail = (
-        "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/"
-        "thumbs/120/twitter/259/ballot-box-with-ballot_1f5f3.png"
-    )
-
-    top_gg_check_link = (
-        "https://top.gg/api/bots/531858459512012811/check?userId={}"
-    )
-
-    top_gg_link = "https://top.gg/bot/531858459512012811/vote"
-
-    top_gg_headers = {
-        "Authorization": config.top_gg_token,
-        "Content-Type": "application/json",
-        "User-Agent": "Brawl Box",
-    }
 
     # upgrade
 

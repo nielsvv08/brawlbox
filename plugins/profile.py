@@ -27,84 +27,57 @@ async def profile_command(application, interaction):
 
     colour, thumbnail, footer = constants.profile.skins[profile_skin]
 
-    description = "Badges: "
-
-    if int(user["id"]) in application.cache.member_ids:
-        description += "<:box:563003560233533440> "
-
-    box_count = (
-        profile["boxcounter"] + profile["bigcounter"] + profile["megacounter"]
-    )
-
-    if box_count >= 100:
-        description += "<:1OO:569858643923566596> "
-    if box_count >= 1000:
-        description += "<:1000:569858643810451466> "
-    if box_count >= 10000:
-        description += "<:10000:569858644003520522> "
-    if box_count >= 50000:
-        description += "<:50000:569858643995131914> "
-    if box_count >= 100000:
-        description += "<:100000:569858643772702743> "
-
-    description += " • "  # en space on both sides
-
-    # TODO: badges for members, Nitro and tournament
-
-    tier = int(profile["tier"])
-    tier_emoji_amount = 8 if tier > 8 else tier
-
-    for i in range(0, tier_emoji_amount):
-        description += f"{constants.emoji.tiers[i]} "
-
-    if tier > 8:
-        description += f"({tier})"
-
-    return discourtesy.utils.embed(
-        {
-            "color": colour,
-            "author": {
-                "name": user["username"],
-                "icon_url": discourtesy.utils.avatar_url(user),
+    embed = {
+        "color": colour,
+        "author": {
+            "name": user["username"],
+            "icon_url": discourtesy.utils.avatar_url(user),
+        },
+        "thumbnail": {"url": thumbnail},
+        "fields": [
+            {
+                "name": "Coins",
+                "value": f"{r(profile['coins'])} {constants.emoji.coins}",
+                "inline": True,
             },
-            "thumbnail": {"url": thumbnail},
-            "description": description,
-            "fields": [
-                {
-                    "name": "Coins",
-                    "value": f"{r(profile['coins'])} {constants.emoji.coins}",
-                    "inline": True,
-                },
-                {
-                    "name": "Gems",
-                    "value": f"{r(profile['gems'])} {constants.emoji.gems}",
-                    "inline": True,
-                },
-                {
-                    "name": "Star Points",
-                    "value": (
-                        f"{r(int(profile['starpoints']))}"
-                        f" {constants.emoji.star_points}"
-                    ),
-                    "inline": True,
-                },
-                {
-                    "name": "Big Boxes",
-                    "value": (
-                        f"{r(profile['bigboxes'])}"
-                        f" {constants.emoji.big_box}"
-                    ),
-                    "inline": True,
-                },
-                {
-                    "name": "Mega Boxes",
-                    "value": (
-                        f"{r(profile['megaboxes'])}"
-                        f" {constants.emoji.mega_box}"
-                    ),
-                    "inline": True,
-                },
-            ],
-            "footer": {"icon_url": thumbnail, "text": footer},
-        }
-    )
+            {
+                "name": "Gems",
+                "value": f"{r(profile['gems'])} {constants.emoji.gems}",
+                "inline": True,
+            },
+            {
+                "name": "Star Points",
+                "value": (
+                    f"{r(int(profile['starpoints']))}"
+                    f" {constants.emoji.star_points}"
+                ),
+                "inline": True,
+            },
+            {
+                "name": "Big Boxes",
+                "value": (
+                    f"{r(profile['bigboxes'])}" f" {constants.emoji.big_box}"
+                ),
+                "inline": True,
+            },
+            {
+                "name": "Mega Boxes",
+                "value": (
+                    f"{r(profile['megaboxes'])}" f" {constants.emoji.mega_box}"
+                ),
+                "inline": True,
+            },
+        ],
+        "footer": {"icon_url": thumbnail, "text": footer},
+    }
+
+    if profile["tier"] > 1:
+        embed["fields"].append(
+            {
+                "name": "Prestige",
+                "value": (f"Tier {profile['tier']} <:c:796281532196716544>"),
+                "inline": True,
+            }
+        )
+
+    return discourtesy.utils.embed(embed)
