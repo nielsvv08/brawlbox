@@ -54,6 +54,12 @@
                 "type": 6,
                 "name": "user",
                 "description": "The user to look up."
+            },
+            {
+                "type": 5,
+                "name": "all",
+                "description": "Whether to show all brawlers or not.",
+                "required": false
             }
         ]
     },
@@ -135,7 +141,7 @@
     {
         "type": 1,
         "name": "levels",
-        "description": "View a list of brawler levels.",
+        "description": "(discontinued)",
         "options": [
             {
                 "type": 6,
@@ -147,7 +153,7 @@
     {
         "type": 1,
         "name": "powerpoints",
-        "description": "View a list of the brawler power points.",
+        "description": "(discontinued)",
         "options": [
             {
                 "type": 6,

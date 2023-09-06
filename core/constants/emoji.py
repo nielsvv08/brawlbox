@@ -7,6 +7,7 @@ class EmojiConstants:
 
     gadget = "<:ga:689837070264303673>"
     star_power = "<:s:1081892115577057312>"
+    power_points = "<:pp:563001978079150102>"
 
     # currency
 
