@@ -2,7 +2,7 @@ import discourtesy
 
 from core.config import Config as config
 from core.constants import Constants as constants
-from core.utils import get_skin, r
+from core.utils import get_skin, get_username, r
 from core.random import get_random_hint
 
 
@@ -34,11 +34,8 @@ async def brawlers_command(application, interaction):
     profile, _ = await application.mongo.get_profile(user["id"])
 
     if not profile:
-        complete_username = (
-            user["global_name"]
-            or user["username"] + "#" + user["discriminator"]
-        )
-        return constants.errors.profile_not_found.format(complete_username)
+        username = get_username(user)
+        return constants.errors.profile_not_found.format(username)
 
     fields = []
 

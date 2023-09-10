@@ -30,5 +30,11 @@ def get_skin(application, profile, brawler_name):
         return brawler_name
 
 
+def get_username(user):
+    return (
+        user["global_name"] or user["username"] + "#" + user["discriminator"]
+    )
+
+
 def max_gadgets(brawler_name):
     return len(constants.brawlers.brawlers[brawler_name]["gadgets"])

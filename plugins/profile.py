@@ -1,7 +1,7 @@
 import discourtesy
 
 from core.constants import Constants as constants
-from core.utils import r
+from core.utils import get_username, r
 
 
 @discourtesy.command("profile", followup=True)
@@ -11,8 +11,8 @@ async def profile_command(application, interaction):
     profile, _ = await application.mongo.get_profile(user["id"])
 
     if profile is None:
-        complete_username = user["username"] + "#" + user["discriminator"]
-        return constants.errors.profile_not_found.format(complete_username)
+        username = get_username(user)
+        return constants.errors.profile_not_found.format(username)
 
     try:
         profile_skin = profile["profile_skins"][0]
@@ -28,6 +28,7 @@ async def profile_command(application, interaction):
     colour, thumbnail, footer = constants.profile.skins[profile_skin]
 
     embed = {
+        "title": "Profile Inventory",
         "color": colour,
         "author": {
             "name": user["username"],
