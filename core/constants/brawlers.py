@@ -457,17 +457,24 @@ class BrawlersConstants:
         },
         "Maisie": {
             "rarity": "Chromatic",
-            "droprate": "Mythic",
+            "droprate": "Epic",
             "emoji": "<:M:1108815643345690744>",
             "gadgets": ["Disengage!", "Finish Them!"],
             "starpowers": ["Pinpoint Precision", "Tremors"],
         },
         "Cordelius": {
             "rarity": "Chromatic",
-            "droprate": "Legendary",
+            "droprate": "Mythic",
             "emoji": "<:C:1125365776006774784>",
             "gadgets": ["Replanting", "Poison Mushroom"],
             "starpowers": ["Comboshrooms", "Mushroom Kingdom"],
+        },
+        "Pearl": {
+            "rarity": "Chromatic",
+            "droprate": "Legendary",
+            "emoji": "<:P:1150438236448104498>",
+            "gadgets": ["Overcooked", "Made With Love"],
+            "starpowers": ["Heat Retention", "Heat Shield"],
         },
     }
 
