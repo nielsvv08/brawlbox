@@ -5,13 +5,14 @@ import discourtesy
 from core import mongo
 from core.config import Config as config
 from core.constants import Constants as constants
+from core.utils import calculate_level
 
 
 def can_prestige(profile):
     for brawler in constants.brawlers.brawlers:
         try:
             if (
-                profile["brawlers"][brawler]["level"] != 11
+                calculate_level(profile, brawler) != 11
                 or len(profile["brawlers"][brawler]["starpowers"]) != 2
                 or len(profile["brawlers"][brawler]["gadgets"])
                 != (

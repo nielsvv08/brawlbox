@@ -5,6 +5,21 @@ def r(number):
     return "{:,}".format(number)
 
 
+def calculate_level(profile, brawler_name):
+    try:
+        current_pp = profile["brawlers"][brawler_name]["powerpoints"]
+    except KeyError:
+        return 0
+
+    for level in constants.various.levels_reverse:
+        required_pp = constants.various.upgrades[str(level)]["powerpoints"]
+
+        if required_pp <= current_pp:
+            return level
+
+    return 1
+
+
 def get_skin(application, profile, brawler_name):
     selected = (
         profile["brawlers"]

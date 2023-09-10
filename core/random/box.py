@@ -3,6 +3,7 @@ import math
 import random
 
 from core.constants import Constants as constants
+from core.utils import calculate_level
 from .normal import normal_distribution
 
 
@@ -63,19 +64,21 @@ def get_droprates(profile):
             remove_drop(rarity, droprates)
 
     if any(
-        profile["brawlers"].get(brawler, {"level": 1})["level"] >= 9
-        and len(profile["brawlers"].get(brawler, {}).get("starpowers", []))
+        calculate_level(profile, brawler_name) >= 9
+        and len(
+            profile["brawlers"].get(brawler_name, {}).get("starpowers", [])
+        )
         != 2
-        for brawler in sum(list(rarities.values()), [])
+        for brawler_name in sum(list(rarities.values()), [])
     ):
         droprates["star"] = 3.9
         droprates["pp"] -= droprates["star"]
 
     if any(
-        profile["brawlers"].get(brawler, {"level": 1})["level"] >= 7
-        and len(profile["brawlers"].get(brawler, {}).get("gadgets", []))
-        < (2 if brawler in constants.brawlers.two_gadget_brawlers else 1)
-        for brawler in sum(list(rarities.values()), [])
+        calculate_level(profile, brawler_name) >= 7
+        and len(profile["brawlers"].get(brawler_name, {}).get("gadgets", []))
+        < (2 if brawler_name in constants.brawlers.two_gadget_brawlers else 1)
+        for brawler_name in sum(list(rarities.values()), [])
     ):
         droprates["gadget"] = 5.2
         droprates["pp"] -= droprates["gadget"]
@@ -145,7 +148,7 @@ def get_random_box_item(profile):
                 possible_gadget_brawlers = [
                     brawler
                     for brawler in profile["brawlers"]
-                    if profile["brawlers"][brawler]["level"] >= 7
+                    if calculate_level(profile, brawler) >= 7
                     and len(
                         profile["brawlers"].get(brawler, {}).get("gadgets", [])
                     )
@@ -196,7 +199,7 @@ def get_random_box_item(profile):
                 possible_starpower_brawlers = [
                     brawler
                     for brawler in profile["brawlers"]
-                    if profile["brawlers"][brawler]["level"] >= 9
+                    if calculate_level(profile, brawler) >= 9
                     and len(profile["brawlers"][brawler].get("starpowers", []))
                     != 2
                 ]

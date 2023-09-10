@@ -2,20 +2,8 @@ import discourtesy
 
 from core.config import Config as config
 from core.constants import Constants as constants
-from core.utils import get_skin, get_username, r
+from core.utils import calculate_level, get_skin, get_username, r
 from core.random import get_random_hint
-
-
-def calculate_level(profile, brawler_name):
-    current_pp = profile["brawlers"][brawler_name]["powerpoints"]
-
-    for level in constants.various.levels_reverse:
-        required_pp = constants.various.upgrades[str(level)]["powerpoints"]
-
-        if required_pp <= current_pp:
-            return level
-
-    return 1
 
 
 @discourtesy.command("brawlers")
