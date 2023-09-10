@@ -2,7 +2,7 @@ import discourtesy
 
 from core.config import Config as config
 from core.constants import Constants as constants
-from core.utils import get_skin, max_gadgets
+from core.utils import calculate_level, get_skin, max_gadgets
 
 
 @discourtesy.command("brawler")
@@ -53,7 +53,7 @@ async def brawler_command(application, interaction):
 
         description = (
             "Status: Unlocked 🔓\n\n"
-            f"Level {brawler['level']}\n"
+            f"Level {calculate_level(profile, brawler_name)}\n"
             f"Power Points: {brawler['powerpoints']} / 3740\n\n"
         )
 
