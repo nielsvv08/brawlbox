@@ -1,11 +1,6 @@
 [
     {
         "type": 1,
-        "name": "badges",
-        "description": "(discontinued)"
-    },
-    {
-        "type": 1,
         "name": "battle",
         "description": "Battle it out for sweet rewards!",
         "options": [
@@ -83,11 +78,6 @@
     },
     {
         "type": 1,
-        "name": "claim",
-        "description": "(discontinued)"
-    },
-    {
-        "type": 1,
         "name": "counter",
         "description": "View the amount of opened boxes.",
         "options": [
@@ -132,35 +122,6 @@
         "type": 1,
         "name": "invite",
         "description": "Invite the bot to another server or join the support server."
-    },
-    {
-        "type": 1,
-        "name": "leaderboard",
-        "description": "(discontinued)"
-    },
-    {
-        "type": 1,
-        "name": "levels",
-        "description": "(discontinued)",
-        "options": [
-            {
-                "type": 6,
-                "name": "user",
-                "description": "The user to look up."
-            }
-        ]
-    },
-    {
-        "type": 1,
-        "name": "powerpoints",
-        "description": "(discontinued)",
-        "options": [
-            {
-                "type": 6,
-                "name": "user",
-                "description": "The user to look up."
-            }
-        ]
     },
     {
         "type": 1,
@@ -227,10 +188,5 @@
                 "required": true
             }
         ]
-    },
-    {
-        "type": 1,
-        "name": "vote",
-        "description": "(discontinued)"
     }
 ]
