@@ -292,6 +292,12 @@ class BrawlersConstants:
             "gadgets": ["Double Sausage", "Extra Mustard"],
             "starpowers": ["Fast Food", "Self Service"],
         },
+        "Doug": {
+            "rarity": "Mythic",
+            "emoji": "<:C:1171178357627568168>",
+            "gadgets": ["Rerouting", "Ghost Train"],
+            "starpowers": ["Pit Stop", "Tickets Please!"],
+        },
         # Legendary
         "Spike": {
             "rarity": "Legendary",
@@ -464,17 +470,24 @@ class BrawlersConstants:
         },
         "Cordelius": {
             "rarity": "Chromatic",
-            "droprate": "Mythic",
+            "droprate": "Epic",
             "emoji": "<:C:1125365776006774784>",
             "gadgets": ["Replanting", "Poison Mushroom"],
             "starpowers": ["Comboshrooms", "Mushroom Kingdom"],
         },
         "Pearl": {
             "rarity": "Chromatic",
-            "droprate": "Legendary",
+            "droprate": "Mythic",
             "emoji": "<:P:1150438236448104498>",
             "gadgets": ["Overcooked", "Made With Love"],
             "starpowers": ["Heat Retention", "Heat Shield"],
+        },
+        "Charlie": {
+            "rarity": "Chromatic",
+            "droprate": "Legendary",
+            "emoji": "<:C:1171178359523389511>",
+            "gadgets": ["Spiders", "Personal Space"],
+            "starpowers": ["Digestive", "Slimy"],
         },
     }
 
