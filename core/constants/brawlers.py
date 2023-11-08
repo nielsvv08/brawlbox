@@ -292,7 +292,7 @@ class BrawlersConstants:
             "gadgets": ["Double Sausage", "Extra Mustard"],
             "starpowers": ["Fast Food", "Self Service"],
         },
-        "Doug": {
+        "Chuck": {
             "rarity": "Mythic",
             "emoji": "<:C:1171178357627568168>",
             "gadgets": ["Rerouting", "Ghost Train"],
@@ -492,9 +492,7 @@ class BrawlersConstants:
     }
 
     two_gadget_brawlers = [
-        name
-        for name, brawler in brawlers.items()
-        if len(brawler["gadgets"]) == 2
+        name for name, brawler in brawlers.items() if len(brawler["gadgets"]) == 2
     ]
 
     gadgets_overwrite = {
@@ -652,12 +650,8 @@ class BrawlersConstants:
         k for k, v in brawlers.items() if v["rarity"] == "Super Rare"
     ]
     epic_brawlers = [k for k, v in brawlers.items() if v["rarity"] == "Epic"]
-    mythic_brawlers = [
-        k for k, v in brawlers.items() if v["rarity"] == "Mythic"
-    ]
-    legendary_brawlers = [
-        k for k, v in brawlers.items() if v["rarity"] == "Legendary"
-    ]
+    mythic_brawlers = [k for k, v in brawlers.items() if v["rarity"] == "Mythic"]
+    legendary_brawlers = [k for k, v in brawlers.items() if v["rarity"] == "Legendary"]
 
     chromatic_epic_brawlers = [
         k
@@ -729,8 +723,6 @@ class BrawlersConstants:
     }
 
     icon_url = "https://papier.dis.tf/static/brawlbox/pins/{}.png"
-    skin_icon_url = (
-        "https://papier.dis.tf/static/brawlbox/pins/skins/{}/{}.png"
-    )
+    skin_icon_url = "https://papier.dis.tf/static/brawlbox/pins/skins/{}/{}.png"
 
     powerpoint_costs = [0, 20, 30, 50, 80, 130, 210, 340, 550, 890, 1440, 0]
