@@ -85,7 +85,7 @@ async def brawlers_command(application, interaction):
             {
                 "color": config.colour,
                 "fields": second_fields,
-                "footer": {"text": f"Hint: {get_random_hint()}"},
+                # "footer": {"text": f"Hint: {get_random_hint()}"},
             },
         ]
     }
