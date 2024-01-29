@@ -113,6 +113,9 @@ class MongoClient:
 
         document = await db.data.partners.find_one(query)
 
+        if not document:
+            return list()
+
         return document["members"]
 
     async def is_user_in_guild(self, user_id, guild_id):
