@@ -275,9 +275,15 @@ class BrawlersConstants:
         },
         "Pearl": {
             "rarity": "Epic",
-            "emoji": "<:P:1150438236448104498>",
+            "emoji": "<:P:1201538436104990803>",
             "gadgets": ["Overcooked", "Made With Love"],
             "starpowers": ["Heat Retention", "Heat Shield"],
+        },
+        "Larry & Lawrie": {
+            "rarity": "Epic",
+            "emoji": "<:L:1201538438395068446>",
+            "gadgets": ["Order: Swap", "Order: Fall Back"],
+            "starpowers": ["Protocol: Protect", "Protocol: Assist"],
         },
         # Mythic
         "Mortis": {
@@ -371,7 +377,7 @@ class BrawlersConstants:
             "starpowers": ["Stencil Glue", "Ink Refills"],
         },
         "Buster": {
-            "rarity": "Epic",
+            "rarity": "Mythic",
             "emoji": "<:B:1039257726250930256>",
             "gadgets": ["Utility Belt", "Slo-Mo Replay"],
             "starpowers": ["Blockbuster", "Kevlar Vest"],
@@ -407,10 +413,16 @@ class BrawlersConstants:
             "starpowers": ["Pit Stop", "Tickets Please!"],
         },
         "Charlie": {
-            "rarity": "Legendary",
+            "rarity": "Mythic",
             "emoji": "<:C:1171178359523389511>",
             "gadgets": ["Spiders", "Personal Space"],
             "starpowers": ["Digestive", "Slimy"],
+        },
+        "Mico": {
+            "rarity": "Mythic",
+            "emoji": "<:M:1201538443780567170>",
+            "gadgets": ["Clipping Scream", "Presto"],
+            "starpowers": ["Monkey Business", "Record Smash"],
         },
         # Legendary
         "Spike": {
@@ -466,6 +478,12 @@ class BrawlersConstants:
             "emoji": "<:C:1125365776006774784>",
             "gadgets": ["Replanting", "Poison Mushroom"],
             "starpowers": ["Comboshrooms", "Mushroom Kingdom"],
+        },
+        "Kit": {
+            "rarity": "Legendary",
+            "emoji": "<:K:1201538441201078323>",
+            "gadgets": ["Cardboard Box", "Cheeseburger"],
+            "starpowers": ["Power Hungry", "Overly Attached"],
         },
     }
 
