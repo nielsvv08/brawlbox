@@ -14,12 +14,7 @@ def can_prestige(profile):
             if (
                 calculate_level(profile, brawler) != 11
                 or len(profile["brawlers"][brawler]["starpowers"]) != 2
-                or len(profile["brawlers"][brawler]["gadgets"])
-                != (
-                    2
-                    if brawler in constants.brawlers.two_gadget_brawlers
-                    else 1
-                )
+                or len(profile["brawlers"][brawler]["gadgets"]) != 2
             ):
                 return False
         except KeyError:

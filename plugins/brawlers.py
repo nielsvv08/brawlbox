@@ -1,7 +1,10 @@
+from copy import deepcopy
+
 import discourtesy
 
 from core.config import Config as config
 from core.constants import Constants as constants
+from core.paginate import Paginate
 from core.utils import calculate_level, get_skin, get_username, r
 from core.random import get_random_hint
 
@@ -12,12 +15,6 @@ async def brawlers_command(application, interaction):
         user = discourtesy.utils.first_option_user_or_author(interaction)
     except KeyError:
         user = interaction.get("user") or interaction["member"]["user"]
-
-    show_all = False
-
-    for option in interaction["data"].get("options", ()):
-        if option["name"] == "all":
-            show_all = option["value"]
 
     profile, _ = await application.mongo.get_profile(user["id"])
 
@@ -47,48 +44,58 @@ async def brawlers_command(application, interaction):
             else:
                 in_progress_counter += 1
 
-            if show_all or not "Locked" in status:
-                description += f"{status}\n"
+            description += f"{status}\n"
 
         fields.append({"name": category, "value": description, "inline": True})
 
     first_fields = fields[:6]
-    second_fields = fields[6:]
+    second_fields = fields[6:9]
+    third_fields = fields[9:12]
+    fourth_fields = fields[12:]
 
     description = (
         "This command shows a list of brawlers and indicates their current "
         "status. Underneath each unlocked brawler, their level and power "
         "points are revealed."
         "\n\n"
+    )
+
+    description += (
         f"**Summary**: {locked_counter} locked — {in_progress_counter} in "
         f"progress — {maxed_counter} maxed."
     )
 
-    if not show_all:
-        description += (
-            "\n\nNote: this is a **compressed view**. To view all brawlers, "
-            "set the `all` option to true when executing this command."
-        )
+    base_embed = discourtesy.utils.embed(
+        {
+            "title": "Brawler Progress 🌺✨",
+            "author": {
+                "name": user["username"],
+                "icon_url": discourtesy.utils.avatar_url(user),
+            },
+            "color": config.colour,
+            "footer": f"Hint: {get_random_hint()}",
+        }
+    )
 
-    return {
-        "embeds": [
-            {
-                "title": "Brawler Progress 🌺✨",
-                "description": description,
-                "color": config.colour,
-                "author": {
-                    "name": user["username"],
-                    "icon_url": discourtesy.utils.avatar_url(user),
-                },
-                "fields": first_fields,
-            },
-            {
-                "color": config.colour,
-                "fields": second_fields,
-                # "footer": {"text": f"Hint: {get_random_hint()}"},
-            },
-        ]
-    }
+    first_embed = deepcopy(base_embed)
+    first_embed["embeds"][0]["description"] = description
+    first_embed["embeds"][0]["fields"] = first_fields
+
+    second_embed = deepcopy(base_embed)
+    second_embed["embeds"][0]["fields"] = second_fields
+
+    third_embed = deepcopy(base_embed)
+    third_embed["embeds"][0]["fields"] = third_fields
+
+    fourth_embed = deepcopy(base_embed)
+    fourth_embed["embeds"][0]["fields"] = fourth_fields
+
+    embeds = (first_embed, second_embed, third_embed, fourth_embed)
+
+    paginate = Paginate("brawlers", application, interaction, *embeds)
+    await paginate.start()
+
+    return paginate.embeds[0]
 
 
 def get_status(application, profile, brawler_name):
@@ -105,9 +112,9 @@ def get_status(application, profile, brawler_name):
     power_points = brawler["powerpoints"]
 
     if power_points == constants.various.upgrades["11"]["powerpoints"]:
-        return f"{emoji} **{brawler_name}\n⥝** Level {level} — Maxed!"
+        return f"{emoji} **{brawler_name}\n⥝ Level {level} — Maxed!**"
 
     return (
-        f"{emoji} **{brawler_name}\n⥝** Level {level} — {r(power_points)} "
+        f"{emoji} **{brawler_name}\n⥝ Level {level} — {r(power_points)} **"
         f"{constants.emoji.power_points}"
     )

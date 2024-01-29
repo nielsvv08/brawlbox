@@ -219,11 +219,65 @@ class BrawlersConstants:
             "gadgets": ["Sugar Rush", "Crash Test"],
             "starpowers": ["Black Powder", "Wisdom Tooth"],
         },
+        "Gale": {
+            "rarity": "Epic",
+            "emoji": "<:G:776006754646884352>",
+            "gadgets": ["Spring Ejector", "Twister"],
+            "starpowers": ["Blustery Blow", "Freezing Snow"],
+        },
+        "Colette": {
+            "rarity": "Epic",
+            "emoji": "<:C:776006754663399489>",
+            "gadgets": ["Na-ah!", "Gotcha!"],
+            "starpowers": ["Push It", "Mass Tax"],
+        },
+        "Belle": {
+            "rarity": "Epic",
+            "emoji": "<:B:830402914941927425>",
+            "gadgets": ["Nest Egg", "Reverse Polarity"],
+            "starpowers": ["Positive Feedback", "Grounded"],
+        },
+        "Ash": {
+            "rarity": "Epic",
+            "emoji": "<:A:881457139837710357>",
+            "gadgets": ["Chill Pill", "Rotten Banana"],
+            "starpowers": ["First Bash", "Mad As Heck"],
+        },
+        "Lola": {
+            "rarity": "Epic",
+            "emoji": "<:L:902944553575804971>",
+            "gadgets": ["Freeze Frame", "Stunt Double"],
+            "starpowers": ["Improvise", "Sealed With A Kiss"],
+        },
+        "Sam": {
+            "rarity": "Epic",
+            "emoji": "<:S:1016081621117575190>",
+            "gadgets": ["Magnetic Field", "Pulse Repellent"],
+            "starpowers": ["Hearty Recovery", "Remote Recharge"],
+        },
+        "Mandy": {
+            "rarity": "Epic",
+            "emoji": "<:M:1059551287080914985>",
+            "gadgets": ["Caramelize", "Cookie Crumbs"],
+            "starpowers": ["In My Sights", "Hard Candy"],
+        },
+        "Maisie": {
+            "rarity": "Epic",
+            "emoji": "<:M:1108815643345690744>",
+            "gadgets": ["Disengage!", "Finish Them!"],
+            "starpowers": ["Pinpoint Precision", "Tremors"],
+        },
         "Hank": {
             "rarity": "Epic",
             "emoji": "<:H:1108819447675883650>",
             "gadgets": ["Water Balloons", "Barricade"],
             "starpowers": ["It's Gonna Blow", "Take Cover!"],
+        },
+        "Pearl": {
+            "rarity": "Epic",
+            "emoji": "<:P:1150438236448104498>",
+            "gadgets": ["Overcooked", "Made With Love"],
+            "starpowers": ["Heat Retention", "Heat Shield"],
         },
         # Mythic
         "Mortis": {
@@ -274,11 +328,65 @@ class BrawlersConstants:
             "gadgets": ["Windup", "Residue"],
             "starpowers": ["Chain Reaction", "Super Sticky"],
         },
+        "Lou": {
+            "rarity": "Mythic",
+            "emoji": "<:L:776353795030122507>",
+            "gadgets": ["Ice Block", "Cryo Syrup"],
+            "starpowers": ["Supercool", "Hypothermia"],
+        },
+        "Colonel Ruffs": {
+            "rarity": "Mythic",
+            "emoji": "<:C:804311859090948096>",
+            "gadgets": ["Take Cover", "Air Support"],
+            "starpowers": ["Air Superiority", "Field Promotion"],
+        },
+        "Buzz": {
+            "rarity": "Mythic",
+            "emoji": "<:B:854635938360721408>",
+            "gadgets": ["Reserve Buoy", "X-Ray-Shades"],
+            "starpowers": ["Tougher Torpedo", "Eyes Sharp"],
+        },
+        "Fang": {
+            "rarity": "Mythic",
+            "emoji": "<:F:923487339597148160>",
+            "gadgets": ["Corn-Fu", "Roundhouse Kick"],
+            "starpowers": ["Fresh Kicks", "Divine Soles"],
+        },
+        "Eve": {
+            "rarity": "Mythic",
+            "emoji": "<:E:950762267522269224>",
+            "gadgets": ["Gotta Go!", "Motherly Love"],
+            "starpowers": ["Unnatural Order", "Happy Surprise"],
+        },
+        "Janet": {
+            "rarity": "Mythic",
+            "emoji": "<:J:970789140922769438>",
+            "gadgets": ["Drop The Bass", "Backstage Pass"],
+            "starpowers": ["Stage View", "Vocal Warm Up"],
+        },
+        "Otis": {
+            "rarity": "Mythic",
+            "emoji": "<:O:992111448274763778>",
+            "gadgets": ["Dormant Star", "Phat Splatter"],
+            "starpowers": ["Stencil Glue", "Ink Refills"],
+        },
+        "Buster": {
+            "rarity": "Epic",
+            "emoji": "<:B:1039257726250930256>",
+            "gadgets": ["Utility Belt", "Slo-Mo Replay"],
+            "starpowers": ["Blockbuster", "Kevlar Vest"],
+        },
         "Gray": {
             "rarity": "Mythic",
             "emoji": "<:G:1059551285294141511>",
             "gadgets": ["Walking Cane", "Grand Piano"],
             "starpowers": ["Fake Injury", "New Perspective"],
+        },
+        "R-T": {
+            "rarity": "Mythic",
+            "emoji": "<:R:1081866518725406782>",
+            "gadgets": ["In Line", "Hacks!"],
+            "starpowers": ["Quick Maths", "Recording"],
         },
         "Willow": {
             "rarity": "Mythic",
@@ -297,6 +405,12 @@ class BrawlersConstants:
             "emoji": "<:C:1171178357627568168>",
             "gadgets": ["Rerouting", "Ghost Train"],
             "starpowers": ["Pit Stop", "Tickets Please!"],
+        },
+        "Charlie": {
+            "rarity": "Legendary",
+            "emoji": "<:C:1171178359523389511>",
+            "gadgets": ["Spiders", "Personal Space"],
+            "starpowers": ["Digestive", "Slimy"],
         },
         # Legendary
         "Spike": {
@@ -335,167 +449,25 @@ class BrawlersConstants:
             "gadgets": ["Jolting Volts", "Toolbox"],
             "starpowers": ["Force Field", "Self Destruction"],
         },
+        "Surge": {
+            "rarity": "Legendary",
+            "emoji": "<:S:776007475261603841>",
+            "gadgets": ["Power Surge", "Power Shield"],
+            "starpowers": ["To The Max!", "Serve Ice Cold"],
+        },
         "Chester": {
             "rarity": "Legendary",
             "emoji": "<:C:1052972358073335877>",
             "gadgets": ["Spicy Dice", "Candy Beans"],
             "starpowers": ["Bell'O'Mania", "Sneak Peek"],
         },
-        # Chromatic
-        "Gale": {
-            "rarity": "Chromatic",
-            "droprate": "Epic",
-            "emoji": "<:G:776006754646884352>",
-            "gadgets": ["Spring Ejector", "Twister"],
-            "starpowers": ["Blustery Blow", "Freezing Snow"],
-        },
-        "Surge": {
-            "rarity": "Chromatic",
-            "droprate": "Epic",
-            "emoji": "<:S:776007475261603841>",
-            "gadgets": ["Power Surge", "Power Shield"],
-            "starpowers": ["To The Max!", "Serve Ice Cold"],
-        },
-        "Colette": {
-            "rarity": "Chromatic",
-            "droprate": "Epic",
-            "emoji": "<:C:776006754663399489>",
-            "gadgets": ["Na-ah!", "Gotcha!"],
-            "starpowers": ["Push It", "Mass Tax"],
-        },
-        "Lou": {
-            "rarity": "Chromatic",
-            "droprate": "Epic",
-            "emoji": "<:L:776353795030122507>",
-            "gadgets": ["Ice Block", "Cryo Syrup"],
-            "starpowers": ["Supercool", "Hypothermia"],
-        },
-        "Colonel Ruffs": {
-            "rarity": "Chromatic",
-            "droprate": "Epic",
-            "emoji": "<:C:804311859090948096>",
-            "gadgets": ["Take Cover", "Air Support"],
-            "starpowers": ["Air Superiority", "Field Promotion"],
-        },
-        "Belle": {
-            "rarity": "Chromatic",
-            "droprate": "Epic",
-            "emoji": "<:B:830402914941927425>",
-            "gadgets": ["Nest Egg", "Reverse Polarity"],
-            "starpowers": ["Positive Feedback", "Grounded"],
-        },
-        "Buzz": {
-            "rarity": "Chromatic",
-            "droprate": "Epic",
-            "emoji": "<:B:854635938360721408>",
-            "gadgets": ["Reserve Buoy", "X-Ray-Shades"],
-            "starpowers": ["Tougher Torpedo", "Eyes Sharp"],
-        },
-        "Ash": {
-            "rarity": "Chromatic",
-            "droprate": "Epic",
-            "emoji": "<:A:881457139837710357>",
-            "gadgets": ["Chill Pill", "Rotten Banana"],
-            "starpowers": ["First Bash", "Mad As Heck"],
-        },
-        "Lola": {
-            "rarity": "Chromatic",
-            "droprate": "Epic",
-            "emoji": "<:L:902944553575804971>",
-            "gadgets": ["Freeze Frame", "Stunt Double"],
-            "starpowers": ["Improvise", "Sealed With A Kiss"],
-        },
-        "Fang": {
-            "rarity": "Chromatic",
-            "droprate": "Epic",
-            "emoji": "<:F:923487339597148160>",
-            "gadgets": ["Corn-Fu", "Roundhouse Kick"],
-            "starpowers": ["Fresh Kicks", "Divine Soles"],
-        },
-        "Eve": {
-            "rarity": "Chromatic",
-            "droprate": "Epic",
-            "emoji": "<:E:950762267522269224>",
-            "gadgets": ["Gotta Go!", "Motherly Love"],
-            "starpowers": ["Unnatural Order", "Happy Surprise"],
-        },
-        "Janet": {
-            "rarity": "Chromatic",
-            "droprate": "Epic",
-            "emoji": "<:J:970789140922769438>",
-            "gadgets": ["Drop The Bass", "Backstage Pass"],
-            "starpowers": ["Stage View", "Vocal Warm Up"],
-        },
-        "Otis": {
-            "rarity": "Chromatic",
-            "droprate": "Epic",
-            "emoji": "<:O:992111448274763778>",
-            "gadgets": ["Dormant Star", "Phat Splatter"],
-            "starpowers": ["Stencil Glue", "Ink Refills"],
-        },
-        "Sam": {
-            "rarity": "Chromatic",
-            "droprate": "Epic",
-            "emoji": "<:S:1016081621117575190>",
-            "gadgets": ["Magnetic Field", "Pulse Repellent"],
-            "starpowers": ["Hearty Recovery", "Remote Recharge"],
-        },
-        "Buster": {
-            "rarity": "Chromatic",
-            "droprate": "Epic",
-            "emoji": "<:B:1039257726250930256>",
-            "gadgets": ["Utility Belt", "Slo-Mo Replay"],
-            "starpowers": ["Blockbuster", "Kevlar Vest"],
-        },
-        "Mandy": {
-            "rarity": "Chromatic",
-            "droprate": "Epic",
-            "emoji": "<:M:1059551287080914985>",
-            "gadgets": ["Caramelize", "Cookie Crumbs"],
-            "starpowers": ["In My Sights", "Hard Candy"],
-        },
-        "R-T": {
-            "rarity": "Chromatic",
-            "droprate": "Epic",
-            "emoji": "<:R:1081866518725406782>",
-            "gadgets": ["In Line", "Hacks!"],
-            "starpowers": ["Quick Maths", "Recording"],
-        },
-        "Maisie": {
-            "rarity": "Chromatic",
-            "droprate": "Epic",
-            "emoji": "<:M:1108815643345690744>",
-            "gadgets": ["Disengage!", "Finish Them!"],
-            "starpowers": ["Pinpoint Precision", "Tremors"],
-        },
         "Cordelius": {
-            "rarity": "Chromatic",
-            "droprate": "Epic",
+            "rarity": "Legendary",
             "emoji": "<:C:1125365776006774784>",
             "gadgets": ["Replanting", "Poison Mushroom"],
             "starpowers": ["Comboshrooms", "Mushroom Kingdom"],
         },
-        "Pearl": {
-            "rarity": "Chromatic",
-            "droprate": "Mythic",
-            "emoji": "<:P:1150438236448104498>",
-            "gadgets": ["Overcooked", "Made With Love"],
-            "starpowers": ["Heat Retention", "Heat Shield"],
-        },
-        "Charlie": {
-            "rarity": "Chromatic",
-            "droprate": "Legendary",
-            "emoji": "<:C:1171178359523389511>",
-            "gadgets": ["Spiders", "Personal Space"],
-            "starpowers": ["Digestive", "Slimy"],
-        },
     }
-
-    two_gadget_brawlers = [
-        name
-        for name, brawler in brawlers.items()
-        if len(brawler["gadgets"]) == 2
-    ]
 
     gadgets_overwrite = {
         "Active Noise Cancelling": "Active Noise Canceling",  # Frank
@@ -659,28 +631,6 @@ class BrawlersConstants:
         k for k, v in brawlers.items() if v["rarity"] == "Legendary"
     ]
 
-    chromatic_epic_brawlers = [
-        k
-        for k, v in brawlers.items()
-        if v["rarity"] == "Chromatic" and v["droprate"] == "Epic"
-    ]
-    chromatic_mythic_brawlers = [
-        k
-        for k, v in brawlers.items()
-        if v["rarity"] == "Chromatic" and v["droprate"] == "Mythic"
-    ]
-    chromatic_legendary_brawlers = [
-        k
-        for k, v in brawlers.items()
-        if v["rarity"] == "Chromatic" and v["droprate"] == "Legendary"
-    ]
-
-    chromatic_brawlers = (
-        chromatic_epic_brawlers
-        + chromatic_mythic_brawlers
-        + chromatic_legendary_brawlers
-    )
-
     droprates = {
         "pp": 92.1,
         "trophy": 0.0,
@@ -695,27 +645,26 @@ class BrawlersConstants:
         "trophy": starting_brawler,
         "rare": rare_brawlers,
         "sr": super_rare_brawlers,
-        "epic": epic_brawlers + chromatic_epic_brawlers,
-        "mythic": mythic_brawlers + chromatic_mythic_brawlers,
-        "legen": legendary_brawlers + chromatic_legendary_brawlers,
+        "epic": epic_brawlers,
+        "mythic": mythic_brawlers,
+        "legen": legendary_brawlers,
     }
 
     brawler_categories = {
         "⚪ Starting Brawler": starting_brawler,
         "🟢 Rare": split_in_two(rare_brawlers)[0],
-        "\u200e": split_in_two(rare_brawlers)[1],
+        "‎": split_in_two(rare_brawlers)[1],
         "🔵 Super Rare": split_in_three(super_rare_brawlers)[0],
-        "\u200e" * 2: split_in_three(super_rare_brawlers)[1],
-        "\u200e" * 3: split_in_three(super_rare_brawlers)[2],
+        "‎" * 2: split_in_three(super_rare_brawlers)[1],
+        "‎" * 3: split_in_three(super_rare_brawlers)[2],
         "🟣 Epic": split_in_three(epic_brawlers)[0],
-        "\u200e" * 4: split_in_three(epic_brawlers)[1],
-        "\u200e" * 5: split_in_three(epic_brawlers)[2],
-        "🔴 Mythic": split_in_two(mythic_brawlers)[0],
-        "\u200e" * 6: split_in_two(mythic_brawlers)[1],
-        "🟡 Legendary": legendary_brawlers,
-        "🟠 Chromatic": split_in_three(chromatic_brawlers)[0],
-        "\u200e" * 7: split_in_three(chromatic_brawlers)[1],
-        "\u200e" * 8: split_in_three(chromatic_brawlers)[2],
+        "‎" * 4: split_in_three(epic_brawlers)[1],
+        "‎" * 5: split_in_three(epic_brawlers)[2],
+        "🔴 Mythic": split_in_three(mythic_brawlers)[0],
+        "‎" * 6: split_in_three(mythic_brawlers)[1],
+        "‎" * 7: split_in_three(mythic_brawlers)[2],
+        "🟡 Legendary": split_in_two(legendary_brawlers)[0],
+        "‎" * 8: split_in_three(legendary_brawlers)[1],
     }
 
     rarity_emoji = {
@@ -725,7 +674,6 @@ class BrawlersConstants:
         "Epic": "💜",
         "Mythic": "❤",
         "Legendary": "💛",
-        "Chromatic": "🧡",
     }
 
     icon_url = "https://papier.dis.tf/static/brawlbox/pins/{}.png"

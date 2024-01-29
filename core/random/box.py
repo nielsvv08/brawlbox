@@ -77,7 +77,7 @@ def get_droprates(profile):
     if any(
         calculate_level(profile, brawler_name) >= 7
         and len(profile["brawlers"].get(brawler_name, {}).get("gadgets", []))
-        < (2 if brawler_name in constants.brawlers.two_gadget_brawlers else 1)
+        < 2
         for brawler_name in sum(list(rarities.values()), [])
     ):
         droprates["gadget"] = 5.2
@@ -152,11 +152,7 @@ def get_random_box_item(profile):
                     and len(
                         profile["brawlers"].get(brawler, {}).get("gadgets", [])
                     )
-                    < (
-                        2
-                        if brawler in constants.brawlers.two_gadget_brawlers
-                        else 1
-                    )
+                    < 2
                 ]
 
                 if len(possible_gadget_brawlers) == 0:
