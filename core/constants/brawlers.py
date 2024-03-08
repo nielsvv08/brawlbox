@@ -285,6 +285,12 @@ class BrawlersConstants:
             "gadgets": ["Order: Swap", "Order: Fall Back"],
             "starpowers": ["Protocol: Protect", "Protocol: Assist"],
         },
+        "Angelo": {
+            "rarity": "Epic",
+            "emoji": "<:A:1215744344863281152>",
+            "gadgets": ["Stinging Flight", "Master Fletcher"],
+            "starpowers": ["Empower", "Flow"],
+        },
         # Mythic
         "Mortis": {
             "rarity": "Mythic",
