@@ -688,7 +688,7 @@ class BrawlersConstants:
         "‎" * 6: split_in_three(mythic_brawlers)[1],
         "‎" * 7: split_in_three(mythic_brawlers)[2],
         "🟡 Legendary": split_in_two(legendary_brawlers)[0],
-        "‎" * 8: split_in_three(legendary_brawlers)[1],
+        "‎" * 8: split_in_two(legendary_brawlers)[1],
     }
 
     rarity_emoji = {
