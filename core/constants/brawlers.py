@@ -430,6 +430,18 @@ class BrawlersConstants:
             "gadgets": ["Clipping Scream", "Presto"],
             "starpowers": ["Monkey Business", "Record Smash"],
         },
+        "Melodie": {
+            "rarity": "Mythic",
+            "emoji": "<:M:1254748190008414349>",
+            "gadgets": ["Perfect Pitch", "Interlude"],
+            "starpowers": ["Fast Beats", "Extended Mix"],
+        },
+        "Lily": {
+            "rarity": "Mythic",
+            "emoji": "<:L:1254748188775026708>",
+            "gadgets": ["Vanish", "Repot"],
+            "starpowers": ["Spiky", "Vigilance"],
+        },
         # Legendary
         "Spike": {
             "rarity": "Legendary",
@@ -491,6 +503,12 @@ class BrawlersConstants:
             "gadgets": ["Cardboard Box", "Cheeseburger"],
             "starpowers": ["Power Hungry", "Overly Attached"],
         },
+        "Draco": {
+            "rarity": "Legendary",
+            "emoji": "<:D:1254748186799640646>",
+            "gadgets": ["Upper Cut", "Last Stand"],
+            "starpowers": ["Expose", "Shredding"],
+        },
     }
 
     gadgets_overwrite = {
@@ -499,6 +517,7 @@ class BrawlersConstants:
         "Captain's Compass": "Trusty Spyglass",  # Penny
         "Sleep Simulator": "Sleep Stimulator",  # Sandy
         "Backup Mine": "Mine Mania",  # Tick
+        "In Line": "Out Of Line",  # R-T
     }
 
     starpowers_overwrite = {
