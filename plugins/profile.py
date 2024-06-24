@@ -1,5 +1,6 @@
 import discourtesy
 
+from core.config import Config as config
 from core.constants import Constants as constants
 from core.utils import get_username, r
 
@@ -14,27 +15,13 @@ async def profile_command(application, interaction):
         username = get_username(user)
         return constants.errors.profile_not_found.format(username)
 
-    try:
-        profile_skin = profile["profile_skins"][0]
-    except IndexError:
-        profile_skin = "default"
-
-    if (
-        profile_skin == "default"
-        and int(user["id"]) in constants.profile.staff_members
-    ):
-        profile_skin = "staff"
-
-    colour, thumbnail, footer = constants.profile.skins[profile_skin]
-
     embed = {
         "title": "Profile Inventory",
-        "color": colour,
+        "color": config.colour,
         "author": {
             "name": user["username"],
             "icon_url": discourtesy.utils.avatar_url(user),
         },
-        "thumbnail": {"url": thumbnail},
         "fields": [
             {
                 "name": "Coins",
@@ -69,7 +56,6 @@ async def profile_command(application, interaction):
                 "inline": True,
             },
         ],
-        "footer": {"icon_url": thumbnail, "text": footer},
     }
 
     if profile["tier"] > 1:

@@ -3,7 +3,6 @@ from .brawlers import BrawlersConstants
 from .buttons import ButtonsConstants
 from .emoji import EmojiConstants
 from .errors import ErrorsConstants
-from .profile import ProfileConstants
 from .various import VariousConstants
 
 
@@ -13,5 +12,4 @@ class Constants:
     buttons = ButtonsConstants
     emoji = EmojiConstants
     errors = ErrorsConstants
-    profile = ProfileConstants
     various = VariousConstants
