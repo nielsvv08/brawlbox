@@ -12,6 +12,5 @@ from .box import (
     get_random_box_item,
 )
 from .brawlers import random_unlocked_brawler
-from .hints import get_random_hint
 from .normal import normal_distribution
 from .shop import choose_skins

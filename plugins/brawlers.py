@@ -6,7 +6,6 @@ from core.config import Config as config
 from core.constants import Constants as constants
 from core.paginate import Paginate
 from core.utils import calculate_level, get_skin, get_username, r
-from core.random import get_random_hint
 
 
 @discourtesy.command("brawlers")
@@ -73,7 +72,6 @@ async def brawlers_command(application, interaction):
                 "icon_url": discourtesy.utils.avatar_url(user),
             },
             "color": config.colour,
-            "footer": f"Hint: {get_random_hint()}",
         }
     )
 
