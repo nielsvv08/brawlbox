@@ -291,6 +291,12 @@ class BrawlersConstants:
             "gadgets": ["Stinging Flight", "Master Fletcher"],
             "starpowers": ["Empower", "Flow"],
         },
+        "Berry": {
+            "rarity": "Epic",
+            "emoji": "<:B:1262408060069085257>",
+            "gadgets": ["Friendship Is Great", "Healthy Additives"],
+            "starpowers": ["Floor Is Fine", "Making A Mess"],
+        },
         # Mythic
         "Mortis": {
             "rarity": "Mythic",
