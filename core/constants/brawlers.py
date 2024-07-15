@@ -448,6 +448,12 @@ class BrawlersConstants:
             "gadgets": ["Vanish", "Repot"],
             "starpowers": ["Spiky", "Vigilance"],
         },
+        # "Clancy": {
+        #     "rarity": "Mythic",
+        #     "emoji": "<:C:1262408062153789501>",
+        #     "gadgets": ["Snappy Shooting", "Tactical Retreat"],
+        #     "starpowers": ["Recon", "Pumping Up"],
+        # },
         # Legendary
         "Spike": {
             "rarity": "Legendary",
