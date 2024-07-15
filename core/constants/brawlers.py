@@ -527,6 +527,7 @@ class BrawlersConstants:
         "Snare a Bear": "Snare A Bear",  # Bo
         "Rocket No. Four": "Rocket No. 4",  # Brock
         "Incendiary": "More Rockets!",  # Brock
+        "Bell'O'Mania": "Single Bell'O'Mania",  # Chester
         "Run n' Gun": "Run N Gun",  # Max
         "Self Destruction": "Heavy Metal",  # Meg
         "Tin Can": "Revolving Door",  # Mr P
