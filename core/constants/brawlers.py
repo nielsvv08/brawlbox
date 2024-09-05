@@ -454,6 +454,12 @@ class BrawlersConstants:
             "gadgets": ["Snappy Shooting", "Tactical Retreat"],
             "starpowers": ["Recon", "Pumping Up"],
         },
+        "Moe": {
+            "rarity": "Mythic",
+            "emoji": "<:M:1281346463519084646>",
+            "gadgets": ["Dodgy Digging", "Rat Race"],
+            "starpowers": ["Skipping Stones", "Speeding Ticket"],
+        },
         # Legendary
         "Spike": {
             "rarity": "Legendary",
