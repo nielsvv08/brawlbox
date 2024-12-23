@@ -10,9 +10,9 @@ Brawl Box is written in Python. The bot benefits from the custom-designed [Disco
 
 ## Environment Setup
 
-Brawl Box requires [Python 3.10][python-3.10] or higher.
+Brawl Box requires a modern version of Python. Currently, [Python 3.10][python-3.10] is used in production.
 
-Firstly, clone the source code and install the [Poetry][poetry] dependency manager.
+Firstly, clone the source code and install the [uv][uv] dependency manager.
 
 ```sh
 # using the customary way with HTTP
@@ -22,15 +22,15 @@ git clone https://github.com/nielsvv08/brawlbox.git
 git clone git@github.com:nielsvv08/brawlbox.git
 
 
-pip install poetry
+pip install uv
 ```
 
-Then, move to the correct directory in order to create a virtual environment and install the dependencies by running these two commands.
+Then, move to the correct directory in order to create a virtual environment and synchronise the dependencies by running these two commands.
 
 ```sh
 cd brawlbox
 
-poetry install
+uv sync
 ```
 
 ## Configuration
@@ -55,8 +55,10 @@ In order for commands to show up in the selection menu, they should be registred
 Finally, start the bot by running this command.
 
 ```sh
-poetry run uvicorn app:app
+uv run uvicorn app:app
 ```
+
+The production version is managed by [`pm2`][pm2], whose configuration values are collected in the `pm2.yml` file.
 
 ## Contributing
 
@@ -75,6 +77,7 @@ This project is licensed under the terms of the [AGPL-3.0][agpl-3.0-license] lic
 [discord-support-server]: <https://discord.gg/bXQaeFM>
 [discourtesy]: <https://github.com/robinmahieu/discourtesy>
 [mongodb]: <https://www.mongodb.com/>
-[poetry]: <https://github.com/python-poetry/poetry>
+[pm2]: <https://pm2.keymetrics.io/>
 [python-3.10]: <https://www.python.org/downloads/>
 [starlette]: <https://github.com/encode/starlette>
+[uv]: <https://github.com/astral-sh/uv>

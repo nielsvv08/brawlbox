@@ -1,4 +1,4 @@
 apps:
   script: "/bin/bash"
-  name: "brawlbox-slash"
-  args: ["-c", "poetry run uvicorn app:app --port 5071"]
+  name: "brawlbox"
+  args: ["-c", "uv run uvicorn app:app --port 5071"]
