@@ -15,7 +15,14 @@ dependencies = [
 dev-dependencies = [
     "black>=24.8.0",
     "flake8>=7.1.1",
+    "ruff>=0.8.4",
 ]
 
 [tool.uv.workspace]
 members = ["uvtest"]
+
+[tool.ruff]
+line-length = 79
+
+[tool.ruff.lint]
+per-file-ignores = { "__init__.py" = ["F401"] }

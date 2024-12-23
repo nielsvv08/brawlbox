@@ -11,8 +11,8 @@ from core.constants import Constants as constants
 @discourtesy.command("eval")
 async def eval_command(application, interaction):
     if (
-        not interaction["member"]["user"]["id"]
-        in constants.various.eval_permission
+        interaction["member"]["user"]["id"]
+        not in constants.various.eval_permission
     ):
         return "You cannot use this command."
 

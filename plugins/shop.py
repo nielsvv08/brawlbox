@@ -124,9 +124,7 @@ async def shop_command(application, interaction):
             minute=0,
             second=0,
             tzinfo=datetime.timezone(datetime.timedelta()),
-        ) + datetime.timedelta(
-            days=1
-        )  # why is datetime such a pain argh
+        ) + datetime.timedelta(days=1)  # why is datetime such a pain argh
 
         timestamp = f"<t:{int(datetime.datetime.timestamp(midnight))}:t>"
 

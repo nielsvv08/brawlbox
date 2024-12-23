@@ -91,9 +91,7 @@ class MongoClient:
             minute=0,
             second=0,
             tzinfo=datetime.timezone(datetime.timedelta()),
-        ) + datetime.timedelta(
-            days=1
-        )  # why is datetime such a pain argh
+        ) + datetime.timedelta(days=1)  # why is datetime such a pain argh
 
         db = self.databases[0]
 

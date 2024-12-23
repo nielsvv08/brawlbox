@@ -55,7 +55,7 @@ async def select_command(application, interaction):
                     "id": emoji_id,
                 },
             }
-        ),
+        )
 
     content = (
         f"Choose a skin for {brawler_name} in the menu below.\n"
