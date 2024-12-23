@@ -554,6 +554,7 @@ class BrawlersConstants:
         "Sleep Simulator": "Sleep Stimulator",  # Sandy
         "Backup Mine": "Mine Mania",  # Tick
         "In Line": "Out Of Line",  # R-T
+        "Warp Blast": "Warpin' Time",  # Nani
     }
 
     starpowers_overwrite = {
