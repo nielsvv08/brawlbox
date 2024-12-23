@@ -297,6 +297,12 @@ class BrawlersConstants:
             "gadgets": ["Friendship Is Great", "Healthy Additives"],
             "starpowers": ["Floor Is Fine", "Making A Mess"],
         },
+        "Shade": {
+            "rarity": "Epic",
+            "emoji": "<:S:1320843531434332210>",
+            "gadgets": ["Longarms", "Jump Scare"],
+            "starpowers": ["Spooky Speedster", "Hardened Hoodie"],
+        },
         # Mythic
         "Mortis": {
             "rarity": "Mythic",
@@ -460,6 +466,12 @@ class BrawlersConstants:
             "gadgets": ["Dodgy Digging", "Rat Race"],
             "starpowers": ["Skipping Stones", "Speeding Ticket"],
         },
+        "Juju": {
+            "rarity": "Mythic",
+            "emoji": "<:J:1320843530045751478>",
+            "gadgets": ["Voodoo Chile", "Elementalist"],
+            "starpowers": ["Guarded Gris-Gris", "Numbing Needles"],
+        },
         # Legendary
         "Spike": {
             "rarity": "Legendary",
@@ -526,6 +538,12 @@ class BrawlersConstants:
             "emoji": "<:D:1254748186799640646>",
             "gadgets": ["Upper Cut", "Last Stand"],
             "starpowers": ["Expose", "Shredding"],
+        },
+        "Kenji": {
+            "rarity": "Legendary",
+            "emoji": "<:K:1281346462562648157>",
+            "gadgets": ["Dashi Dash", "Hosomaki Healing"],
+            "starpowers": ["Studied The Blade", "Nigiri Nemesis"],
         },
     }
 
