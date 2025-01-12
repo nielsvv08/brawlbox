@@ -5,7 +5,7 @@ import discourtesy
 from core.config import Config as config
 from core.constants import Constants as constants
 from core.paginate import Paginate
-from core.split import split_in_three, split_in_two
+from core.split import split_in_six, split_in_three, split_in_two
 
 
 base_embed = discourtesy.utils.embed(
@@ -38,7 +38,7 @@ second_embed["embeds"][0]["fields"] = [
         "inline": True,
     },
     {
-        "name": "‎",  # empty space
+        "name": "‎" * 2,  # empty spaces
         "value": "\n".join(special_skins[2]),
         "inline": True,
     },
@@ -66,7 +66,7 @@ third_embed["embeds"][0]["fields"] = [
         "inline": True,
     },
     {
-        "name": "‎",  # empty space
+        "name": "‎" * 2,  # empty space
         "value": "\n".join(gem_skins[2]),
         "inline": True,
     },
@@ -118,6 +118,8 @@ async def skins_command(application, interaction):
         f"{constants.brawlers.emoji.get(skin)} {skin}" for skin in sorted_skins
     ]
 
+    print(len(sorted_skins))
+
     match len(sorted_skins):
         case length if length == 0:
             fields = [
@@ -126,7 +128,7 @@ async def skins_command(application, interaction):
                     "value": "‎",  # empty space
                 }
             ]
-        case length if length < 10:
+        case length if length < 9:
             fields = [
                 {
                     "name": "Unlocked Skins",
@@ -148,8 +150,7 @@ async def skins_command(application, interaction):
                     "inline": True,
                 },
             ]
-
-        case _:
+        case length if length < 43:
             skins = split_in_three(formatted_skins)
 
             fields = [
@@ -164,15 +165,79 @@ async def skins_command(application, interaction):
                     "inline": True,
                 },
                 {
-                    "name": "‎",  # empty space
+                    "name": "‎" * 2,  # empty spaces
                     "value": "\n".join(skins[2]),
                     "inline": True,
                 },
             ]
+        case length if length < 100:
+            skins = split_in_six(formatted_skins)
 
-    first_embed["embeds"][0]["fields"] = fields
+            print(skins)
 
-    embeds = (first_embed, second_embed, third_embed, fourth_embed)
+            fields = [
+                [
+                    {
+                        "name": "Unlocked Skins",
+                        "value": "\n".join(skins[0]),
+                        "inline": True,
+                    },
+                    {
+                        "name": "‎",  # empty space
+                        "value": "\n".join(skins[1]),
+                        "inline": True,
+                    },
+                    {
+                        "name": "‎" * 2,  # empty spaces
+                        "value": "\n".join(skins[2]),
+                        "inline": True,
+                    },
+                ],
+                [
+                    {
+                        "name": "Unlocked Skins (Continued)",
+                        "value": "\n".join(skins[3]),
+                        "inline": True,
+                    },
+                    {
+                        "name": "‎",  # empty space
+                        "value": "\n".join(skins[4]),
+                        "inline": True,
+                    },
+                    {
+                        "name": "‎" * 2,  # empty spaces
+                        "value": "\n".join(skins[5]),
+                        "inline": True,
+                    },
+                ],
+            ]
+        case _:
+            fields = [
+                {
+                    "name": "Unlocked Skins",
+                    "value": (
+                        "Too many to show! Contact the support server linked "
+                        "in the `\\help` command to signal this issue."
+                    ),
+                }
+            ]
+
+    if type(fields) is not list:
+        first_embed["embeds"][0]["fields"] = fields
+        embeds = (first_embed, second_embed, third_embed, fourth_embed)
+    else:
+        second_first_embed = deepcopy(first_embed)
+
+        first_embed["embeds"][0]["fields"] = fields[0]
+        second_first_embed["embeds"][0]["fields"] = fields[1]
+
+        embeds = (
+            first_embed,
+            second_first_embed,
+            second_embed,
+            third_embed,
+            fourth_embed,
+        )
 
     paginate = Paginate("skins", application, interaction, *embeds)
     await paginate.start()
