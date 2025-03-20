@@ -303,6 +303,12 @@ class BrawlersConstants:
             "gadgets": ["Longarms", "Jump Scare"],
             "starpowers": ["Spooky Speedster", "Hardened Hoodie"],
         },
+        "Meeple": {
+            "rarity": "Epic",
+            "emoji": "<:M:1352278664208846868>",
+            "gadgets": ["Mansions of Meeple", "Ragequit"],
+            "starpowers": ["Do Not Pass Go", "Rule Bending"],
+        },
         # Mythic
         "Mortis": {
             "rarity": "Mythic",
@@ -471,6 +477,18 @@ class BrawlersConstants:
             "emoji": "<:J:1320843530045751478>",
             "gadgets": ["Voodoo Chile", "Elementalist"],
             "starpowers": ["Guarded Gris-Gris", "Numbing Needles"],
+        },
+        "Ollie": {
+            "rarity": "Mythic",
+            "emoji": "<:O:1352278670097518653>",
+            "gadgets": ["Regulate", "All Eyez On Me"],
+            "starpowers": ["Kick, Push", "Renegade"],
+        },
+        "Finx": {
+            "rarity": "Mythic",
+            "emoji": "<:F:1352278666498932770>",
+            "gadgets": ["Back To The Finxture", "No Escape"],
+            "starpowers": ["Hieroglyph Halt", "Primer"],
         },
         # Legendary
         "Spike": {
