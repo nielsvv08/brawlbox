@@ -118,8 +118,6 @@ async def skins_command(application, interaction):
         f"{constants.brawlers.emoji.get(skin)} {skin}" for skin in sorted_skins
     ]
 
-    print(len(sorted_skins))
-
     match len(sorted_skins):
         case length if length == 0:
             fields = [
@@ -128,14 +126,14 @@ async def skins_command(application, interaction):
                     "value": "‎",  # empty space
                 }
             ]
-        case length if length < 9:
+        case length if length <= 8:
             fields = [
                 {
                     "name": "Unlocked Skins",
                     "value": "\n".join(formatted_skins),
                 }
             ]
-        case length if length < 21:
+        case length if length <= 16:  # 3 * 7 + 1
             skins = split_in_two(formatted_skins)
 
             fields = [
@@ -150,7 +148,7 @@ async def skins_command(application, interaction):
                     "inline": True,
                 },
             ]
-        case length if length < 43:
+        case length if length <= 24:
             skins = split_in_three(formatted_skins)
 
             fields = [
@@ -170,10 +168,8 @@ async def skins_command(application, interaction):
                     "inline": True,
                 },
             ]
-        case length if length < 100:
+        case length if length <= 48:
             skins = split_in_six(formatted_skins)
-
-            print(skins)
 
             fields = [
                 [
@@ -212,15 +208,13 @@ async def skins_command(application, interaction):
                 ],
             ]
         case _:
-            fields = [
-                {
-                    "name": "Unlocked Skins",
-                    "value": (
-                        "Too many to show! Contact the support server linked "
-                        "in the `\\help` command to signal this issue."
-                    ),
-                }
-            ]
+            fields = {
+                "name": "Unlocked Skins",
+                "value": (
+                    "Too many to show! Contact the support server linked "
+                    "in the `\\help` command to signal this issue."
+                ),
+            }
 
     if type(fields) is not list:
         first_embed["embeds"][0]["fields"] = fields
